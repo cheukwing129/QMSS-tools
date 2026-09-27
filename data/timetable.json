@@ -632,7 +632,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_2 505"
+          "subject": "MATH_2 505"
         },
         {
           "day": "A",
@@ -649,7 +649,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_2 505"
+          "subject": "MATH_2 505"
         },
         {
           "day": "B",
@@ -690,7 +690,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_2 505"
+          "subject": "MATH_2 505"
         },
         {
           "day": "C",
@@ -707,7 +707,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_2 505"
+          "subject": "MATH_2 505"
         },
         {
           "day": "D",
@@ -756,7 +756,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_2 505"
+          "subject": "MATH_2 505"
         },
         {
           "day": "E",
@@ -765,7 +765,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_2 505"
+          "subject": "MATH_2 505"
         },
         {
           "day": "E",
@@ -798,7 +798,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_2 505"
+          "subject": "MATH_2 505"
         },
         {
           "day": "F",
@@ -855,7 +855,7 @@
             "6P",
             "6T"
           ],
-          "subject": " , ENG_C 602"
+          "subject": "ENG_C 602"
         },
         {
           "day": "B",
@@ -865,7 +865,7 @@
             "6P",
             "6T"
           ],
-          "subject": " , ENG_C 602"
+          "subject": "ENG_C 602"
         },
         {
           "day": "B",
@@ -915,7 +915,7 @@
             "6P",
             "6T"
           ],
-          "subject": " , ENG_C 602"
+          "subject": "ENG_C 602"
         },
         {
           "day": "C",
@@ -925,7 +925,7 @@
             "6P",
             "6T"
           ],
-          "subject": " , ENG_C 602"
+          "subject": "ENG_C 602"
         },
         {
           "day": "C",
@@ -999,7 +999,7 @@
             "6P",
             "6T"
           ],
-          "subject": " , ENG_C 602"
+          "subject": "ENG_C 602"
         },
         {
           "day": "E",
@@ -1009,7 +1009,7 @@
             "6P",
             "6T"
           ],
-          "subject": " , ENG_C 602"
+          "subject": "ENG_C 602"
         },
         {
           "day": "E",
@@ -1019,7 +1019,7 @@
             "6P",
             "6T"
           ],
-          "subject": " , ENG_C 602"
+          "subject": "ENG_C 602"
         },
         {
           "day": "F",
@@ -1045,7 +1045,7 @@
             "6P",
             "6T"
           ],
-          "subject": " , ENG_C 602"
+          "subject": "ENG_C 602"
         },
         {
           "day": "F",
@@ -1055,7 +1055,7 @@
             "6P",
             "6T"
           ],
-          "subject": " , ENG_C 602"
+          "subject": "ENG_C 602"
         },
         {
           "day": "F",
@@ -1089,7 +1089,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEX_X1 602"
+          "subject": "CHEX_X1 602"
         },
         {
           "day": "A",
@@ -1098,7 +1098,7 @@
             "4K",
             "4T"
           ],
-          "subject": " CHIN_E 407"
+          "subject": "CHIN_E 407"
         },
         {
           "day": "A",
@@ -1107,7 +1107,7 @@
             "4K",
             "4T"
           ],
-          "subject": " CHIN_E 407"
+          "subject": "CHIN_E 407"
         },
         {
           "day": "A",
@@ -1148,7 +1148,7 @@
             "4K",
             "4T"
           ],
-          "subject": " CHIN_E 407"
+          "subject": "CHIN_E 407"
         },
         {
           "day": "B",
@@ -1157,7 +1157,7 @@
             "4K",
             "4T"
           ],
-          "subject": " CHIN_E 407"
+          "subject": "CHIN_E 407"
         },
         {
           "day": "B",
@@ -1198,7 +1198,7 @@
             "4K",
             "4T"
           ],
-          "subject": " CHIN_E 407"
+          "subject": "CHIN_E 407"
         },
         {
           "day": "D",
@@ -1207,7 +1207,7 @@
             "4K",
             "4T"
           ],
-          "subject": " CHIN_E 407"
+          "subject": "CHIN_E 407"
         },
         {
           "day": "D",
@@ -1216,7 +1216,7 @@
             "4K",
             "4T"
           ],
-          "subject": " CHIN_E 407"
+          "subject": "CHIN_E 407"
         },
         {
           "day": "D",
@@ -1281,7 +1281,7 @@
             "4K",
             "4T"
           ],
-          "subject": " CHIN_E 407"
+          "subject": "CHIN_E 407"
         }
       ]
     },
@@ -1546,7 +1546,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X1 405"
+          "subject": "BAFS_X1 405"
         },
         {
           "day": "B",
@@ -1557,7 +1557,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X1 405"
+          "subject": "BAFS_X1 405"
         },
         {
           "day": "B",
@@ -1568,7 +1568,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BAFS_X3 606"
+          "subject": "BAFS_X3 606"
         },
         {
           "day": "B",
@@ -1579,7 +1579,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BAFS_X3 504"
+          "subject": "BAFS_X3 504"
         },
         {
           "day": "C",
@@ -1590,7 +1590,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X1 405"
+          "subject": "BAFS_X1 405"
         },
         {
           "day": "C",
@@ -1601,7 +1601,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BAFS_X3 504"
+          "subject": "BAFS_X3 504"
         },
         {
           "day": "C",
@@ -1612,7 +1612,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BAFS_X3 606"
+          "subject": "BAFS_X3 606"
         },
         {
           "day": "D",
@@ -1623,7 +1623,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BAFS_X3 606"
+          "subject": "BAFS_X3 606"
         },
         {
           "day": "D",
@@ -1634,7 +1634,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BAFS_X3 606"
+          "subject": "BAFS_X3 606"
         },
         {
           "day": "D",
@@ -1645,7 +1645,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X1 405"
+          "subject": "BAFS_X1 405"
         },
         {
           "day": "D",
@@ -1656,7 +1656,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X1 405"
+          "subject": "BAFS_X1 405"
         },
         {
           "day": "D",
@@ -1667,7 +1667,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BAFS_X3 504"
+          "subject": "BAFS_X3 504"
         },
         {
           "day": "D",
@@ -1678,7 +1678,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BAFS_X3 504"
+          "subject": "BAFS_X3 504"
         },
         {
           "day": "E",
@@ -1689,7 +1689,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X1 405"
+          "subject": "BAFS_X1 405"
         },
         {
           "day": "E",
@@ -1700,7 +1700,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X1 405"
+          "subject": "BAFS_X1 405"
         },
         {
           "day": "E",
@@ -1711,7 +1711,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BAFS_X3 606"
+          "subject": "BAFS_X3 606"
         },
         {
           "day": "E",
@@ -1722,7 +1722,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BAFS_X3 606"
+          "subject": "BAFS_X3 606"
         },
         {
           "day": "E",
@@ -1733,7 +1733,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BAFS_X3 504"
+          "subject": "BAFS_X3 504"
         },
         {
           "day": "E",
@@ -1744,7 +1744,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BAFS_X3 504"
+          "subject": "BAFS_X3 504"
         }
       ]
     },
@@ -1760,7 +1760,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_1 402"
+          "subject": "MATH_1 402"
         },
         {
           "day": "A",
@@ -1809,7 +1809,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_1 402"
+          "subject": "MATH_1 402"
         },
         {
           "day": "B",
@@ -1826,7 +1826,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_1 402"
+          "subject": "MATH_1 402"
         },
         {
           "day": "C",
@@ -1899,7 +1899,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_1 402"
+          "subject": "MATH_1 402"
         },
         {
           "day": "D",
@@ -1908,7 +1908,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_1 402"
+          "subject": "MATH_1 402"
         },
         {
           "day": "E",
@@ -1933,7 +1933,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_1 402"
+          "subject": "MATH_1 402"
         },
         {
           "day": "E",
@@ -1942,7 +1942,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_1 402"
+          "subject": "MATH_1 402"
         },
         {
           "day": "E",
@@ -2008,7 +2008,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BAFS_X1 604"
+          "subject": "BAFS_X1 604"
         },
         {
           "day": "A",
@@ -2019,7 +2019,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BAFS_X1 604"
+          "subject": "BAFS_X1 604"
         },
         {
           "day": "A",
@@ -2030,7 +2030,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BAFS_X1 504"
+          "subject": "BAFS_X1 504"
         },
         {
           "day": "A",
@@ -2041,7 +2041,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BAFS_X1 504"
+          "subject": "BAFS_X1 504"
         },
         {
           "day": "A",
@@ -2052,7 +2052,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X2 405"
+          "subject": "BAFS_X2 405"
         },
         {
           "day": "B",
@@ -2063,7 +2063,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BAFS_X1 504"
+          "subject": "BAFS_X1 504"
         },
         {
           "day": "B",
@@ -2074,7 +2074,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BAFS_X1 604"
+          "subject": "BAFS_X1 604"
         },
         {
           "day": "B",
@@ -2085,7 +2085,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BAFS_X1 604"
+          "subject": "BAFS_X1 604"
         },
         {
           "day": "B",
@@ -2096,7 +2096,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X2 405"
+          "subject": "BAFS_X2 405"
         },
         {
           "day": "C",
@@ -2107,7 +2107,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BAFS_X1 504"
+          "subject": "BAFS_X1 504"
         },
         {
           "day": "C",
@@ -2118,7 +2118,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BAFS_X1 504"
+          "subject": "BAFS_X1 504"
         },
         {
           "day": "C",
@@ -2129,7 +2129,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X2 405"
+          "subject": "BAFS_X2 405"
         },
         {
           "day": "C",
@@ -2140,7 +2140,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X2 405"
+          "subject": "BAFS_X2 405"
         },
         {
           "day": "D",
@@ -2151,7 +2151,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BAFS_X1 504"
+          "subject": "BAFS_X1 504"
         },
         {
           "day": "D",
@@ -2162,7 +2162,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X2 405"
+          "subject": "BAFS_X2 405"
         },
         {
           "day": "D",
@@ -2173,7 +2173,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BAFS_X1 604"
+          "subject": "BAFS_X1 604"
         },
         {
           "day": "E",
@@ -2184,7 +2184,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BAFS_X1 604"
+          "subject": "BAFS_X1 604"
         },
         {
           "day": "E",
@@ -2195,7 +2195,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X2 405"
+          "subject": "BAFS_X2 405"
         },
         {
           "day": "F",
@@ -2206,7 +2206,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BAFS_X2 405"
+          "subject": "BAFS_X2 405"
         }
       ]
     },
@@ -2224,7 +2224,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , THS_X2 605"
+          "subject": "THS_X2 605"
         },
         {
           "day": "A",
@@ -2235,7 +2235,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X2 404"
+          "subject": "THS_X2 404"
         },
         {
           "day": "B",
@@ -2246,7 +2246,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X1 404"
+          "subject": "THS_X1 404"
         },
         {
           "day": "B",
@@ -2257,7 +2257,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X1 404"
+          "subject": "THS_X1 404"
         },
         {
           "day": "B",
@@ -2276,7 +2276,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , THS_X2 605"
+          "subject": "THS_X2 605"
         },
         {
           "day": "B",
@@ -2287,7 +2287,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , THS_X2 605"
+          "subject": "THS_X2 605"
         },
         {
           "day": "B",
@@ -2298,7 +2298,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X2 404"
+          "subject": "THS_X2 404"
         },
         {
           "day": "C",
@@ -2309,7 +2309,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X1 404"
+          "subject": "THS_X1 404"
         },
         {
           "day": "C",
@@ -2336,7 +2336,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X2 404"
+          "subject": "THS_X2 404"
         },
         {
           "day": "C",
@@ -2347,7 +2347,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X2 404"
+          "subject": "THS_X2 404"
         },
         {
           "day": "D",
@@ -2366,7 +2366,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X1 404"
+          "subject": "THS_X1 404"
         },
         {
           "day": "D",
@@ -2377,7 +2377,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X1 404"
+          "subject": "THS_X1 404"
         },
         {
           "day": "D",
@@ -2388,7 +2388,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X2 404"
+          "subject": "THS_X2 404"
         },
         {
           "day": "D",
@@ -2399,7 +2399,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , THS_X2 605"
+          "subject": "THS_X2 605"
         },
         {
           "day": "D",
@@ -2418,7 +2418,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X1 404"
+          "subject": "THS_X1 404"
         },
         {
           "day": "E",
@@ -2429,7 +2429,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X1 404"
+          "subject": "THS_X1 404"
         },
         {
           "day": "E",
@@ -2440,7 +2440,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X2 404"
+          "subject": "THS_X2 404"
         },
         {
           "day": "E",
@@ -2467,7 +2467,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , THS_X2 605"
+          "subject": "THS_X2 605"
         },
         {
           "day": "F",
@@ -2478,7 +2478,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , THS_X2 605"
+          "subject": "THS_X2 605"
         },
         {
           "day": "F",
@@ -2489,7 +2489,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , THS_X2 404"
+          "subject": "THS_X2 404"
         }
       ]
     },
@@ -2505,7 +2505,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_2 605"
+          "subject": "MATH_2 605"
         },
         {
           "day": "A",
@@ -2514,7 +2514,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_1 506"
+          "subject": "MATH_1 506"
         },
         {
           "day": "A",
@@ -2539,7 +2539,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_1 506"
+          "subject": "MATH_1 506"
         },
         {
           "day": "B",
@@ -2550,7 +2550,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , MAEX_X3 602"
+          "subject": "MAEX_X3 602"
         },
         {
           "day": "C",
@@ -2567,7 +2567,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_2 605"
+          "subject": "MATH_2 605"
         },
         {
           "day": "C",
@@ -2576,7 +2576,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_2 605"
+          "subject": "MATH_2 605"
         },
         {
           "day": "C",
@@ -2585,7 +2585,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_2 605"
+          "subject": "MATH_2 605"
         },
         {
           "day": "C",
@@ -2594,7 +2594,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_1 506"
+          "subject": "MATH_1 506"
         },
         {
           "day": "D",
@@ -2603,7 +2603,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_1 506"
+          "subject": "MATH_1 506"
         },
         {
           "day": "D",
@@ -2620,7 +2620,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_2 605"
+          "subject": "MATH_2 605"
         },
         {
           "day": "E",
@@ -2629,7 +2629,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_2 605"
+          "subject": "MATH_2 605"
         },
         {
           "day": "E",
@@ -2638,7 +2638,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_2 605"
+          "subject": "MATH_2 605"
         },
         {
           "day": "E",
@@ -2647,7 +2647,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_1 506"
+          "subject": "MATH_1 506"
         },
         {
           "day": "E",
@@ -2656,7 +2656,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_1 506"
+          "subject": "MATH_1 506"
         },
         {
           "day": "F",
@@ -2667,7 +2667,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , MAEX_X2 602"
+          "subject": "MAEX_X2 602"
         },
         {
           "day": "F",
@@ -2676,7 +2676,7 @@
             "5P",
             "5W"
           ],
-          "subject": " MATH_1 506"
+          "subject": "MATH_1 506"
         },
         {
           "day": "F",
@@ -2726,7 +2726,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BIO_X1 414/606"
+          "subject": "BIO_X1 414/606"
         },
         {
           "day": "A",
@@ -2737,7 +2737,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BIO_X1 414/606"
+          "subject": "BIO_X1 414/606"
         },
         {
           "day": "A",
@@ -2748,7 +2748,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BIO_X2 414/606"
+          "subject": "BIO_X2 414/606"
         },
         {
           "day": "B",
@@ -2767,7 +2767,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BIO_X1 414/606"
+          "subject": "BIO_X1 414/606"
         },
         {
           "day": "B",
@@ -2778,7 +2778,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BIO_X1 414/606"
+          "subject": "BIO_X1 414/606"
         },
         {
           "day": "B",
@@ -2789,7 +2789,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BIO_X2 414/606"
+          "subject": "BIO_X2 414/606"
         },
         {
           "day": "B",
@@ -2800,7 +2800,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BIO_X2 414/606"
+          "subject": "BIO_X2 414/606"
         },
         {
           "day": "D",
@@ -2811,7 +2811,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BIO_X2 414/606"
+          "subject": "BIO_X2 414/606"
         },
         {
           "day": "D",
@@ -2822,7 +2822,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BIO_X1 414/606"
+          "subject": "BIO_X1 414/606"
         },
         {
           "day": "E",
@@ -2833,7 +2833,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BIO_X1 606"
+          "subject": "BIO_X1 606"
         },
         {
           "day": "F",
@@ -2844,7 +2844,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BIO_X2 414/606"
+          "subject": "BIO_X2 414/606"
         },
         {
           "day": "F",
@@ -2855,7 +2855,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , BIO_X2 414/606"
+          "subject": "BIO_X2 414/606"
         },
         {
           "day": "F",
@@ -2904,7 +2904,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ECON_X1 605"
+          "subject": "ECON_X1 605"
         },
         {
           "day": "A",
@@ -2915,7 +2915,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ECON_X1 605"
+          "subject": "ECON_X1 605"
         },
         {
           "day": "A",
@@ -2934,7 +2934,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ECON_X2 406"
+          "subject": "ECON_X2 406"
         },
         {
           "day": "A",
@@ -2945,7 +2945,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ECON_X2 504"
+          "subject": "ECON_X2 504"
         },
         {
           "day": "B",
@@ -2956,7 +2956,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ECON_X2 504"
+          "subject": "ECON_X2 504"
         },
         {
           "day": "B",
@@ -2975,7 +2975,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ECON_X1 605"
+          "subject": "ECON_X1 605"
         },
         {
           "day": "B",
@@ -2986,7 +2986,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ECON_X1 605"
+          "subject": "ECON_X1 605"
         },
         {
           "day": "B",
@@ -3005,7 +3005,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ECON_X2 406"
+          "subject": "ECON_X2 406"
         },
         {
           "day": "C",
@@ -3016,7 +3016,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ECON_X2 504"
+          "subject": "ECON_X2 504"
         },
         {
           "day": "C",
@@ -3027,7 +3027,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ECON_X2 406"
+          "subject": "ECON_X2 406"
         },
         {
           "day": "C",
@@ -3038,7 +3038,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ECON_X2 406"
+          "subject": "ECON_X2 406"
         },
         {
           "day": "D",
@@ -3057,7 +3057,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ECON_X2 406"
+          "subject": "ECON_X2 406"
         },
         {
           "day": "D",
@@ -3068,7 +3068,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ECON_X1 605"
+          "subject": "ECON_X1 605"
         },
         {
           "day": "E",
@@ -3079,7 +3079,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ECON_X2 504"
+          "subject": "ECON_X2 504"
         },
         {
           "day": "E",
@@ -3090,7 +3090,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ECON_X2 504"
+          "subject": "ECON_X2 504"
         },
         {
           "day": "E",
@@ -3109,7 +3109,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ECON_X1 605"
+          "subject": "ECON_X1 605"
         },
         {
           "day": "E",
@@ -3120,7 +3120,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ECON_X2 406"
+          "subject": "ECON_X2 406"
         },
         {
           "day": "E",
@@ -3147,7 +3147,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ECON_X2 504"
+          "subject": "ECON_X2 504"
         },
         {
           "day": "F",
@@ -3158,7 +3158,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ECON_X2 406"
+          "subject": "ECON_X2 406"
         }
       ]
     },
@@ -3224,7 +3224,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , VAD_X1 207"
+          "subject": "VAD_X1 207"
         },
         {
           "day": "B",
@@ -3235,7 +3235,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , VAD_X1 207"
+          "subject": "VAD_X1 207"
         },
         {
           "day": "B",
@@ -3270,7 +3270,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , VAD_X1 111"
+          "subject": "VAD_X1 111"
         },
         {
           "day": "C",
@@ -3305,7 +3305,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , VAD_X1 111"
+          "subject": "VAD_X1 111"
         },
         {
           "day": "D",
@@ -3316,7 +3316,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , VAD_X1 111"
+          "subject": "VAD_X1 111"
         },
         {
           "day": "D",
@@ -3351,7 +3351,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , VAD_X1 111"
+          "subject": "VAD_X1 111"
         },
         {
           "day": "E",
@@ -3362,7 +3362,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , VAD_X1 111"
+          "subject": "VAD_X1 111"
         },
         {
           "day": "E",
@@ -3373,7 +3373,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , VAAP_X3 511"
+          "subject": "VAAP_X3 511"
         },
         {
           "day": "F",
@@ -3415,7 +3415,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ICT_X1 309B(上)"
+          "subject": "ICT_X1 309B(上)"
         },
         {
           "day": "A",
@@ -3426,7 +3426,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ICT_X1 309B(上)"
+          "subject": "ICT_X1 309B(上)"
         },
         {
           "day": "A",
@@ -3453,7 +3453,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ICT_X2 309B"
+          "subject": "ICT_X2 309B"
         },
         {
           "day": "B",
@@ -3472,7 +3472,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ICT_X1 309B(上)"
+          "subject": "ICT_X1 309B(上)"
         },
         {
           "day": "B",
@@ -3483,7 +3483,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ICT_X1 309B(上)"
+          "subject": "ICT_X1 309B(上)"
         },
         {
           "day": "B",
@@ -3502,7 +3502,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ICT_X2 309B"
+          "subject": "ICT_X2 309B"
         },
         {
           "day": "C",
@@ -3529,7 +3529,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ICT_X2 309B"
+          "subject": "ICT_X2 309B"
         },
         {
           "day": "C",
@@ -3540,7 +3540,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ICT_X2 309B"
+          "subject": "ICT_X2 309B"
         },
         {
           "day": "D",
@@ -3575,7 +3575,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ICT_X2 602"
+          "subject": "ICT_X2 602"
         },
         {
           "day": "D",
@@ -3594,7 +3594,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ICT_X1 309B(上)"
+          "subject": "ICT_X1 309B(上)"
         },
         {
           "day": "E",
@@ -3621,7 +3621,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ICT_X1 309B(上)"
+          "subject": "ICT_X1 309B(上)"
         },
         {
           "day": "E",
@@ -3632,7 +3632,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ICT_X2 309B"
+          "subject": "ICT_X2 309B"
         },
         {
           "day": "E",
@@ -3675,7 +3675,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , ICT_X2 309B"
+          "subject": "ICT_X2 309B"
         }
       ]
     },
@@ -3691,7 +3691,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_2 303"
+          "subject": "MATH_2 303"
         },
         {
           "day": "A",
@@ -3700,7 +3700,7 @@
             "2K",
             "2P"
           ],
-          "subject": " MATH_2 202A"
+          "subject": "MATH_2 202A"
         },
         {
           "day": "A",
@@ -3709,7 +3709,7 @@
             "2K",
             "2P"
           ],
-          "subject": " MATH_2 202A"
+          "subject": "MATH_2 202A"
         },
         {
           "day": "A",
@@ -3726,7 +3726,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_2 303"
+          "subject": "MATH_2 303"
         },
         {
           "day": "B",
@@ -3775,7 +3775,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_2 303"
+          "subject": "MATH_2 303"
         },
         {
           "day": "C",
@@ -3784,7 +3784,7 @@
             "2K",
             "2P"
           ],
-          "subject": " MATH_2 202A"
+          "subject": "MATH_2 202A"
         },
         {
           "day": "C",
@@ -3833,7 +3833,7 @@
             "2K",
             "2P"
           ],
-          "subject": " MATH_2 202A"
+          "subject": "MATH_2 202A"
         },
         {
           "day": "D",
@@ -3842,7 +3842,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_2 303"
+          "subject": "MATH_2 303"
         },
         {
           "day": "D",
@@ -3851,7 +3851,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_2 303"
+          "subject": "MATH_2 303"
         },
         {
           "day": "E",
@@ -3860,7 +3860,7 @@
             "2K",
             "2P"
           ],
-          "subject": " MATH_2 202A"
+          "subject": "MATH_2 202A"
         },
         {
           "day": "E",
@@ -3869,7 +3869,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_2 303"
+          "subject": "MATH_2 303"
         },
         {
           "day": "E",
@@ -3878,7 +3878,7 @@
             "3K",
             "3P"
           ],
-          "subject": " MATH_2 303"
+          "subject": "MATH_2 303"
         },
         {
           "day": "E",
@@ -3911,7 +3911,7 @@
             "2K",
             "2P"
           ],
-          "subject": " MATH_2 202A"
+          "subject": "MATH_2 202A"
         },
         {
           "day": "F",
@@ -4136,7 +4136,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEM_X1 607/611"
+          "subject": "CHEM_X1 607/611"
         },
         {
           "day": "A",
@@ -4147,7 +4147,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEM_X1 607/611"
+          "subject": "CHEM_X1 607/611"
         },
         {
           "day": "A",
@@ -4158,7 +4158,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHEM_X1 505/611"
+          "subject": "CHEM_X1 505/611"
         },
         {
           "day": "A",
@@ -4169,7 +4169,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHEM_X1 505/611"
+          "subject": "CHEM_X1 505/611"
         },
         {
           "day": "A",
@@ -4188,7 +4188,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHEM_X1 406/611"
+          "subject": "CHEM_X1 406/611"
         },
         {
           "day": "B",
@@ -4199,7 +4199,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHEM_X1 406/611"
+          "subject": "CHEM_X1 406/611"
         },
         {
           "day": "B",
@@ -4210,7 +4210,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHEM_X1 505/611"
+          "subject": "CHEM_X1 505/611"
         },
         {
           "day": "B",
@@ -4221,7 +4221,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEM_X1 607/611"
+          "subject": "CHEM_X1 607/611"
         },
         {
           "day": "B",
@@ -4232,7 +4232,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEM_X1 607/611"
+          "subject": "CHEM_X1 607/611"
         },
         {
           "day": "C",
@@ -4243,7 +4243,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHEM_X1 406/611"
+          "subject": "CHEM_X1 406/611"
         },
         {
           "day": "C",
@@ -4254,7 +4254,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHEM_X1 505/611"
+          "subject": "CHEM_X1 505/611"
         },
         {
           "day": "C",
@@ -4265,7 +4265,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHEM_X1 505/611"
+          "subject": "CHEM_X1 505/611"
         },
         {
           "day": "C",
@@ -4284,7 +4284,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHEM_X1 505"
+          "subject": "CHEM_X1 505"
         },
         {
           "day": "D",
@@ -4295,7 +4295,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHEM_X1 406/611"
+          "subject": "CHEM_X1 406/611"
         },
         {
           "day": "D",
@@ -4306,7 +4306,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHEM_X1 406/611"
+          "subject": "CHEM_X1 406/611"
         },
         {
           "day": "D",
@@ -4333,7 +4333,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEM_X1 607"
+          "subject": "CHEM_X1 607"
         },
         {
           "day": "E",
@@ -4344,7 +4344,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHEM_X1 406/611"
+          "subject": "CHEM_X1 406/611"
         },
         {
           "day": "E",
@@ -4355,7 +4355,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHEM_X1 406/611"
+          "subject": "CHEM_X1 406/611"
         },
         {
           "day": "E",
@@ -4364,7 +4364,7 @@
             "4K",
             "4T"
           ],
-          "subject": " STEAM_E 513(全)"
+          "subject": "STEAM_E 513(全)"
         },
         {
           "day": "E",
@@ -4373,7 +4373,7 @@
             "4K",
             "4T"
           ],
-          "subject": " STEAM_E 513(全)"
+          "subject": "STEAM_E 513(全)"
         },
         {
           "day": "E",
@@ -4384,7 +4384,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEM_X1 607/611"
+          "subject": "CHEM_X1 607/611"
         },
         {
           "day": "E",
@@ -4418,7 +4418,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHIS_X1 403"
+          "subject": "CHIS_X1 403"
         },
         {
           "day": "B",
@@ -4429,7 +4429,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHIS_X1 403"
+          "subject": "CHIS_X1 403"
         },
         {
           "day": "C",
@@ -4440,7 +4440,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHIS_X1 403"
+          "subject": "CHIS_X1 403"
         },
         {
           "day": "D",
@@ -4451,7 +4451,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHIS_X1 403"
+          "subject": "CHIS_X1 403"
         },
         {
           "day": "D",
@@ -4462,7 +4462,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHIS_X1 403"
+          "subject": "CHIS_X1 403"
         },
         {
           "day": "D",
@@ -4481,7 +4481,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHIS_X1 403"
+          "subject": "CHIS_X1 403"
         },
         {
           "day": "E",
@@ -4492,7 +4492,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , CHIS_X1 403"
+          "subject": "CHIS_X1 403"
         },
         {
           "day": "E",
@@ -4556,7 +4556,7 @@
             "6K",
             "6T"
           ],
-          "subject": " CHIN_E 602"
+          "subject": "CHIN_E 602"
         },
         {
           "day": "A",
@@ -4565,7 +4565,7 @@
             "6K",
             "6T"
           ],
-          "subject": " CHIN_E 602"
+          "subject": "CHIN_E 602"
         },
         {
           "day": "A",
@@ -4622,7 +4622,7 @@
             "6K",
             "6T"
           ],
-          "subject": " CHIN_E 602"
+          "subject": "CHIN_E 602"
         },
         {
           "day": "C",
@@ -4631,7 +4631,7 @@
             "6K",
             "6T"
           ],
-          "subject": " CHIN_E 602"
+          "subject": "CHIN_E 602"
         },
         {
           "day": "C",
@@ -4640,7 +4640,7 @@
             "6K",
             "6T"
           ],
-          "subject": " CHIN_E 602"
+          "subject": "CHIN_E 602"
         },
         {
           "day": "C",
@@ -4673,7 +4673,7 @@
             "6K",
             "6T"
           ],
-          "subject": " CHIN_E 602"
+          "subject": "CHIN_E 602"
         },
         {
           "day": "E",
@@ -4682,7 +4682,7 @@
             "6K",
             "6T"
           ],
-          "subject": " CHIN_E 602"
+          "subject": "CHIN_E 602"
         },
         {
           "day": "E",
@@ -4739,7 +4739,7 @@
             "6K",
             "6T"
           ],
-          "subject": " CHIN_E 602"
+          "subject": "CHIN_E 602"
         },
         {
           "day": "F",
@@ -4773,7 +4773,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BIO_X2 407/414"
+          "subject": "BIO_X2 407/414"
         },
         {
           "day": "A",
@@ -4784,7 +4784,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BIO_X2 506"
+          "subject": "BIO_X2 506"
         },
         {
           "day": "B",
@@ -4795,7 +4795,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BIO_X2 414/506"
+          "subject": "BIO_X2 414/506"
         },
         {
           "day": "B",
@@ -4830,7 +4830,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BIO_X2 407/414"
+          "subject": "BIO_X2 407/414"
         },
         {
           "day": "C",
@@ -4841,7 +4841,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BIO_X2 414/506"
+          "subject": "BIO_X2 414/506"
         },
         {
           "day": "C",
@@ -4860,7 +4860,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BIO_X2 407/414"
+          "subject": "BIO_X2 407/414"
         },
         {
           "day": "C",
@@ -4871,7 +4871,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BIO_X2 407/414"
+          "subject": "BIO_X2 407/414"
         },
         {
           "day": "C",
@@ -4906,7 +4906,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BIO_X2 407/414"
+          "subject": "BIO_X2 407/414"
         },
         {
           "day": "E",
@@ -4917,7 +4917,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BIO_X2 414/506"
+          "subject": "BIO_X2 414/506"
         },
         {
           "day": "E",
@@ -4928,7 +4928,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BIO_X2 414/506"
+          "subject": "BIO_X2 414/506"
         },
         {
           "day": "E",
@@ -4955,7 +4955,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BIO_X2 407/414"
+          "subject": "BIO_X2 407/414"
         },
         {
           "day": "E",
@@ -4982,7 +4982,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BIO_X2 414/506"
+          "subject": "BIO_X2 414/506"
         },
         {
           "day": "F",
@@ -5001,7 +5001,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , BIO_X2 407/414"
+          "subject": "BIO_X2 407/414"
         }
       ]
     },
@@ -5059,7 +5059,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHEM_X3 506/611"
+          "subject": "CHEM_X3 506/611"
         },
         {
           "day": "C",
@@ -5094,7 +5094,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHEM_X3 506"
+          "subject": "CHEM_X3 506"
         },
         {
           "day": "C",
@@ -5137,7 +5137,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHEM_X3 506/611"
+          "subject": "CHEM_X3 506/611"
         },
         {
           "day": "D",
@@ -5148,7 +5148,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHEM_X3 506/611"
+          "subject": "CHEM_X3 506/611"
         },
         {
           "day": "E",
@@ -5183,7 +5183,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHEM_X3 506/611"
+          "subject": "CHEM_X3 506/611"
         },
         {
           "day": "E",
@@ -5194,7 +5194,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHEM_X3 506/611"
+          "subject": "CHEM_X3 506/611"
         },
         {
           "day": "E",
@@ -5268,7 +5268,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "A",
@@ -5279,7 +5279,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "A",
@@ -5290,7 +5290,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "A",
@@ -5301,7 +5301,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "A",
@@ -5312,7 +5312,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , GEOG_X2 412"
+          "subject": "GEOG_X2 412"
         },
         {
           "day": "A",
@@ -5323,7 +5323,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , GEOG_X2 502"
+          "subject": "GEOG_X2 502"
         },
         {
           "day": "B",
@@ -5334,7 +5334,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , GEOG_X2 412"
+          "subject": "GEOG_X2 412"
         },
         {
           "day": "B",
@@ -5345,7 +5345,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "B",
@@ -5356,7 +5356,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "B",
@@ -5367,7 +5367,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "B",
@@ -5378,7 +5378,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , GEOG_X2 412"
+          "subject": "GEOG_X2 412"
         },
         {
           "day": "B",
@@ -5389,7 +5389,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , GEOG_X2 412"
+          "subject": "GEOG_X2 412"
         },
         {
           "day": "C",
@@ -5400,7 +5400,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , GEOG_X2 412"
+          "subject": "GEOG_X2 412"
         },
         {
           "day": "C",
@@ -5411,7 +5411,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "C",
@@ -5422,7 +5422,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "C",
@@ -5457,7 +5457,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "D",
@@ -5468,7 +5468,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , GEOG_X2 412"
+          "subject": "GEOG_X2 412"
         },
         {
           "day": "D",
@@ -5479,7 +5479,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "E",
@@ -5490,7 +5490,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , GEOG_X2 412"
+          "subject": "GEOG_X2 412"
         },
         {
           "day": "E",
@@ -5501,7 +5501,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , GEOG_X2 412"
+          "subject": "GEOG_X2 412"
         },
         {
           "day": "E",
@@ -5520,7 +5520,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "F",
@@ -5531,7 +5531,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , GEOG_X2 412"
+          "subject": "GEOG_X2 412"
         },
         {
           "day": "F",
@@ -5542,7 +5542,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , GEOG_X2 412"
+          "subject": "GEOG_X2 412"
         },
         {
           "day": "F",
@@ -5553,7 +5553,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , GEOG_X2 412"
+          "subject": "GEOG_X2 412"
         },
         {
           "day": "F",
@@ -5585,7 +5585,7 @@
             "4K",
             "4T"
           ],
-          "subject": " ENG_C 407"
+          "subject": "ENG_C 407"
         },
         {
           "day": "A",
@@ -5594,7 +5594,7 @@
             "4K",
             "4T"
           ],
-          "subject": " ENG_C 407"
+          "subject": "ENG_C 407"
         },
         {
           "day": "A",
@@ -5651,7 +5651,7 @@
             "4K",
             "4T"
           ],
-          "subject": " ENG_C 407"
+          "subject": "ENG_C 407"
         },
         {
           "day": "C",
@@ -5668,7 +5668,7 @@
             "4K",
             "4T"
           ],
-          "subject": " ENG_C 407"
+          "subject": "ENG_C 407"
         },
         {
           "day": "D",
@@ -5701,7 +5701,7 @@
             "4K",
             "4T"
           ],
-          "subject": " ENG_C 407"
+          "subject": "ENG_C 407"
         },
         {
           "day": "D",
@@ -5710,7 +5710,7 @@
             "4K",
             "4T"
           ],
-          "subject": " ENG_C 407"
+          "subject": "ENG_C 407"
         },
         {
           "day": "E",
@@ -5735,7 +5735,7 @@
             "4K",
             "4T"
           ],
-          "subject": " ENG_C 407"
+          "subject": "ENG_C 407"
         },
         {
           "day": "E",
@@ -5752,7 +5752,7 @@
             "4K",
             "4T"
           ],
-          "subject": " ENG_C 407"
+          "subject": "ENG_C 407"
         },
         {
           "day": "F",
@@ -5761,7 +5761,7 @@
             "4K",
             "4T"
           ],
-          "subject": " ENG_C 407"
+          "subject": "ENG_C 407"
         },
         {
           "day": "F",
@@ -5810,7 +5810,7 @@
             "5P",
             "5T"
           ],
-          "subject": " , ENG_C 502"
+          "subject": "ENG_C 502"
         },
         {
           "day": "A",
@@ -5820,7 +5820,7 @@
             "5P",
             "5T"
           ],
-          "subject": " , ENG_C 502"
+          "subject": "ENG_C 502"
         },
         {
           "day": "A",
@@ -5854,7 +5854,7 @@
             "5P",
             "5T"
           ],
-          "subject": " , ENG_C 502"
+          "subject": "ENG_C 502"
         },
         {
           "day": "B",
@@ -5864,7 +5864,7 @@
             "5P",
             "5T"
           ],
-          "subject": " , ENG_C 502"
+          "subject": "ENG_C 502"
         },
         {
           "day": "B",
@@ -5898,7 +5898,7 @@
             "5P",
             "5T"
           ],
-          "subject": " , ENG_C 502"
+          "subject": "ENG_C 502"
         },
         {
           "day": "D",
@@ -5916,7 +5916,7 @@
             "5P",
             "5T"
           ],
-          "subject": " , ENG_C 502"
+          "subject": "ENG_C 502"
         },
         {
           "day": "D",
@@ -5942,7 +5942,7 @@
             "5P",
             "5T"
           ],
-          "subject": " , ENG_C 502"
+          "subject": "ENG_C 502"
         },
         {
           "day": "E",
@@ -5992,7 +5992,7 @@
             "5P",
             "5T"
           ],
-          "subject": " , ENG_C 502"
+          "subject": "ENG_C 502"
         },
         {
           "day": "F",
@@ -6002,7 +6002,7 @@
             "5P",
             "5T"
           ],
-          "subject": " , ENG_C 502"
+          "subject": "ENG_C 502"
         }
       ]
     },
@@ -6018,7 +6018,7 @@
             "2K",
             "2P"
           ],
-          "subject": " MATH_1 202"
+          "subject": "MATH_1 202"
         },
         {
           "day": "A",
@@ -6027,7 +6027,7 @@
             "2K",
             "2P"
           ],
-          "subject": " MATH_1 202"
+          "subject": "MATH_1 202"
         },
         {
           "day": "A",
@@ -6108,7 +6108,7 @@
             "2K",
             "2P"
           ],
-          "subject": " MATH_1 202"
+          "subject": "MATH_1 202"
         },
         {
           "day": "C",
@@ -6141,7 +6141,7 @@
             "2K",
             "2P"
           ],
-          "subject": " MATH_1 202"
+          "subject": "MATH_1 202"
         },
         {
           "day": "D",
@@ -6166,7 +6166,7 @@
             "2K",
             "2P"
           ],
-          "subject": " MATH_1 202"
+          "subject": "MATH_1 202"
         },
         {
           "day": "E",
@@ -6177,7 +6177,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , MAEX_X1 602"
+          "subject": "MAEX_X1 602"
         },
         {
           "day": "E",
@@ -6202,7 +6202,7 @@
             "2K",
             "2P"
           ],
-          "subject": " MATH_1 202"
+          "subject": "MATH_1 202"
         },
         {
           "day": "F",
@@ -6380,7 +6380,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , LPCC_X3 602"
+          "subject": "LPCC_X3 602"
         },
         {
           "day": "E",
@@ -6661,7 +6661,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ECON_X1 503"
+          "subject": "ECON_X1 503"
         },
         {
           "day": "A",
@@ -6672,7 +6672,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ECON_X1 503"
+          "subject": "ECON_X1 503"
         },
         {
           "day": "A",
@@ -6683,7 +6683,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ECON_X2 603"
+          "subject": "ECON_X2 603"
         },
         {
           "day": "A",
@@ -6692,7 +6692,7 @@
             "4P",
             "4W"
           ],
-          "subject": " ECON_X3 405"
+          "subject": "ECON_X3 405"
         },
         {
           "day": "A",
@@ -6701,7 +6701,7 @@
             "4P",
             "4W"
           ],
-          "subject": " ECON_X3 405"
+          "subject": "ECON_X3 405"
         },
         {
           "day": "B",
@@ -6720,7 +6720,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ECON_X1 503"
+          "subject": "ECON_X1 503"
         },
         {
           "day": "B",
@@ -6747,7 +6747,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ECON_X2 603"
+          "subject": "ECON_X2 603"
         },
         {
           "day": "B",
@@ -6758,7 +6758,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ECON_X2 603"
+          "subject": "ECON_X2 603"
         },
         {
           "day": "C",
@@ -6767,7 +6767,7 @@
             "4P",
             "4W"
           ],
-          "subject": " ECON_X3 405"
+          "subject": "ECON_X3 405"
         },
         {
           "day": "C",
@@ -6778,7 +6778,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ECON_X1 503"
+          "subject": "ECON_X1 503"
         },
         {
           "day": "C",
@@ -6789,7 +6789,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ECON_X1 503"
+          "subject": "ECON_X1 503"
         },
         {
           "day": "D",
@@ -6808,7 +6808,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ECON_X1 503"
+          "subject": "ECON_X1 503"
         },
         {
           "day": "D",
@@ -6817,7 +6817,7 @@
             "4P",
             "4W"
           ],
-          "subject": " ECON_X3 405"
+          "subject": "ECON_X3 405"
         },
         {
           "day": "D",
@@ -6836,7 +6836,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ECON_X2 603"
+          "subject": "ECON_X2 603"
         },
         {
           "day": "D",
@@ -6863,7 +6863,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ECON_X2 603"
+          "subject": "ECON_X2 603"
         },
         {
           "day": "F",
@@ -6874,7 +6874,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ECON_X2 603"
+          "subject": "ECON_X2 603"
         },
         {
           "day": "F",
@@ -6883,7 +6883,7 @@
             "4P",
             "4W"
           ],
-          "subject": " ECON_X3 405"
+          "subject": "ECON_X3 405"
         },
         {
           "day": "F",
@@ -6892,7 +6892,7 @@
             "4P",
             "4W"
           ],
-          "subject": " ECON_X3 405"
+          "subject": "ECON_X3 405"
         },
         {
           "day": "F",
@@ -6940,7 +6940,7 @@
             "4P",
             "4W"
           ],
-          "subject": " CHEM_X3 406/611"
+          "subject": "CHEM_X3 406/611"
         },
         {
           "day": "A",
@@ -6949,7 +6949,7 @@
             "4P",
             "4W"
           ],
-          "subject": " CHEM_X3 406/611"
+          "subject": "CHEM_X3 406/611"
         },
         {
           "day": "B",
@@ -6976,7 +6976,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEM_X3 604"
+          "subject": "CHEM_X3 604"
         },
         {
           "day": "B",
@@ -7001,7 +7001,7 @@
             "4P",
             "4W"
           ],
-          "subject": " CHEM_X3 406/611"
+          "subject": "CHEM_X3 406/611"
         },
         {
           "day": "C",
@@ -7036,7 +7036,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEM_X3 604/611"
+          "subject": "CHEM_X3 604/611"
         },
         {
           "day": "D",
@@ -7047,7 +7047,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEM_X3 604/611"
+          "subject": "CHEM_X3 604/611"
         },
         {
           "day": "D",
@@ -7058,7 +7058,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEM_X3 604/611"
+          "subject": "CHEM_X3 604/611"
         },
         {
           "day": "D",
@@ -7075,7 +7075,7 @@
             "4P",
             "4W"
           ],
-          "subject": " CHEM_X3 406/611"
+          "subject": "CHEM_X3 406/611"
         },
         {
           "day": "D",
@@ -7094,7 +7094,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEM_X3 604/611"
+          "subject": "CHEM_X3 604/611"
         },
         {
           "day": "E",
@@ -7105,7 +7105,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEM_X3 604/611"
+          "subject": "CHEM_X3 604/611"
         },
         {
           "day": "E",
@@ -7146,7 +7146,7 @@
             "4P",
             "4W"
           ],
-          "subject": " CHEM_X3 406/611"
+          "subject": "CHEM_X3 406/611"
         },
         {
           "day": "F",
@@ -7155,7 +7155,7 @@
             "4P",
             "4W"
           ],
-          "subject": " CHEM_X3 406/611"
+          "subject": "CHEM_X3 406/611"
         }
       ]
     },
@@ -7189,7 +7189,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , HIST_X2 604"
+          "subject": "HIST_X2 604"
         },
         {
           "day": "A",
@@ -7208,7 +7208,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , HIST_X2 503"
+          "subject": "HIST_X2 503"
         },
         {
           "day": "B",
@@ -7219,7 +7219,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , HIST_X2 503"
+          "subject": "HIST_X2 503"
         },
         {
           "day": "B",
@@ -7230,7 +7230,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , HIST_X2 604"
+          "subject": "HIST_X2 604"
         },
         {
           "day": "B",
@@ -7241,7 +7241,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , HIST_X2 604"
+          "subject": "HIST_X2 604"
         },
         {
           "day": "C",
@@ -7260,7 +7260,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , HIST_X2 503"
+          "subject": "HIST_X2 503"
         },
         {
           "day": "C",
@@ -7319,7 +7319,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , HIST_X2 604"
+          "subject": "HIST_X2 604"
         },
         {
           "day": "E",
@@ -7330,7 +7330,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , HIST_X2 503"
+          "subject": "HIST_X2 503"
         },
         {
           "day": "E",
@@ -7341,7 +7341,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , HIST_X2 503"
+          "subject": "HIST_X2 503"
         },
         {
           "day": "F",
@@ -7352,7 +7352,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , HIST_X2 604"
+          "subject": "HIST_X2 604"
         },
         {
           "day": "F",
@@ -7363,7 +7363,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , HIST_X2 604"
+          "subject": "HIST_X2 604"
         },
         {
           "day": "F",
@@ -7374,7 +7374,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , HIST_X2 503"
+          "subject": "HIST_X2 503"
         },
         {
           "day": "F",
@@ -7408,7 +7408,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , THS_X2 505"
+          "subject": "THS_X2 505"
         },
         {
           "day": "B",
@@ -7419,7 +7419,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , THS_X2 505"
+          "subject": "THS_X2 505"
         },
         {
           "day": "B",
@@ -7430,7 +7430,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , THS_X3 605"
+          "subject": "THS_X3 605"
         },
         {
           "day": "B",
@@ -7449,7 +7449,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , THS_X3 505"
+          "subject": "THS_X3 505"
         },
         {
           "day": "C",
@@ -7460,7 +7460,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , THS_X2 505"
+          "subject": "THS_X2 505"
         },
         {
           "day": "C",
@@ -7487,7 +7487,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , THS_X3 505"
+          "subject": "THS_X3 505"
         },
         {
           "day": "C",
@@ -7498,7 +7498,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , THS_X3 605"
+          "subject": "THS_X3 605"
         },
         {
           "day": "D",
@@ -7509,7 +7509,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , THS_X3 605"
+          "subject": "THS_X3 605"
         },
         {
           "day": "D",
@@ -7520,7 +7520,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , THS_X3 605"
+          "subject": "THS_X3 605"
         },
         {
           "day": "D",
@@ -7547,7 +7547,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , THS_X3 505"
+          "subject": "THS_X3 505"
         },
         {
           "day": "D",
@@ -7558,7 +7558,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , THS_X3 505"
+          "subject": "THS_X3 505"
         },
         {
           "day": "E",
@@ -7569,7 +7569,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , THS_X2 505"
+          "subject": "THS_X2 505"
         },
         {
           "day": "E",
@@ -7580,7 +7580,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , THS_X2 505"
+          "subject": "THS_X2 505"
         },
         {
           "day": "E",
@@ -7591,7 +7591,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , THS_X3 605"
+          "subject": "THS_X3 605"
         },
         {
           "day": "E",
@@ -7602,7 +7602,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , THS_X3 605"
+          "subject": "THS_X3 605"
         },
         {
           "day": "E",
@@ -7613,7 +7613,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , THS_X3 505"
+          "subject": "THS_X3 505"
         },
         {
           "day": "E",
@@ -7624,7 +7624,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , THS_X3 505"
+          "subject": "THS_X3 505"
         },
         {
           "day": "F",
@@ -7635,7 +7635,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , THS_X2 505"
+          "subject": "THS_X2 505"
         },
         {
           "day": "F",
@@ -7691,7 +7691,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_1 606"
+          "subject": "MATH_1 606"
         },
         {
           "day": "A",
@@ -7708,7 +7708,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_1 606"
+          "subject": "MATH_1 606"
         },
         {
           "day": "C",
@@ -7717,7 +7717,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_1 606"
+          "subject": "MATH_1 606"
         },
         {
           "day": "C",
@@ -7726,7 +7726,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_1 606"
+          "subject": "MATH_1 606"
         },
         {
           "day": "C",
@@ -7783,7 +7783,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_1 606"
+          "subject": "MATH_1 606"
         },
         {
           "day": "E",
@@ -7792,7 +7792,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_1 606"
+          "subject": "MATH_1 606"
         },
         {
           "day": "E",
@@ -7801,7 +7801,7 @@
             "6P",
             "6W"
           ],
-          "subject": " MATH_1 606"
+          "subject": "MATH_1 606"
         },
         {
           "day": "E",
@@ -7889,7 +7889,7 @@
             "3T",
             "3W"
           ],
-          "subject": " ENG_C 205"
+          "subject": "ENG_C 205"
         },
         {
           "day": "A",
@@ -7898,7 +7898,7 @@
             "3T",
             "3W"
           ],
-          "subject": " ENG_C 205"
+          "subject": "ENG_C 205"
         },
         {
           "day": "A",
@@ -7939,7 +7939,7 @@
             "3T",
             "3W"
           ],
-          "subject": " ENG_C 205"
+          "subject": "ENG_C 205"
         },
         {
           "day": "C",
@@ -7948,7 +7948,7 @@
             "3T",
             "3W"
           ],
-          "subject": " ENG_C 205"
+          "subject": "ENG_C 205"
         },
         {
           "day": "C",
@@ -7959,7 +7959,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ENEX_X3 602"
+          "subject": "ENEX_X3 602"
         },
         {
           "day": "D",
@@ -7968,7 +7968,7 @@
             "3T",
             "3W"
           ],
-          "subject": " ENG_C 205"
+          "subject": "ENG_C 205"
         },
         {
           "day": "D",
@@ -7977,7 +7977,7 @@
             "3T",
             "3W"
           ],
-          "subject": " ENG_C 205"
+          "subject": "ENG_C 205"
         },
         {
           "day": "D",
@@ -8010,7 +8010,7 @@
             "3T",
             "3W"
           ],
-          "subject": " ENG_C 205"
+          "subject": "ENG_C 205"
         },
         {
           "day": "E",
@@ -8019,7 +8019,7 @@
             "3T",
             "3W"
           ],
-          "subject": " ENG_C 205"
+          "subject": "ENG_C 205"
         },
         {
           "day": "E",
@@ -8076,7 +8076,7 @@
             "3T",
             "3W"
           ],
-          "subject": " ENG_C 205"
+          "subject": "ENG_C 205"
         }
       ]
     },
@@ -8108,7 +8108,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BIO_X1 414/506"
+          "subject": "BIO_X1 414/506"
         },
         {
           "day": "A",
@@ -8119,7 +8119,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BIO_X1 414/506"
+          "subject": "BIO_X1 414/506"
         },
         {
           "day": "A",
@@ -8128,7 +8128,7 @@
             "4P",
             "4W"
           ],
-          "subject": " BIO_X3 407/414"
+          "subject": "BIO_X3 407/414"
         },
         {
           "day": "A",
@@ -8137,7 +8137,7 @@
             "4P",
             "4W"
           ],
-          "subject": " BIO_X3 407/414"
+          "subject": "BIO_X3 407/414"
         },
         {
           "day": "B",
@@ -8148,7 +8148,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BIO_X1 414/506"
+          "subject": "BIO_X1 414/506"
         },
         {
           "day": "B",
@@ -8173,7 +8173,7 @@
             "4P",
             "4W"
           ],
-          "subject": " BIO_X3 407"
+          "subject": "BIO_X3 407"
         },
         {
           "day": "C",
@@ -8184,7 +8184,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BIO_X1 414/506"
+          "subject": "BIO_X1 414/506"
         },
         {
           "day": "C",
@@ -8195,7 +8195,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BIO_X1 414/506"
+          "subject": "BIO_X1 414/506"
         },
         {
           "day": "C",
@@ -8238,7 +8238,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , BIO_X1 506"
+          "subject": "BIO_X1 506"
         },
         {
           "day": "D",
@@ -8255,7 +8255,7 @@
             "4P",
             "4W"
           ],
-          "subject": " BIO_X3 407/414"
+          "subject": "BIO_X3 407/414"
         },
         {
           "day": "E",
@@ -8304,7 +8304,7 @@
             "4P",
             "4W"
           ],
-          "subject": " BIO_X3 407/414"
+          "subject": "BIO_X3 407/414"
         },
         {
           "day": "F",
@@ -8313,7 +8313,7 @@
             "4P",
             "4W"
           ],
-          "subject": " BIO_X3 407/414"
+          "subject": "BIO_X3 407/414"
         },
         {
           "day": "F",
@@ -8347,7 +8347,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , MUAP_X1 309"
+          "subject": "MUAP_X1 309"
         },
         {
           "day": "A",
@@ -8486,7 +8486,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , MUAP_X2 309"
+          "subject": "MUAP_X2 309"
         },
         {
           "day": "E",
@@ -8497,7 +8497,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , MUAP_X3 309"
+          "subject": "MUAP_X3 309"
         },
         {
           "day": "F",
@@ -8730,7 +8730,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "A",
@@ -8741,7 +8741,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "A",
@@ -8760,7 +8760,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X1 613"
+          "subject": "PHY_X1 613"
         },
         {
           "day": "B",
@@ -8771,7 +8771,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X1 613"
+          "subject": "PHY_X1 613"
         },
         {
           "day": "B",
@@ -8790,7 +8790,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "B",
@@ -8801,7 +8801,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "B",
@@ -8812,7 +8812,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X2 607"
+          "subject": "PHY_X2 607"
         },
         {
           "day": "C",
@@ -8823,7 +8823,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X1 613"
+          "subject": "PHY_X1 613"
         },
         {
           "day": "C",
@@ -8842,7 +8842,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "C",
@@ -8853,7 +8853,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "D",
@@ -8872,7 +8872,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X1 613"
+          "subject": "PHY_X1 613"
         },
         {
           "day": "D",
@@ -8883,7 +8883,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X1 613"
+          "subject": "PHY_X1 613"
         },
         {
           "day": "D",
@@ -8902,7 +8902,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "D",
@@ -8913,7 +8913,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , PHY_X2 607"
+          "subject": "PHY_X2 607"
         },
         {
           "day": "E",
@@ -8924,7 +8924,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X1 607"
+          "subject": "PHY_X1 607"
         },
         {
           "day": "E",
@@ -8935,7 +8935,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X1 607"
+          "subject": "PHY_X1 607"
         },
         {
           "day": "E",
@@ -8954,7 +8954,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X2 607"
+          "subject": "PHY_X2 607"
         },
         {
           "day": "E",
@@ -8973,7 +8973,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "F",
@@ -8984,7 +8984,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "F",
@@ -9003,7 +9003,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         }
       ]
     },
@@ -9164,7 +9164,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ICT_X1 309B"
+          "subject": "ICT_X1 309B"
         },
         {
           "day": "A",
@@ -9175,7 +9175,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ICT_X1 309B"
+          "subject": "ICT_X1 309B"
         },
         {
           "day": "A",
@@ -9202,7 +9202,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ICT_X1 309B"
+          "subject": "ICT_X1 309B"
         },
         {
           "day": "B",
@@ -9245,7 +9245,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ICT_X1 309B"
+          "subject": "ICT_X1 309B"
         },
         {
           "day": "C",
@@ -9256,7 +9256,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ICT_X1 309B"
+          "subject": "ICT_X1 309B"
         },
         {
           "day": "C",
@@ -9283,7 +9283,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , ICT_X1 309B"
+          "subject": "ICT_X1 309B"
         },
         {
           "day": "D",
@@ -9610,7 +9610,7 @@
             "5K",
             "5T"
           ],
-          "subject": " CHIN_E 502"
+          "subject": "CHIN_E 502"
         },
         {
           "day": "A",
@@ -9621,7 +9621,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , LPCC_X2 602"
+          "subject": "LPCC_X2 602"
         },
         {
           "day": "B",
@@ -9646,7 +9646,7 @@
             "5K",
             "5T"
           ],
-          "subject": " CHIN_E 502"
+          "subject": "CHIN_E 502"
         },
         {
           "day": "B",
@@ -9655,7 +9655,7 @@
             "5K",
             "5T"
           ],
-          "subject": " CHIN_E 502"
+          "subject": "CHIN_E 502"
         },
         {
           "day": "B",
@@ -9696,7 +9696,7 @@
             "5K",
             "5T"
           ],
-          "subject": " CHIN_E 502"
+          "subject": "CHIN_E 502"
         },
         {
           "day": "D",
@@ -9705,7 +9705,7 @@
             "5K",
             "5T"
           ],
-          "subject": " CHIN_E 502"
+          "subject": "CHIN_E 502"
         },
         {
           "day": "D",
@@ -9738,7 +9738,7 @@
             "5K",
             "5T"
           ],
-          "subject": " CHIN_E 502"
+          "subject": "CHIN_E 502"
         },
         {
           "day": "E",
@@ -9747,7 +9747,7 @@
             "5K",
             "5T"
           ],
-          "subject": " CHIN_E 502"
+          "subject": "CHIN_E 502"
         },
         {
           "day": "E",
@@ -9788,7 +9788,7 @@
             "5K",
             "5T"
           ],
-          "subject": " CHIN_E 502"
+          "subject": "CHIN_E 502"
         },
         {
           "day": "F",
@@ -9854,7 +9854,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ENEX_X1 602"
+          "subject": "ENEX_X1 602"
         },
         {
           "day": "B",
@@ -10040,7 +10040,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HIST_X2 403"
+          "subject": "HIST_X2 403"
         },
         {
           "day": "A",
@@ -10099,7 +10099,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HIST_X2 403"
+          "subject": "HIST_X2 403"
         },
         {
           "day": "C",
@@ -10126,7 +10126,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HIST_X2 403"
+          "subject": "HIST_X2 403"
         },
         {
           "day": "C",
@@ -10137,7 +10137,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HIST_X2 403"
+          "subject": "HIST_X2 403"
         },
         {
           "day": "C",
@@ -10188,7 +10188,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HIST_X2 403"
+          "subject": "HIST_X2 403"
         },
         {
           "day": "D",
@@ -10215,7 +10215,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HIST_X2 403"
+          "subject": "HIST_X2 403"
         },
         {
           "day": "E",
@@ -10250,7 +10250,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HIST_X2 403"
+          "subject": "HIST_X2 403"
         }
       ]
     },
@@ -10323,7 +10323,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "B",
@@ -10334,7 +10334,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , PHY_X2 607"
+          "subject": "PHY_X2 607"
         },
         {
           "day": "B",
@@ -10345,7 +10345,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , PHY_X3 613"
+          "subject": "PHY_X3 613"
         },
         {
           "day": "B",
@@ -10356,7 +10356,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , PHY_X3 613"
+          "subject": "PHY_X3 613"
         },
         {
           "day": "C",
@@ -10367,7 +10367,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "C",
@@ -10402,7 +10402,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , PHY_X3 607"
+          "subject": "PHY_X3 607"
         },
         {
           "day": "C",
@@ -10413,7 +10413,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , PHY_X3 613"
+          "subject": "PHY_X3 613"
         },
         {
           "day": "D",
@@ -10424,7 +10424,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , PHY_X3 613"
+          "subject": "PHY_X3 613"
         },
         {
           "day": "D",
@@ -10435,7 +10435,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , PHY_X3 613"
+          "subject": "PHY_X3 613"
         },
         {
           "day": "D",
@@ -10446,7 +10446,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , PHY_X3 613"
+          "subject": "PHY_X3 613"
         },
         {
           "day": "D",
@@ -10457,7 +10457,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , PHY_X3 613"
+          "subject": "PHY_X3 613"
         },
         {
           "day": "E",
@@ -10468,7 +10468,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "E",
@@ -10479,7 +10479,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "E",
@@ -10490,7 +10490,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , PHY_X3 613"
+          "subject": "PHY_X3 613"
         },
         {
           "day": "E",
@@ -10501,7 +10501,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , PHY_X3 613"
+          "subject": "PHY_X3 613"
         },
         {
           "day": "E",
@@ -10512,7 +10512,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , PHY_X3 613"
+          "subject": "PHY_X3 613"
         },
         {
           "day": "E",
@@ -10523,7 +10523,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , PHY_X3 613"
+          "subject": "PHY_X3 613"
         },
         {
           "day": "F",
@@ -10534,7 +10534,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , PHY_X2 613"
+          "subject": "PHY_X2 613"
         },
         {
           "day": "F",
@@ -10608,7 +10608,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , VAD_X3 111"
+          "subject": "VAD_X3 111"
         },
         {
           "day": "B",
@@ -10619,7 +10619,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , VAD_X3 111"
+          "subject": "VAD_X3 111"
         },
         {
           "day": "C",
@@ -10630,7 +10630,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , VAAP_X1 511"
+          "subject": "VAAP_X1 511"
         },
         {
           "day": "C",
@@ -10657,7 +10657,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , VAD_X3 111"
+          "subject": "VAD_X3 111"
         },
         {
           "day": "C",
@@ -10668,7 +10668,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , VAD_X3 111"
+          "subject": "VAD_X3 111"
         },
         {
           "day": "D",
@@ -10679,7 +10679,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , VAD_X3 111"
+          "subject": "VAD_X3 111"
         },
         {
           "day": "D",
@@ -10690,7 +10690,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , VAD_X3 111"
+          "subject": "VAD_X3 111"
         },
         {
           "day": "D",
@@ -10709,7 +10709,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , VAD_X3 111"
+          "subject": "VAD_X3 111"
         },
         {
           "day": "D",
@@ -10720,7 +10720,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , VAD_X3 111"
+          "subject": "VAD_X3 111"
         },
         {
           "day": "E",
@@ -10731,7 +10731,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , VAD_X3 111"
+          "subject": "VAD_X3 111"
         },
         {
           "day": "E",
@@ -10742,7 +10742,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , VAD_X3 111"
+          "subject": "VAD_X3 111"
         },
         {
           "day": "E",
@@ -10753,7 +10753,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , VAD_X3 111"
+          "subject": "VAD_X3 111"
         },
         {
           "day": "E",
@@ -10764,7 +10764,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , VAD_X3 111"
+          "subject": "VAD_X3 111"
         },
         {
           "day": "F",
@@ -10775,7 +10775,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , VAAP_X2 111"
+          "subject": "VAAP_X2 111"
         },
         {
           "day": "F",
@@ -11295,7 +11295,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEX_X2 602"
+          "subject": "CHEX_X2 602"
         },
         {
           "day": "B",
@@ -11465,7 +11465,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HMSC_X1 407"
+          "subject": "HMSC_X1 407"
         },
         {
           "day": "B",
@@ -11476,7 +11476,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HMSC_X1 407"
+          "subject": "HMSC_X1 407"
         },
         {
           "day": "B",
@@ -11487,7 +11487,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , HMSC_X3 607"
+          "subject": "HMSC_X3 607"
         },
         {
           "day": "B",
@@ -11498,7 +11498,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , HMSC_X3 502"
+          "subject": "HMSC_X3 502"
         },
         {
           "day": "C",
@@ -11509,7 +11509,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HMSC_X1 407"
+          "subject": "HMSC_X1 407"
         },
         {
           "day": "C",
@@ -11528,7 +11528,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , HMSC_X3 502"
+          "subject": "HMSC_X3 502"
         },
         {
           "day": "C",
@@ -11539,7 +11539,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , HMSC_X3 607"
+          "subject": "HMSC_X3 607"
         },
         {
           "day": "D",
@@ -11550,7 +11550,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , HMSC_X3 607"
+          "subject": "HMSC_X3 607"
         },
         {
           "day": "D",
@@ -11561,7 +11561,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , HMSC_X3 607"
+          "subject": "HMSC_X3 607"
         },
         {
           "day": "D",
@@ -11572,7 +11572,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HMSC_X1 407"
+          "subject": "HMSC_X1 407"
         },
         {
           "day": "D",
@@ -11583,7 +11583,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HMSC_X1 407"
+          "subject": "HMSC_X1 407"
         },
         {
           "day": "D",
@@ -11594,7 +11594,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , HMSC_X3 502"
+          "subject": "HMSC_X3 502"
         },
         {
           "day": "D",
@@ -11605,7 +11605,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , HMSC_X3 502"
+          "subject": "HMSC_X3 502"
         },
         {
           "day": "E",
@@ -11616,7 +11616,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HMSC_X1 407"
+          "subject": "HMSC_X1 407"
         },
         {
           "day": "E",
@@ -11627,7 +11627,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , HMSC_X1 407"
+          "subject": "HMSC_X1 407"
         },
         {
           "day": "E",
@@ -11638,7 +11638,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , HMSC_X3 607"
+          "subject": "HMSC_X3 607"
         },
         {
           "day": "E",
@@ -11649,7 +11649,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , HMSC_X3 607"
+          "subject": "HMSC_X3 607"
         },
         {
           "day": "E",
@@ -11660,7 +11660,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , HMSC_X3 502"
+          "subject": "HMSC_X3 502"
         },
         {
           "day": "E",
@@ -11671,7 +11671,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , HMSC_X3 502"
+          "subject": "HMSC_X3 502"
         },
         {
           "day": "F",
@@ -11924,7 +11924,7 @@
             "4P",
             "4W"
           ],
-          "subject": " GEOG_X3 412"
+          "subject": "GEOG_X3 412"
         },
         {
           "day": "A",
@@ -11933,7 +11933,7 @@
             "4P",
             "4W"
           ],
-          "subject": " GEOG_X3 412"
+          "subject": "GEOG_X3 412"
         },
         {
           "day": "B",
@@ -11944,7 +11944,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , GEOG_X1 502"
+          "subject": "GEOG_X1 502"
         },
         {
           "day": "B",
@@ -11955,7 +11955,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , GEOG_X1 502"
+          "subject": "GEOG_X1 502"
         },
         {
           "day": "B",
@@ -11990,7 +11990,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "C",
@@ -11999,7 +11999,7 @@
             "4P",
             "4W"
           ],
-          "subject": " GEOG_X3 502"
+          "subject": "GEOG_X3 502"
         },
         {
           "day": "C",
@@ -12042,7 +12042,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "D",
@@ -12053,7 +12053,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , GEOG_X1 412"
+          "subject": "GEOG_X1 412"
         },
         {
           "day": "D",
@@ -12062,7 +12062,7 @@
             "4P",
             "4W"
           ],
-          "subject": " GEOG_X3 412"
+          "subject": "GEOG_X3 412"
         },
         {
           "day": "D",
@@ -12081,7 +12081,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , GEOG_X1 502"
+          "subject": "GEOG_X1 502"
         },
         {
           "day": "E",
@@ -12092,7 +12092,7 @@
             "4T",
             "4W"
           ],
-          "subject": " , , GEOG_X1 502"
+          "subject": "GEOG_X1 502"
         },
         {
           "day": "E",
@@ -12133,7 +12133,7 @@
             "4P",
             "4W"
           ],
-          "subject": " GEOG_X3 412"
+          "subject": "GEOG_X3 412"
         },
         {
           "day": "F",
@@ -12142,7 +12142,7 @@
             "4P",
             "4W"
           ],
-          "subject": " GEOG_X3 412"
+          "subject": "GEOG_X3 412"
         },
         {
           "day": "F",
@@ -12469,7 +12469,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHEX_X3 602"
+          "subject": "CHEX_X3 602"
         },
         {
           "day": "D",
@@ -12916,7 +12916,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , LPCC_X1 502"
+          "subject": "LPCC_X1 502"
         },
         {
           "day": "D",
@@ -12935,7 +12935,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , ENEX_X2 602"
+          "subject": "ENEX_X2 602"
         },
         {
           "day": "E",
@@ -13065,7 +13065,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHIS_X3 603"
+          "subject": "CHIS_X3 603"
         },
         {
           "day": "B",
@@ -13092,7 +13092,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHIS_X3 503"
+          "subject": "CHIS_X3 503"
         },
         {
           "day": "C",
@@ -13119,7 +13119,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHIS_X3 503"
+          "subject": "CHIS_X3 503"
         },
         {
           "day": "C",
@@ -13130,7 +13130,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHIS_X3 603"
+          "subject": "CHIS_X3 603"
         },
         {
           "day": "D",
@@ -13141,7 +13141,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHIS_X3 603"
+          "subject": "CHIS_X3 603"
         },
         {
           "day": "D",
@@ -13152,7 +13152,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHIS_X3 603"
+          "subject": "CHIS_X3 603"
         },
         {
           "day": "D",
@@ -13163,7 +13163,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHIS_X3 503"
+          "subject": "CHIS_X3 503"
         },
         {
           "day": "D",
@@ -13174,7 +13174,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHIS_X3 503"
+          "subject": "CHIS_X3 503"
         },
         {
           "day": "E",
@@ -13185,7 +13185,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHIS_X3 603"
+          "subject": "CHIS_X3 603"
         },
         {
           "day": "E",
@@ -13196,7 +13196,7 @@
             "6T",
             "6W"
           ],
-          "subject": " , , CHIS_X3 603"
+          "subject": "CHIS_X3 603"
         },
         {
           "day": "E",
@@ -13207,7 +13207,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHIS_X3 503"
+          "subject": "CHIS_X3 503"
         },
         {
           "day": "E",
@@ -13218,7 +13218,7 @@
             "5T",
             "5W"
           ],
-          "subject": " , , CHIS_X3 503"
+          "subject": "CHIS_X3 503"
         },
         {
           "day": "F",
