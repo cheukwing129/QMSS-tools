@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="QMSS 校務工具入口：頒獎禮排隊控場、交流團點名，以及即將推出的調堂工具。">
+  <title>QMSS Tools｜校務工具入口</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f6f4ee;
+      --paper: #fffefa;
+      --ink: #19313a;
+      --muted: #68777a;
+      --line: #e5e4dc;
+      --teal: #2b776b;
+      --teal-dark: #205e56;
+      --teal-soft: #e6f1ec;
+      --gold: #e6ad59;
+      --navy: #17323d;
+      --shadow: 0 14px 36px rgba(35, 54, 52, .07);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(ellipse at 86% 4%, rgba(223, 234, 222, .52), transparent 28rem),
+        var(--page);
+      color: var(--ink);
+      font-family: "Noto Sans HK", "PingFang HK", "Microsoft JhengHei", system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    button:focus-visible, input:focus-visible, a:focus-visible {
+      outline: 3px solid #d28b2f;
+      outline-offset: 3px;
+    }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+
+    .topbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid rgba(25, 49, 58, .08);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+    .brand-mark {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--navy);
+      color: #fffefa;
+      font-size: 18px;
+      letter-spacing: -.07em;
+    }
+    .brand-name { display: block; font-size: 15px; line-height: 1.2; }
+    .brand-caption {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .15em;
+    }
+    .top-links { display: flex; align-items: center; gap: 26px; }
+    .top-links a {
+      color: #506267;
+      font-size: 13px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .top-links a:hover { color: var(--teal-dark); }
+    .live-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid #d8e6dd;
+      border-radius: 999px;
+      background: rgba(255, 254, 250, .7);
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+    .live-dot, .status-dot {
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 50%;
+      background: #45a47c;
+      flex: 0 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+      align-items: center;
+      gap: clamp(36px, 7vw, 88px);
+      padding-block: clamp(56px, 8vw, 96px) 74px;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: var(--teal-dark);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      width: 25px;
+      height: 2px;
+      background: var(--gold);
+      content: "";
+    }
+    h1 {
+      max-width: 650px;
+      margin: 0;
+      font-size: clamp(38px, 5.2vw, 64px);
+      line-height: 1.17;
+      letter-spacing: -.065em;
+      font-weight: 800;
+    }
+    .hero-copy {
+      max-width: 540px;
+      margin: 20px 0 27px;
+      color: #5e6e70;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+    .primary-link {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 19px;
+      border-radius: 13px;
+      background: var(--teal);
+      color: white;
+      font-size: 14px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: background .18s ease, transform .18s ease;
+    }
+    .primary-link:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    .primary-link svg { width: 16px; height: 16px; }
+
+    .overview {
+      position: relative;
+      overflow: hidden;
+      min-height: 258px;
+      padding: 25px;
+      border-radius: 25px;
+      background:
+        radial-gradient(circle at 89% 12%, rgba(230, 173, 89, .34) 0 5px, transparent 6px),
+        radial-gradient(circle at 95% 19%, rgba(230, 173, 89, .22) 0 3px, transparent 4px),
+        linear-gradient(145deg, #1b3c45, #17323d 72%);
+      color: #fffefa;
+      box-shadow: 0 22px 48px rgba(23, 50, 61, .17);
+    }
+    .overview::after {
+      position: absolute;
+      right: -54px;
+      bottom: -95px;
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 50%;
+      box-shadow: 0 0 0 22px rgba(255,255,255,.025), 0 0 0 47px rgba(255,255,255,.025);
+      content: "";
+      pointer-events: none;
+    }
+    .overview-kicker {
+      color: #b9d3cb;
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: .17em;
+    }
+    .overview-title { margin: 14px 0 23px; font-size: 21px; font-weight: 750; letter-spacing: -.025em; }
+    .overview-stats { display: flex; gap: 40px; }
+    .stat-number { display: block; font-size: 34px; font-weight: 800; line-height: 1; letter-spacing: -.06em; }
+    .stat-label { display: block; margin-top: 8px; color: #c5d3d0; font-size: 12px; }
+    .overview-foot {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 25px;
+      color: #d3dfdc;
+      font-size: 11px;
+    }
+    .overview-foot .live-dot { background: #8fd2a7; box-shadow: 0 0 0 4px rgba(143,210,167,.12); }
+
+    .tools-section { padding: 22px 0 84px; }
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 23px;
+    }
+    .section-heading h2 { margin: 0; font-size: clamp(24px, 3vw, 31px); line-height: 1.25; letter-spacing: -.045em; }
+    .section-heading p { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
+    .tool-count {
+      color: #718082;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 26px 0 21px;
+    }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-button {
+      min-height: 39px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 254, 250, .62);
+      color: #5e6e70;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 700;
+      transition: border-color .16s ease, background .16s ease, color .16s ease;
+    }
+    .filter-button:hover { border-color: #b9d3c8; color: var(--teal-dark); }
+    .filter-button[aria-pressed="true"] {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: #fffefa;
+    }
+    .search-box {
+      width: min(270px, 100%);
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+    }
+    .search-box svg { width: 17px; height: 17px; color: #84918e; flex: 0 0 auto; }
+    .search-box input {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--ink);
+      font-size: 13px;
+    }
+    .search-box input::placeholder { color: #909b98; }
+    .search-box:focus-within { border-color: #74a99a; box-shadow: 0 0 0 3px rgba(43,119,107,.1); }
+
+    .tool-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }
+    .tool-card {
+      min-height: 278px;
+      display: flex;
+      flex-direction: column;
+      padding: 21px;
+      border: 1px solid rgba(33, 57, 57, .09);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: 0 5px 18px rgba(35, 54, 52, .035);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .tool-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(43,119,107,.28);
+      box-shadow: var(--shadow);
+    }
+    .tool-card.planned { background: rgba(255, 254, 250, .58); border-style: dashed; box-shadow: none; }
+    .tool-card.planned:hover { transform: none; border-color: #c9c9bd; box-shadow: none; }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .tool-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+    }
+    .tool-icon svg { width: 24px; height: 24px; }
+    .tool-card.attendance .tool-icon { background: #edf0df; color: #65733e; }
+    .tool-card.planned .tool-icon { background: #efeee8; color: #77786d; }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: #e8f3ed;
+      color: #307451;
+      font-size: 10px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .status-badge .status-dot { width: 6px; height: 6px; }
+    .status-badge.upcoming { background: #efeee8; color: #77786d; }
+    .status-badge.upcoming .status-dot { background: #aaa99e; }
+    .category {
+      margin: 18px 0 5px;
+      color: var(--teal-dark);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+    .tool-card h3 { margin: 0; font-size: 18px; line-height: 1.4; letter-spacing: -.035em; }
+    .tool-card p { margin: 9px 0 17px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
+    .feature-tag { color: #82908e; font-size: 10px; font-weight: 650; }
+    .card-link, .coming-label {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 12px;
+      border-radius: 11px;
+      background: #edf4ef;
+      color: var(--teal-dark);
+      font-size: 11px;
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .16s ease;
+    }
+    .card-link:hover { background: #dcece2; }
+    .card-link svg { width: 14px; height: 14px; }
+    .coming-label { background: #f1f0eb; color: #77786d; }
+
+    .empty-state {
+      padding: 30px 20px;
+      border: 1px dashed #d6d5ca;
+      border-radius: 16px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+    .empty-state[hidden], .tool-card[hidden] { display: none !important; }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 21px 0 27px;
+      border-top: 1px solid rgba(25,49,58,.1);
+      color: #788482;
+      font-size: 11px;
+    }
+    .footer strong { color: #506267; font-weight: 750; }
+
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr  .82fr; gap: 28px; }
+      .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .overview { min-height: 230px; padding: 21px; }
+      .overview-stats { gap: 25px; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 34px, 480px); }
+      .topbar { min-height: 68px; gap: 12px; }
+      .top-links { display: none; }
+      .live-count { padding: 7px 10px; font-size: 10px; }
+      .brand-mark { width: 36px; height: 36px; }
+      .hero { grid-template-columns: 1fr; gap: 31px; padding-block: 48px 52px; }
+      h1 { font-size: clamp(38px, 11vw, 52px); }
+      .hero-copy { margin: 15px 0 22px; font-size: 14px; }
+      .overview { min-height: 0; padding: 21px; }
+      .overview-title { margin: 10px 0 20px; font-size: 18px; }
+      .overview-stats { gap: 34px; }
+      .tools-section { padding-bottom: 58px; }
+      .section-heading { align-items: start; flex-direction: column; gap: 8px; }
+      .toolbar { align-items: stretch; flex-direction: column-reverse; }
+      .search-box { width: 100%; min-height: 46px; }
+      .filter-button { min-height: 42px; }
+      .tool-grid { grid-template-columns: 1fr; gap: 12px; }
+      .tool-card { min-height: 252px; padding: 19px; }
+      .footer { flex-direction: column; gap: 4px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="./index.html" aria-label="QMSS Tools 首頁">
+      <span class="brand-mark" aria-hidden="true">Q</span>
+      <span>
+        <span class="brand-name">QMSS Tools</span>
+        <span class="brand-caption">TEACHER TOOLKIT</span>
+      </span>
+    </a>
+    <nav class="top-links" aria-label="主導覽">
+      <a href="#tools">工具清單</a>
+      <a href="#footer">關於工具站</a>
+    </nav>
+    <span class="live-count"><span class="live-dot" aria-hidden="true"></span><span id="header-live-count">2 款工具可用</span></span>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">QMSS · 教師工具站</p>
+        <h1 id="hero-title">校務日常，<br>一頁找到順手工具。</h1>
+        <p class="hero-copy">把活動控場、學生點名等工作小工具集中在這裡。選擇工具即可開啟，之後新增的工具也會在此整理。</p>
+        <a class="primary-link" href="#tools">
+          查看所有工具
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <aside class="overview" aria-label="工具站概覽">
+        <div class="overview-kicker">TOOLKIT SNAPSHOT</div>
+        <div class="overview-title">小工具，讓現場流程更順。</div>
+        <div class="overview-stats">
+          <div><span class="stat-number" id="available-count">02</span><span class="stat-label">可直接使用</span></div>
+          <div><span class="stat-number" id="planned-count">01</span><span class="stat-label">規劃中</span></div>
+        </div>
+        <div class="overview-foot"><span class="live-dot" aria-hidden="true"></span>工具清單會隨新功能更新</div>
+      </aside>
+    </section>
+
+    <section class="tools-section" id="tools" aria-labelledby="tools-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="tools-title">工具清單</h2>
+          <p>目前已整理好的工作小幫手，直接開啟即可使用。</p>
+        </div>
+        <span class="tool-count" id="result-count" aria-live="polite">共 3 款工具</span>
+      </div>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="按用途篩選工具">
+          <button class="filter-button" type="button" data-filter="all" aria-pressed="true">全部工具</button>
+          <button class="filter-button" type="button" data-filter="events" aria-pressed="false">活動支援</button>
+          <button class="filter-button" type="button" data-filter="academic" aria-pressed="false">教務安排</button>
+        </div>
+        <label class="search-box">
+          <span class="sr-only" hidden>搜尋工具</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <input id="tool-search" type="search" placeholder="搜尋工具名稱或用途" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="tool-grid" id="tool-grid">
+        <article class="tool-card award" data-category="events" data-status="available" data-search="頒獎禮 排隊 控場 領獎 座位表 學生上台">
+          <div class="card-top">
+            <span class="tool-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M8 4h8v4.5a4 4 0 0 1-8 0V4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 6H5v2a4 4 0 0 0 4 4M16 6h3v2a4 4 0 0 1-4 4M12 12.5V17m-4 3h8m-7-3h6v3H9v-3Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="status-badge"><span class="status-dot" aria-hidden="true"></span>已上線</span>
+          </div>
+          <div class="category">活動支援</div>
+          <h3>頒獎禮排隊控場小幫手</h3>
+          <p>匯入座位表與領獎次序，追蹤學生候場、點名狀態及座位位置。</p>
+          <div class="card-bottom">
+            <span class="feature-tag">順序管理 · 座位表</span>
+            <a class="card-link" href="./school-award-system.htm">開啟工具
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="tool-card attendance" data-category="events" data-status="available" data-search="交流團 點名 簽到 學生 出席 遲到 老師 名單">
+          <div class="card-top">
+            <span class="tool-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v10a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5v-10Z" stroke="currentColor" stroke-width="1.7"/><path d="M4 10h16M8 5v5m8-5v5m-8 4h3m2 0h3m-8 3h3m2 0h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <span class="status-badge"><span class="status-dot" aria-hidden="true"></span>已上線</span>
+          </div>
+          <div class="category">活動支援</div>
+          <h3>交流團點名小幫手</h3>
+          <p>學生可自行簽到，老師可即時管理名單並查看出席、遲到及未到狀態。</p>
+          <div class="card-bottom">
+            <span class="feature-tag">學生簽到 · 老師管理</span>
+            <a class="card-link" href="./tour-check-in.htm">開啟工具
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="tool-card planned" data-category="academic" data-status="planned" data-search="調堂 調課 課堂 課節 教務 安排">
+          <div class="card-top">
+            <span class="tool-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M8 3.5v3m8-3v3M3.5 9h17M8 13h3m2 0h3m-8 4h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <span class="status-badge upcoming"><span class="status-dot" aria-hidden="true"></span>規劃中</span>
+          </div>
+          <div class="category">教務安排</div>
+          <h3>調堂小幫手</h3>
+          <p>整理調堂安排與課節資料，讓臨時改動更容易查看。工具正在規劃中。</p>
+          <div class="card-bottom">
+            <span class="feature-tag">即將加入工具清單</span>
+            <span class="coming-label">尚未開放</span>
+          </div>
+        </article>
+      </div>
+      <div class="empty-state" id="empty-state" hidden>找不到相符的工具，試試其他關鍵字或用途。</div>
+    </section>
+  </main>
+
+  <footer class="wrap footer" id="footer">
+    <span><strong>QMSS Tools</strong> · 校務工具入口</span>
+    <span>獨立工具頁面 · 持續整理與更新</span>
+  </footer>
+
+  <script>
+    (function () {
+      const cards = Array.from(document.querySelectorAll(".tool-card"));
+      const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
+      const searchInput = document.getElementById("tool-search");
+      const emptyState = document.getElementById("empty-state");
+      const resultCount = document.getElementById("result-count");
+      let activeFilter = "all";
+
+      function updateCounts() {
+        const available = cards.filter(function (card) { return card.dataset.status === "available"; }).length;
+        const planned = cards.filter(function (card) { return card.dataset.status === "planned"; }).length;
+        document.getElementById("available-count").textContent = String(available).padStart(2, "0");
+        document.getElementById("planned-count").textContent = String(planned).padStart(2, "0");
+        document.getElementById("header-live-count").textContent = available + " 款工具可用";
+      }
+
+      function applyFilters() {
+        const query = searchInput.value.trim().toLocaleLowerCase();
+        let visible = 0;
+        cards.forEach(function (card) {
+          const categoryMatches = activeFilter === "all" || card.dataset.category === activeFilter;
+          const text = (card.dataset.search + " " + card.textContent).toLocaleLowerCase();
+          const textMatches = !query || text.includes(query);
+          const show = categoryMatches && textMatches;
+          card.hidden = !show;
+          if (show) visible += 1;
+        });
+        emptyState.hidden = visible !== 0;
+        resultCount.textContent = "顯示 " + visible + " 款工具";
+      }
+
+      filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          activeFilter = button.dataset.filter;
+          filterButtons.forEach(function (item) {
+            item.setAttribute("aria-pressed", String(item === button));
+          });
+          applyFilters();
+        });
+      });
+      searchInput.addEventListener("input", applyFilters);
+      updateCounts();
+      applyFilters();
+    }());
+  </script>
+</body>
+</html>
