@@ -184,6 +184,7 @@
       <div class="format-note">
         <p><strong>課表格式：</strong>每張工作表一位老師，Day A–F 分列，沿用目前課表版式。</p>
         <p><strong>九節制對應：</strong>全日編號為第 1–9 節。Day F 課表第 6 列為第 1 節；其後 8 個固定課節列依序為第 2–9 節。Day A–E 的正式課堂也由第 2 節開始。</p>
+        <p><strong>特殊課節：</strong>課表中標示 CLP 的備課／會議，以及 Day F 第 7／9 節的 Assembly Hall，會一併寫入資料，供調堂頁選擇是否視為空堂。</p>
         <p><strong>校曆檔：</strong>Google Calendar 匯出如為 ZIP，先解壓縮，再選取 QMSS Calendar.ics。若 Day 活動設定為重複事件，請先提供已展開成實際日期的 .ics。</p>
         <p><strong>匯出權限：</strong>Google Calendar 匯出需要「Make changes and manage sharing」權限；若你只有訂閱／查看權限，請日曆擁有人或管理員匯出 QMSS Calendar.ics 給你。</p>
       </div>
@@ -324,29 +325,40 @@
             daySlots.forEach(function (timeSlot) {
               normalizeRaw(sheetCell(sheet, column, timeSlot.row)).forEach(function (raw) {
                 var foundClasses = Array.from(new Set(extractClasses(raw)));
-                if (!foundClasses.length) return;
+                var specials = [];
+                if (/\bCLP\b/i.test(raw)) specials.push('clp');
+                if (day === 'F' && (timeSlot.period === 7 || timeSlot.period === 9) && /\bAssembly\s+Hall\b/i.test(raw)) {
+                  specials.push('assemblyHall');
+                }
+                if (!foundClasses.length && !specials.length) return;
                 foundClasses.forEach(function (classCode) { allClasses.add(classCode); });
                 var subject = stripClasses(raw);
                 var key = day + '|' + timeSlot.period;
-                if (!slotGroups.has(key)) slotGroups.set(key, { day: day, period: timeSlot.period, classes: new Set(), subjects: [] });
+                if (!slotGroups.has(key)) slotGroups.set(key, { day: day, period: timeSlot.period, classes: new Set(), subjects: [], specials: new Set() });
                 var group = slotGroups.get(key);
                 foundClasses.forEach(function (classCode) { group.classes.add(classCode); });
+                specials.forEach(function (special) { group.specials.add(special); });
                 if (group.subjects.indexOf(subject) === -1) group.subjects.push(subject);
               });
             });
           });
           var lessons = Array.from(slotGroups.values()).map(function (group) {
-            return {
+            var lesson = {
               day: group.day,
               period: group.period,
               classes: Array.from(group.classes).sort(compareClass),
               subject: group.subjects.join('／')
             };
+            if (group.specials.size) lesson.specials = Array.from(group.specials).sort(compareText);
+            return lesson;
           }).sort(function (a, b) { return DAY_NAMES.indexOf(a.day) - DAY_NAMES.indexOf(b.day) || a.period - b.period; });
           teachers.push({ code: code, name: fullName, displayName: displayName(fullName, code), lessons: lessons });
         });
         var classes = Array.from(allClasses).sort(compareClass);
         var lessonCount = teachers.reduce(function (total, teacher) { return total + teacher.lessons.length; }, 0);
+        var specialSlotCount = teachers.reduce(function (total, teacher) {
+          return total + teacher.lessons.filter(function (lesson) { return (lesson.specials || []).length > 0; }).length;
+        }, 0);
         if (teachers.length < 10 || teachers.length > 200 || classes.length < 10 || lessonCount < 100) {
           throw new Error('提取出的課表資料量異常（' + teachers.length + ' 位老師、' + classes.length + ' 個班別、' + lessonCount + ' 節），請確認上載的是完整年度課表。');
         }
@@ -362,7 +374,8 @@
           },
           teacherCount: teachers.length,
           classCount: classes.length,
-          lessonCount: lessonCount
+          lessonCount: lessonCount,
+          specialSlotCount: specialSlotCount
         };
       }
 
@@ -455,7 +468,8 @@
       }
       function showResults(timetable, calendar) {
         document.getElementById('timetable-result').textContent =
-          timetable.teacherCount + ' 位老師 · ' + timetable.classCount + ' 個班別 · ' + timetable.lessonCount + ' 節課堂';
+          timetable.teacherCount + ' 位老師 · ' + timetable.classCount + ' 個班別 · ' + timetable.lessonCount +
+          ' 個課節／活動時段' + (timetable.specialSlotCount ? '（包括 ' + timetable.specialSlotCount + ' 個 CLP／Assembly Hall 時段）' : '');
         document.getElementById('calendar-result').textContent =
           calendar.count + ' 個日期 · ' + calendar.firstDate + ' 至 ' + calendar.lastDate;
         var chips = document.getElementById('day-counts');
