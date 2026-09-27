@@ -426,6 +426,14 @@
                   <input id="hide-split-lessons" type="checkbox" checked>
                   隱藏拆班課節
                 </label>
+                <label class="split-toggle" for="ignore-sixth-lessons" title="6K、6P、6T、6W 的課節不計入衝突檢查">
+                  <input id="ignore-sixth-lessons" type="checkbox">
+                  視中六堂節為空堂
+                </label>
+                <label class="split-toggle" for="ignore-clp-assembly" title="包括課表中標示 CLP 的課節，以及 Day F 第 7／9 節 Assembly Hall">
+                  <input id="ignore-clp-assembly" type="checkbox">
+                  視備課節／會議／周會為空堂
+                </label>
                 <span><i class="legend-dot available" aria-hidden="true"></i>可調換</span>
                 <span><i class="legend-dot own" aria-hidden="true"></i>你的課節</span>
                 <span><i class="legend-dot manual" aria-hidden="true"></i>手動選擇</span>
@@ -501,6 +509,8 @@
       var scheduleView = document.getElementById('schedule-view');
       var manualEntryButton = document.getElementById('manual-entry-button');
       var hideSplitToggle = document.getElementById('hide-split-lessons');
+      var ignoreSixthToggle = document.getElementById('ignore-sixth-lessons');
+      var ignoreClpAssemblyToggle = document.getElementById('ignore-clp-assembly');
       var selectedLessons = document.getElementById('selected-lessons');
       var selectionPrompt = document.getElementById('selection-prompt');
       var selectionStepLabel = document.getElementById('selection-step-label');
@@ -586,12 +596,25 @@
         return (teacher.lessons || []).filter(function (lesson) {
           return lesson.day === day && Number(lesson.period) === Number(period);
         }).map(function (lesson) {
-          var classes = (lesson.classes || []).join('、');
+          var specials = Array.isArray(lesson.specials) ? lesson.specials : [];
+          var hasIgnoredActivity = specials.some(function (special) {
+            return special === 'clp' || special === 'assemblyHall';
+          });
+          if (ignoreClpAssemblyToggle.checked && hasIgnoredActivity) return null;
+
+          var classes = (lesson.classes || []).filter(function (classCode) {
+            return !(ignoreSixthToggle.checked && /^6[KPTW]$/.test(classCode));
+          }).join('、');
+          if (!classes && !specials.length) return null;
+
           var subject = String(lesson.subject || '').trim();
-          var key = classes + '|' + subject;
+          if (specials.indexOf('clp') !== -1 && !/\bCLP\b/i.test(subject)) {
+            subject = subject ? subject + ' · CLP' : 'CLP';
+          }
+          var key = classes + '|' + subject + '|' + specials.join(',');
           if (seen.has(key)) return null;
           seen.add(key);
-          return { classes: classes, subject: subject };
+          return { classes: classes, subject: subject, activity: !classes && specials.length > 0 };
         }).filter(Boolean);
       }
       function assessCycle(plan, complete) {
@@ -608,7 +631,7 @@
               teacher: teacher ? teacher.displayName : plan[index].teacher,
               day: incoming.day,
               period: incoming.period,
-              className: lesson.classes || '其他班別',
+              className: lesson.classes || (lesson.activity ? '校內活動' : '其他班別'),
               subject: lesson.subject || '課堂'
             });
           });
@@ -633,7 +656,7 @@
                 teacher: (teacherByCode(teacherCode) || {}).displayName || teacherCode,
                 day: choice.day,
                 period: Number(choice.period),
-                className: lesson.classes || '其他班別',
+                className: lesson.classes || (lesson.activity ? '校內活動' : '其他班別'),
                 subject: lesson.subject || '課堂'
               });
             });
@@ -1309,6 +1332,12 @@
         });
       });
       hideSplitToggle.addEventListener('change', handleSplitToggle);
+      function handleConflictOptionsChange() {
+        renderAll();
+        previewSection.hidden = true;
+      }
+      ignoreSixthToggle.addEventListener('change', handleConflictOptionsChange);
+      ignoreClpAssemblyToggle.addEventListener('change', handleConflictOptionsChange);
       selectedLessons.addEventListener('click', handleScheduleClick);
       manualPanel.addEventListener('click', handleManualPanelClick);
       manualPanel.addEventListener('change', handleManualTeacherChange);
