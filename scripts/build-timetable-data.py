@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Convert the school's annual teacher timetable workbook to public web data.
 
-Expected source layout: teacher name in A3; Day A–F in B:G; teaching periods
-in rows 7, 8, 10, 11, 12, 14, 15, and 16. Requires openpyxl.
+Expected source layout: teacher name in A3; Day A–F in B:G; Day F period 1
+in row 6, and periods 2–9 in rows 7, 8, 10, 11, 12, 14, and 16. Requires openpyxl.
 """
 from __future__ import annotations
 
@@ -15,6 +15,7 @@ from openpyxl import load_workbook
 
 DAYS = ["A", "B", "C", "D", "E", "F"]
 PERIOD_ROWS = [7, 8, 10, 11, 12, 14, 15, 16]
+DAY_F_FIRST_PERIOD_ROW = 6
 CLASS_PATTERN = re.compile(r"(?<![A-Za-z0-9])([1-6][KPTW])(?=$|[\s,;/])")
 CLASS_SORT = "KPTW"
 
@@ -44,7 +45,10 @@ def convert(workbook_path: Path, academic_year: str) -> dict:
         slot_groups: dict[tuple[str, int], dict[str, set[str] | list[str]]] = {}
 
         for column, day in enumerate(DAYS, start=2):
-            for period, row in enumerate(PERIOD_ROWS, start=1):
+            day_slots = list(enumerate(PERIOD_ROWS, start=2))
+            if day == "F":
+                day_slots.insert(0, (1, DAY_F_FIRST_PERIOD_ROW))
+            for period, row in day_slots:
                 cell_value = sheet.cell(row, column).value
                 if cell_value is None:
                     continue
@@ -84,7 +88,7 @@ def convert(workbook_path: Path, academic_year: str) -> dict:
         "academicYear": academic_year,
         "sourceFile": workbook_path.name,
         "days": DAYS,
-        "periods": list(range(1, 9)),
+        "periods": list(range(1, 10)),
         "classes": sorted(all_classes, key=class_sort_key),
         "teachers": sorted(teachers, key=lambda item: (item["displayName"], item["code"])),
     }
