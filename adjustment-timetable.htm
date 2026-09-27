@@ -159,28 +159,87 @@
     .preview-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin: 0 0 13px; }
     .preview-toolbar h2 { margin: 0; font-size: 18px; }
     .preview-actions { display: flex; gap: 9px; flex-wrap: wrap; }
-    .print-sheet { --copy-count: 4; display: grid; gap: 9px; }
-    .print-copy { display: grid; grid-template-columns: minmax(150px, 190px) minmax(0, 1fr); gap: 13px; min-width: 0; padding: 13px; border: 1px solid var(--border); border-radius: 15px; background: white; }
-    .copy-meta { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: 4px 13px 4px 5px; border-right: 1px dashed var(--border); }
-    .copy-mark { color: var(--green-dark); font-size: 9px; font-weight: 800; letter-spacing: .08em; }
-    .copy-recipient { margin: 3px 0 0; font-size: 15px; font-weight: 850; line-height: 1.3; overflow-wrap: anywhere; }
-    .copy-desc { margin: 4px 0 0; color: var(--muted); font-size: 9px; }
-    .lesson-list { display: grid; grid-template-columns: repeat(var(--participant-count), minmax(0, 1fr)); gap: 8px; min-width: 0; }
-    .notice-card { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: 9px 10px; border: 1px solid hsl(var(--ink) / .1); border-radius: 11px; }
-    .notice-top { display: flex; align-items: center; justify-content: space-between; gap: 5px; color: var(--green-dark); font-size: 9px; font-weight: 800; }
-    .notice-class { padding: 2px 6px; border-radius: 99px; background: var(--green-soft); white-space: nowrap; }
-    .notice-subject { margin: 5px 0 0; color: hsl(var(--ink)); font-size: 12px; font-weight: 850; line-height: 1.35; overflow-wrap: anywhere; }
-    .notice-date { margin: 3px 0 0; color: hsl(var(--ink-soft)); font-size: 9px; line-height: 1.35; }
-    .notice-teacher { margin: 1px 0 0; color: var(--muted); font-size: 9px; overflow-wrap: anywhere; }
-    .empty-slot { display: none; }
+    .print-sheet {
+      --copy-count: 4;
+      --participant-count: 2;
+      --title-size: 11.8pt;
+      --body-size: 8.9pt;
+      --stamp-size: 11.8pt;
+      width: min(100%, 794px);
+      aspect-ratio: 210 / 297;
+      margin: 0 auto;
+      padding: 7.7% 8.6% 0;
+      display: grid;
+      align-content: start;
+      grid-template-rows: repeat(4, 14.1%);
+      row-gap: .7%;
+      background: #fff;
+      color: #111;
+      box-shadow: 0 9px 28px hsl(var(--ink) / .14);
+      font-family: "Microsoft JhengHei", "微軟正黑體", "PingFang HK", sans-serif;
+    }
+    .print-sheet[data-mode="3"] {
+      --copy-count: 5;
+      --participant-count: 3;
+      --title-size: 8.2pt;
+      --body-size: 6.1pt;
+      --stamp-size: 8.2pt;
+      padding: 5.4% 6.2% 0;
+      grid-template-rows: repeat(5, 10.2%);
+      row-gap: .55%;
+    }
+    .print-copy {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(var(--participant-count), minmax(0, 1fr));
+      gap: 2.8%;
+      min-width: 0;
+      height: 100%;
+      padding-bottom: 2.2%;
+      border-bottom: .3mm dashed #666;
+    }
+    .print-copy:last-child { border-bottom: 0; }
+    .copy-recipient-label {
+      position: absolute;
+      top: 0;
+      left: calc(var(--recipient-index) * (100% / var(--participant-count)));
+      width: calc(100% / var(--participant-count));
+      height: 3mm;
+      overflow: hidden;
+      color: #111;
+      font-size: var(--stamp-size);
+      line-height: 1.05;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .lesson-list { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(var(--participant-count), minmax(0, 1fr)); gap: 2.8%; min-width: 0; height: 100%; }
+    .notice-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      height: calc(100% - 3mm);
+      margin-top: 3mm;
+      padding: 1.2mm 1.6mm;
+      border: .25mm solid #111;
+      text-align: center;
+      overflow: hidden;
+    }
+    .notice-title { margin: 0 auto .6mm; padding: 0 0 .6mm; border-bottom: .2mm solid #111; font-size: var(--title-size); font-weight: 400; line-height: 1.12; white-space: nowrap; }
+    .notice-subtitle { margin: 0 0 .5mm; font-size: var(--body-size); line-height: 1.12; white-space: nowrap; }
+    .notice-intro { margin: 0 0 .7mm; font-size: var(--body-size); line-height: 1.15; white-space: nowrap; }
+    .notice-row { display: grid; align-items: baseline; gap: 0 .7mm; margin-top: .55mm; font-size: var(--body-size); line-height: 1.18; text-align: left; }
+    .notice-row.date-row, .notice-row.teacher-row { grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr); }
+    .notice-row.class-row-print { grid-template-columns: auto minmax(0, 1fr) auto minmax(0, .55fr) auto minmax(0, .45fr); }
+    .notice-value { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .print-hint { margin: 10px 1px 0; color: var(--muted); font-size: 10px; }
     .loading { color: var(--muted); font-size: 12px; }
 
     @media (max-width: 720px) {
       .teacher-grid { grid-template-columns: 1fr; }
       .class-row { grid-template-columns: minmax(0, 1fr); gap: 13px; }
-      .print-copy { grid-template-columns: 138px minmax(0, 1fr); }
-      .copy-recipient { font-size: 13px; }
+      .print-sheet { padding-left: 5%; padding-right: 5%; }
+      .print-sheet[data-mode="3"] { padding-left: 3%; padding-right: 3%; }
     }
     @media (max-width: 480px) {
       .wrap { width: calc(100% - 28px); }
@@ -195,31 +254,24 @@
       .builder-bottom lumen-button, .preview-actions lumen-button { width: 100%; }
       .builder-bottom lumen-button::part(button), .preview-actions lumen-button::part(button) { width: 100%; }
       .builder-bottom .lumen-fallback-button, .preview-actions .lumen-fallback-button { width: 100%; }
-      .print-copy { grid-template-columns: 1fr; gap: 9px; }
-      .copy-meta { padding: 0 0 8px; border-right: 0; border-bottom: 1px dashed var(--border); }
-      .lesson-list { grid-template-columns: 1fr; }
+      .print-sheet { padding-left: 2.5%; padding-right: 2.5%; }
+      .print-sheet[data-mode="3"] { padding-left: 1%; padding-right: 1%; }
       .page-foot { flex-direction: column; gap: 5px; }
     }
     @media print {
-      @page { size: A4 landscape; margin: 7mm; }
+      @page { size: A4 portrait; margin: 19.05mm 6.35mm; }
       html, body { width: auto; min-width: 0; margin: 0; background: white !important; color: #142b31; }
       .site-header, .intro, .builder-card, .page-foot, .preview-toolbar, .print-hint, .data-error { display: none !important; }
       main, .wrap, .preview-section { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
       .preview-section { display: block !important; }
       .preview-section[hidden] { display: none !important; }
-      .print-sheet { display: grid !important; height: 196mm; gap: 0; grid-template-rows: repeat(var(--copy-count), minmax(0, 1fr)); }
-      .print-copy { min-height: 0; height: 100%; overflow: hidden; grid-template-columns: 42mm minmax(0, 1fr); gap: 2.5mm; padding: 2.2mm 1.2mm; border: 0; border-bottom: .25mm dashed #87938f; border-radius: 0; break-inside: avoid; background: white; }
-      .print-copy:last-child { border-bottom: 0; }
-      .copy-meta { padding: 1mm 2mm 1mm 1mm; }
-      .copy-mark { font-size: 6.2pt; }
-      .copy-recipient { margin-top: 1mm; font-size: 10pt; line-height: 1.2; }
-      .copy-desc { margin-top: 1mm; font-size: 6.5pt; }
-      .lesson-list { gap: 1.5mm; }
-      .notice-card { padding: 1.3mm 1.7mm; border: .25mm solid #c8d0cc; border-radius: 1.5mm; }
-      .notice-top { gap: 1mm; font-size: 6.3pt; }
-      .notice-class { padding: .2mm 1.2mm; }
-      .notice-subject { margin-top: .8mm; font-size: 8pt; line-height: 1.2; }
-      .notice-date, .notice-teacher { margin-top: .5mm; font-size: 6.1pt; line-height: 1.15; }
+      .print-sheet { width: 174mm; max-width: 100%; height: 259mm; aspect-ratio: auto; margin: 0 auto; padding: 4mm 0 0; grid-template-rows: repeat(4, 41mm); row-gap: 2mm; box-shadow: none; }
+      .print-sheet[data-mode="3"] { width: 184mm; padding-top: 0; grid-template-rows: repeat(5, 29.5mm); row-gap: 2mm; }
+      .print-copy { min-height: 0; height: 100%; gap: 2.8%; padding-bottom: 2mm; break-inside: avoid; }
+      .copy-recipient-label { top: 0; height: 3mm; }
+      .notice-card { height: calc(100% - 3mm); margin-top: 3mm; }
+      .print-sheet[data-mode="3"] .notice-card { height: calc(100% - 2.3mm); margin-top: 2.3mm; padding: .75mm .9mm; }
+      .print-sheet[data-mode="3"] .copy-recipient-label { height: 2.3mm; }
       * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -240,7 +292,7 @@
     <section class="intro" aria-labelledby="page-title">
       <p class="eyebrow">教務安排 · 課表已預載</p>
       <h1 id="page-title">調堂小幫手</h1>
-      <p class="intro-copy">選好班別，再填寫每位老師原本的上課日期、循環日和節數；系統會按輪流接課的方式整理通知，列印給各位老師、班房和行政主任 Florence。</p>
+      <p class="intro-copy">選好班別和每位老師的原課日期、節數；Day A–F 會由 QMSS Calendar 的年度資料自動對照，課堂內容由預載課表帶入。列印版面依照 Excel 的 A4 直向表格排列。</p>
     </section>
 
     <lumen-card class="builder-card" variant="unstyled" as="section" aria-labelledby="setup-title">
@@ -255,7 +307,7 @@
           <button type="button" data-count="2" aria-pressed="true">二人互調</button>
           <button type="button" data-count="3" aria-pressed="false">三人互調</button>
         </div>
-        <span class="step-label" id="copy-count-label">將列印 4 份</span>
+        <span class="step-label" id="copy-count-label">頁內有 4 個可裁切區</span>
       </div>
 
       <div class="class-row">
@@ -265,7 +317,7 @@
         </div>
         <div class="cycle-note">
           <span class="note-mark" aria-hidden="true">!</span>
-          <span><strong>日期和 A–F 循環日要分別選擇。</strong>年度課表列出 Day A 至 Day F，沒有日期對照；請按校曆核對後，為每位老師手動選擇循環日。</span>
+          <span><strong>Day 會按日期從 QMSS Calendar 自動帶入。</strong>若校曆沒有該日的對照，表格會提示你手動補選 A–F。</span>
         </div>
       </div>
 
@@ -289,11 +341,11 @@
         </div>
       </div>
       <div id="print-sheet" class="print-sheet" aria-label="調堂通知列印版面"></div>
-      <p class="print-hint">列印設定：A4 橫向、縮放 100%；會一次列印全部份數。</p>
+      <p class="print-hint">列印設定：A4 直向、比例 100%、關閉頁首和頁尾；每區按虛線裁開。</p>
     </section>
 
     <footer class="page-foot">
-      <span id="data-foot">課表每學年更新一次；使用者毋須登入或上載課表。</span>
+      <span id="data-foot">課表和 QMSS Calendar 日別每學年更新一次；使用者毋須登入或上載資料。</span>
       <a href="./index.html">返回工具首頁</a>
     </footer>
   </main>
@@ -302,6 +354,8 @@
     (function () {
       'use strict';
       var data;
+      var calendarDays = {};
+      var calendarMeta = {};
       var peopleCount = 2;
       var slots = [];
       var classSelect = document.getElementById('class-select');
@@ -319,6 +373,9 @@
       }
       function teacherByCode(code) {
         return data.teachers.find(function (teacher) { return teacher.code === code; });
+      }
+      function calendarDayFor(date) {
+        return date && /^[A-F]$/.test(calendarDays[date] || '') ? calendarDays[date] : '';
       }
       function lessonsFor(teacher, classCode, day) {
         if (!teacher) return [];
@@ -354,8 +411,6 @@
         }).sort(function (a, b) { return a.displayName.localeCompare(b.displayName, 'zh-Hant'); });
       }
       function setPeopleCount(count) {
-        var dates = slots.map(function (slot) { return slot.date; });
-        var days = slots.map(function (slot) { return slot.day; });
         var kept = slots.slice(0, count);
         while (kept.length < count) kept.push({ teacher: '', date: '', day: '', period: '' });
         slots = kept;
@@ -363,7 +418,7 @@
         modeButtons.forEach(function (button) {
           button.setAttribute('aria-pressed', String(Number(button.dataset.count) === count));
         });
-        document.getElementById('copy-count-label').textContent = '將列印 ' + (count + 2) + ' 份';
+        document.getElementById('copy-count-label').textContent = '頁內有 ' + (count + 2) + ' 個可裁切區';
         renderTeacherCards();
         updateFormStatus();
         previewSection.hidden = true;
@@ -377,12 +432,16 @@
           var slot = slots[index];
           var teacher = teacherByCode(slot.teacher);
           var dayLessons = lessonsFor(teacher, classCode, slot.day);
+          var mappedDay = calendarDayFor(slot.date);
           var periodOptions = dayLessons.map(function (lesson) {
             return '<option value="' + lesson.period + '" ' + (String(lesson.period) === String(slot.period) ? 'selected' : '') + '>第 ' + lesson.period + ' 節 · ' + escapeHtml(lesson.subject) + '</option>';
           }).join('');
           var teacherOptions = teachers.map(function (item) {
             return '<option value="' + escapeHtml(item.code) + '" ' + (item.code === slot.teacher ? 'selected' : '') + '>' + escapeHtml(item.displayName) + '</option>';
           }).join('');
+          var dayControl = mappedDay
+            ? '<input class="control" id="day-' + index + '" value="Day ' + mappedDay + '" readonly aria-readonly="true" aria-label="QMSS Calendar 日別：Day ' + mappedDay + '"><p class="hint">由 QMSS Calendar 自動帶入</p>'
+            : '<select class="control" id="day-' + index + '" data-slot-index="' + index + '" data-field="day" required><option value="">' + (slot.date ? '校曆未有此日對照' : '選日期後自動對照') + '</option>' + data.days.map(function (day) { return '<option value="' + day + '" ' + (slot.day === day ? 'selected' : '') + '>Day ' + day + '</option>'; }).join('') + '</select><p class="hint">' + (slot.date ? '校曆未有此日的 Day，請按校曆補選' : '有校曆對照時會自動填入') + '</p>';
           var course = matchingLesson(slot);
           var courseLine = course ? escapeHtml(course.subject) : (slot.teacher && slot.day && !dayLessons.length ? '這位老師在所選循環日沒有該班課堂，請改選老師或日期／循環日。' : '選擇老師、日期、循環日和原課節後，課堂內容會自動帶入。');
           var title = String.fromCharCode(65 + index);
@@ -391,7 +450,7 @@
             '<div class="teacher-fields">' +
               '<div class="field wide"><label class="field-label" for="teacher-' + index + '">老師</label><select class="control" id="teacher-' + index + '" data-slot-index="' + index + '" data-field="teacher" required ' + (!classCode ? 'disabled' : '') + '><option value="">' + (classCode ? '選擇老師' : '請先選班別') + '</option>' + teacherOptions + '</select></div>' +
               '<div class="field"><label class="field-label" for="date-' + index + '">上課日期</label><input class="control" id="date-' + index + '" type="date" data-slot-index="' + index + '" data-field="date" value="' + escapeHtml(slot.date) + '" required></div>' +
-              '<div class="field"><label class="field-label" for="day-' + index + '">循環日</label><select class="control" id="day-' + index + '" data-slot-index="' + index + '" data-field="day" required><option value="">選擇 A–F</option>' + data.days.map(function (day) { return '<option value="' + day + '" ' + (slot.day === day ? 'selected' : '') + '>Day ' + day + '</option>'; }).join('') + '</select><p class="hint">請按校曆核對</p></div>' +
+              '<div class="field"><label class="field-label" for="day-' + index + '">循環日</label>' + dayControl + '</div>' +
               '<div class="field wide"><label class="field-label" for="period-' + index + '">原課節</label><select class="control" id="period-' + index + '" data-slot-index="' + index + '" data-field="period" required ' + (!teacher || !slot.day || !dayLessons.length ? 'disabled' : '') + '><option value="">' + (teacher && slot.day ? (dayLessons.length ? '選擇節數' : '該日沒有此班課堂') : '先選老師和循環日') + '</option>' + periodOptions + '</select></div>' +
             '</div><div class="lesson-readout" aria-live="polite"><strong>該節課堂／科目（由年度課表帶入）</strong>' + courseLine + '</div></lumen-card>';
         }
@@ -410,7 +469,7 @@
           if (!slot.teacher || !slot.date || !slot.day || !slot.period || !lesson) missing = true;
           chosen.push({ slot: slot, lesson: lesson, teacher: teacherByCode(slot.teacher) });
         }
-        if (missing) return { valid: false, message: '請填妥每位老師的老師、日期、循環日和有效課節。' };
+        if (missing) return { valid: false, message: '請填妥每位老師的老師、日期、Day 和有效課節。' };
         var seenTeachers = new Set();
         for (var t = 0; t < chosen.length; t += 1) {
           if (seenTeachers.has(chosen[t].slot.teacher)) return { valid: false, message: '每位老師只能選一次，請更換重複的老師。' };
@@ -422,7 +481,7 @@
           if (seenTimes.has(timeKey)) return { valid: false, message: '同一班別不能在同一日期、同一節安排兩位老師，請檢查日期和節數。' };
           seenTimes.add(timeKey);
         }
-        return { valid: true, message: '資料已齊全，可以預覽 ' + (peopleCount + 2) + ' 份列印版面。' };
+        return { valid: true, message: '資料已齊全，可以預覽 ' + (peopleCount + 2) + ' 個可裁切區。' };
       }
       function updateFormStatus() {
         var result = validate();
@@ -434,9 +493,12 @@
       }
       function dateLabel(isoDate) {
         var parts = isoDate.split('-').map(Number);
+        return parts[1] + '/' + parts[2] + '/' + parts[0];
+      }
+      function weekdayLabel(isoDate) {
+        var parts = isoDate.split('-').map(Number);
         var date = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
-        var week = ['日', '一', '二', '三', '四', '五', '六'][date.getUTCDay()];
-        return parts[0] + '年' + String(parts[1]).padStart(2, '0') + '月' + String(parts[2]).padStart(2, '0') + '日（' + week + '）';
+        return ['日', '一', '二', '三', '四', '五', '六'][date.getUTCDay()];
       }
       function appendText(parent, tagName, className, text) {
         var element = document.createElement(tagName);
@@ -457,7 +519,7 @@
         var assignments = participants.map(function (participant, index) {
           var incoming = participants[(index + 1) % participants.length];
           return {
-            teacher: participant.teacher.displayName,
+            teacher: participant.teacher.code,
             subject: participant.lesson.subject,
             classCode: classSelect.value,
             date: incoming.slot.date,
@@ -465,43 +527,57 @@
             period: incoming.slot.period
           };
         });
+        var centerIndex = Math.floor((peopleCount - 1) / 2);
         var copies = participants.map(function (participant, index) {
-          return { mark: '調堂通知 · ' + data.academicYear + ' · 老師用第 ' + (index + 1) + ' 份', recipient: participant.teacher.displayName, desc: '請按以下新日期及節數上課。' };
+          return { label: '老師 ' + participant.teacher.code + ' 保存', position: index, recipient: participant.teacher.displayName };
         });
-        copies.push({ mark: '調堂通知 · ' + data.academicYear + ' · 班房張貼第 ' + (peopleCount + 1) + ' 份', recipient: '貼於 ' + classSelect.value + ' 班房', desc: '供學生查看調堂後的上課安排。' });
-        copies.push({ mark: '調堂通知 · ' + data.academicYear + ' · 行政存檔第 ' + (peopleCount + 2) + ' 份', recipient: '交行政主任 Florence', desc: '請交回行政主任 Florence 保存。' });
+        copies.push({ label: '貼於 ' + classSelect.value + ' 班房', position: centerIndex, recipient: classSelect.value + ' 班房' });
+        copies.push({ label: '交由 Florence 保存', position: centerIndex, recipient: '行政主任 Florence' });
         printSheet.style.setProperty('--copy-count', String(copies.length));
         printSheet.style.setProperty('--participant-count', String(peopleCount));
+        printSheet.dataset.mode = String(peopleCount);
         printSheet.replaceChildren();
         copies.forEach(function (copy) {
           var section = document.createElement('section');
           section.className = 'print-copy';
           section.setAttribute('aria-label', copy.recipient + '副本');
-          var meta = document.createElement('div');
-          meta.className = 'copy-meta';
-          appendText(meta, 'span', 'copy-mark', copy.mark);
-          appendText(meta, 'h3', 'copy-recipient', copy.recipient);
-          appendText(meta, 'p', 'copy-desc', copy.desc);
-          section.appendChild(meta);
+          section.style.setProperty('--recipient-index', String(copy.position));
+          appendText(section, 'div', 'copy-recipient-label', copy.label);
           var list = document.createElement('div');
           list.className = 'lesson-list';
           assignments.forEach(function (assignment, assignmentIndex) {
             var card = document.createElement('article');
             card.className = 'notice-card';
-            var top = document.createElement('div');
-            top.className = 'notice-top';
-            appendText(top, 'span', '', '新安排 ' + String.fromCharCode(65 + assignmentIndex));
-            appendText(top, 'span', 'notice-class', assignment.classCode);
-            card.appendChild(top);
-            appendText(card, 'strong', 'notice-subject', assignment.subject);
-            appendText(card, 'p', 'notice-date', dateLabel(assignment.date) + ' · Day ' + assignment.day + ' · 第 ' + assignment.period + ' 節');
-            appendText(card, 'p', 'notice-teacher', '上課老師：' + assignment.teacher);
+            appendText(card, 'h3', 'notice-title', '調堂安排');
+            appendText(card, 'p', 'notice-subtitle', 'Rearrangement of Lessons');
+            appendText(card, 'p', 'notice-intro', '調堂後安排如下The New Arrangement is as follows:');
+            var dateRow = document.createElement('div');
+            dateRow.className = 'notice-row date-row';
+            [['日期：', dateLabel(assignment.date)], ['星期：', weekdayLabel(assignment.date)]].forEach(function (field) {
+              appendText(dateRow, 'span', 'notice-label', field[0]);
+              appendText(dateRow, 'span', 'notice-value', field[1]);
+            });
+            card.appendChild(dateRow);
+            var teacherRow = document.createElement('div');
+            teacherRow.className = 'notice-row teacher-row';
+            [['老師：', assignment.teacher], ['科目：', assignment.subject || '(X)']].forEach(function (field) {
+              appendText(teacherRow, 'span', 'notice-label', field[0]);
+              appendText(teacherRow, 'span', 'notice-value', field[1]);
+            });
+            card.appendChild(teacherRow);
+            var classRow = document.createElement('div');
+            classRow.className = 'notice-row class-row-print';
+            [['班別：', assignment.classCode], ['Day：', assignment.day], ['節數：', assignment.period]].forEach(function (field) {
+              appendText(classRow, 'span', 'notice-label', field[0]);
+              appendText(classRow, 'span', 'notice-value', field[1]);
+            });
+            card.appendChild(classRow);
             list.appendChild(card);
           });
           section.appendChild(list);
           printSheet.appendChild(section);
         });
-        document.getElementById('preview-count').textContent = '共 ' + copies.length + ' 份：' + peopleCount + ' 位老師各一份、班房張貼一份、Florence 一份。';
+        document.getElementById('preview-count').textContent = 'A4 直向一頁，共 ' + copies.length + ' 個可裁切區：' + peopleCount + ' 位老師各一份、班房張貼一份、Florence 一份。';
         previewSection.hidden = false;
         previewSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -512,24 +588,36 @@
         var field = target.dataset.field;
         var value = target.value;
         slots[index][field] = value;
-        if (field === 'teacher' || field === 'day') slots[index].period = '';
+        if (field === 'date') slots[index].day = calendarDayFor(value);
+        if (field === 'teacher' || field === 'day' || field === 'date') slots[index].period = '';
         renderTeacherCards(target.id);
         updateFormStatus();
         previewSection.hidden = true;
       }
       function loadTimetable() {
-        fetch('./data/timetable.json?v=2627-20260927-r2', { cache: 'force-cache' }).then(function (response) {
+        var timetableRequest = fetch('./data/timetable.json?v=2627-20260927-r3', { cache: 'force-cache' }).then(function (response) {
           if (!response.ok) throw new Error('HTTP ' + response.status);
           return response.json();
-        }).then(function (timetable) {
+        });
+        var calendarRequest = fetch('./data/school-days.json?v=2627-20260927-r3', { cache: 'force-cache' }).then(function (response) {
+          if (!response.ok) return { days: {}, calendarName: 'QMSS Calendar' };
+          return response.json();
+        }).catch(function () { return { days: {}, calendarName: 'QMSS Calendar' }; });
+        Promise.all([timetableRequest, calendarRequest]).then(function (loaded) {
+          var timetable = loaded[0];
+          var calendar = loaded[1];
           data = timetable;
+          calendarDays = calendar.days || {};
+          calendarMeta = calendar;
           slots = [{ teacher: '', date: '', day: '', period: '' }, { teacher: '', date: '', day: '', period: '' }];
           document.getElementById('year-pill').textContent = '課表版本 · ' + data.academicYear;
-          document.getElementById('data-foot').textContent = data.academicYear + ' 課表已預載；使用者毋須登入或上載。新學年由工具維護者更新課表資料。';
+          var calendarDateCount = Object.keys(calendarDays).length;
+          var calendarUpdate = calendarMeta.lastSynced ? '（更新至 ' + calendarMeta.lastSynced + '）' : '';
+          document.getElementById('data-foot').textContent = data.academicYear + ' 課表已預載；QMSS Calendar 日別資料 ' + (calendarDateCount ? '已載入 ' + calendarDateCount + ' 日' + calendarUpdate : '尚未載入，日期可手動補選') + '。使用者毋須登入或上載。';
           classSelect.innerHTML = '<option value="">選擇班別</option>' + data.classes.map(function (classCode) { return '<option value="' + escapeHtml(classCode) + '">' + escapeHtml(classCode) + '</option>'; }).join('');
           classSelect.disabled = false;
           classSelect.addEventListener('change', function () {
-            slots = slots.map(function (slot) { return { teacher: '', date: slot.date, day: slot.day, period: '' }; });
+            slots = slots.map(function (slot) { return { teacher: '', date: slot.date, day: calendarDayFor(slot.date) || '', period: '' }; });
             renderTeacherCards();
             updateFormStatus();
             previewSection.hidden = true;
