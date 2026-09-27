@@ -177,6 +177,8 @@
     .class-timetable td { padding: 3px; vertical-align: top; }
     .class-timetable td:first-child { position: sticky; left: 0; z-index: 1; width: 50px; padding: 8px 4px; background: hsl(var(--surface-strong)); color: hsl(var(--ink-soft)); font-size: 11px; font-weight: 800; text-align: center; }
     .timetable-cell { display: grid; align-content: start; gap: 4px; min-height: 62px; }
+    .class-timetable .timetable-break-row td { position: static; left: auto; z-index: auto; width: auto; padding: 5px 8px; border: 1px solid hsl(var(--brand) / .18); border-radius: 8px; background: hsl(var(--brand-soft) / .62); color: hsl(var(--brand-solid)); font-size: 10px; font-weight: 850; letter-spacing: .08em; text-align: center; vertical-align: middle; }
+    .class-timetable .timetable-break-row.lunch td { border-color: hsl(var(--accent) / .42); background: hsl(var(--accent) / .18); color: hsl(var(--ink)); }
     .period-note-inline { padding: 4px 5px; border-radius: 7px; background: hsl(var(--ink) / .05); color: var(--muted); font-size: 8px; line-height: 1.4; text-align: center; }
     .timetable-entry, .empty-slot { width: 100%; min-height: 52px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 6px 7px; border: 1px solid hsl(var(--ink) / .12); border-radius: 9px; background: white; color: hsl(var(--ink)); text-align: left; cursor: pointer; transition: border-color .15s ease, background .15s ease, box-shadow .15s ease; }
     .timetable-entry .entry-subject { font-size: 9px; font-weight: 800; line-height: 1.35; overflow-wrap: anywhere; }
@@ -827,7 +829,12 @@
             }
             return '<td><div class="timetable-cell">' + html + '</div></td>';
           }).join('');
-          return '<tr><td>第 ' + period + ' 節</td>' + cells + '</tr>';
+          var lessonRow = '<tr><td>第 ' + period + ' 節</td>' + cells + '</tr>';
+          var breakLabel = Number(period) === 2 ? '小息' : (Number(period) === 6 ? '午息' : '');
+          if (!breakLabel) return lessonRow;
+          var breakClass = breakLabel === '午息' ? ' timetable-break-row lunch' : ' timetable-break-row';
+          return lessonRow + '<tr class="' + breakClass.trim() + '"><td colspan="' + (data.days.length + 1) +
+            '">' + breakLabel + '</td></tr>';
         }).join('');
         var headers = data.days.map(function (day) { return '<th scope="col">Day ' + day + '</th>'; }).join('');
         classTimetable.innerHTML = '<table class="class-timetable" aria-label="' + escapeHtml(classCode) +
