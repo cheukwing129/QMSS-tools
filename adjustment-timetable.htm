@@ -322,8 +322,24 @@
       }
       function lessonsFor(teacher, classCode, day) {
         if (!teacher) return [];
-        return teacher.lessons.filter(function (lesson) {
+        var matching = teacher.lessons.filter(function (lesson) {
           return lesson.day === day && lesson.classes.indexOf(classCode) !== -1;
+        });
+        var grouped = new Map();
+        matching.forEach(function (lesson) {
+          var key = String(lesson.period);
+          var group = grouped.get(key);
+          if (!group) {
+            group = { day: lesson.day, period: lesson.period, classes: [], subjects: [] };
+            grouped.set(key, group);
+          }
+          lesson.classes.forEach(function (classCodeInSlot) {
+            if (group.classes.indexOf(classCodeInSlot) === -1) group.classes.push(classCodeInSlot);
+          });
+          if (lesson.subject && group.subjects.indexOf(lesson.subject) === -1) group.subjects.push(lesson.subject);
+        });
+        return Array.from(grouped.values()).map(function (group) {
+          return { day: group.day, period: group.period, classes: group.classes, subject: group.subjects.join('／') };
         }).sort(function (a, b) { return a.period - b.period; });
       }
       function matchingLesson(slot) {

@@ -1263,15 +1263,7 @@
           "classes": [
             "1K"
           ],
-          "subject": "CTL(L) 309A(上)"
-        },
-        {
-          "day": "A",
-          "period": 1,
-          "classes": [
-            "1K"
-          ],
-          "subject": "CTL(T) 207(下)"
+          "subject": "CTL(L) 309A(上)／CTL(T) 207(下)"
         },
         {
           "day": "A",
@@ -1279,15 +1271,7 @@
           "classes": [
             "1K"
           ],
-          "subject": "CTL(L) 309A(上)"
-        },
-        {
-          "day": "A",
-          "period": 2,
-          "classes": [
-            "1K"
-          ],
-          "subject": "CTL(T) 207(下)"
+          "subject": "CTL(L) 309A(上)／CTL(T) 207(下)"
         },
         {
           "day": "A",
@@ -1311,15 +1295,7 @@
           "classes": [
             "2K"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "B",
-          "period": 4,
-          "classes": [
-            "2K"
-          ],
-          "subject": "CTL(L) 513(下)"
+          "subject": "CTL(T) 207(上)／CTL(L) 513(下)"
         },
         {
           "day": "B",
@@ -1327,15 +1303,7 @@
           "classes": [
             "2K"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "B",
-          "period": 5,
-          "classes": [
-            "2K"
-          ],
-          "subject": "CTL(L) 513(下)"
+          "subject": "CTL(T) 207(上)／CTL(L) 513(下)"
         },
         {
           "day": "B",
@@ -1343,15 +1311,7 @@
           "classes": [
             "2P"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "B",
-          "period": 6,
-          "classes": [
-            "2P"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 207(上)／CTL(AI) 207(下)"
         },
         {
           "day": "B",
@@ -1359,15 +1319,7 @@
           "classes": [
             "2P"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "B",
-          "period": 7,
-          "classes": [
-            "2P"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 207(上)／CTL(AI) 207(下)"
         },
         {
           "day": "C",
@@ -1375,15 +1327,7 @@
           "classes": [
             "1P"
           ],
-          "subject": "CTL(AI) 207(上)"
-        },
-        {
-          "day": "C",
-          "period": 1,
-          "classes": [
-            "1P"
-          ],
-          "subject": "CTL(T) 207(下)"
+          "subject": "CTL(AI) 207(上)／CTL(T) 207(下)"
         },
         {
           "day": "C",
@@ -1391,15 +1335,7 @@
           "classes": [
             "1P"
           ],
-          "subject": "CTL(AI) 207(上)"
-        },
-        {
-          "day": "C",
-          "period": 2,
-          "classes": [
-            "1P"
-          ],
-          "subject": "CTL(T) 207(下)"
+          "subject": "CTL(AI) 207(上)／CTL(T) 207(下)"
         },
         {
           "day": "C",
@@ -1407,15 +1343,7 @@
           "classes": [
             "2W"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "C",
-          "period": 4,
-          "classes": [
-            "2W"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 207(上)／CTL(AI) 207(下)"
         },
         {
           "day": "C",
@@ -1423,15 +1351,7 @@
           "classes": [
             "2W"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "C",
-          "period": 5,
-          "classes": [
-            "2W"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 207(上)／CTL(AI) 207(下)"
         },
         {
           "day": "C",
@@ -1439,15 +1359,7 @@
           "classes": [
             "2T"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "C",
-          "period": 6,
-          "classes": [
-            "2T"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 207(上)／CTL(AI) 207(下)"
         },
         {
           "day": "C",
@@ -1455,15 +1367,7 @@
           "classes": [
             "2T"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "C",
-          "period": 7,
-          "classes": [
-            "2T"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 207(上)／CTL(AI) 207(下)"
         },
         {
           "day": "D",
@@ -1487,15 +1391,7 @@
           "classes": [
             "3P"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "D",
-          "period": 4,
-          "classes": [
-            "3P"
-          ],
-          "subject": "CTL(L) 309A(下)"
+          "subject": "CTL(T) 207(上)／CTL(L) 309A(下)"
         },
         {
           "day": "D",
@@ -1503,15 +1399,7 @@
           "classes": [
             "3P"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "D",
-          "period": 5,
-          "classes": [
-            "3P"
-          ],
-          "subject": "CTL(L) 309A(下)"
+          "subject": "CTL(T) 207(上)／CTL(L) 309A(下)"
         },
         {
           "day": "D",
@@ -1519,15 +1407,7 @@
           "classes": [
             "3T"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "D",
-          "period": 6,
-          "classes": [
-            "3T"
-          ],
-          "subject": "CTL(L) 309A(下)"
+          "subject": "CTL(T) 207(上)／CTL(L) 309A(下)"
         },
         {
           "day": "D",
@@ -1535,15 +1415,7 @@
           "classes": [
             "3T"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "D",
-          "period": 7,
-          "classes": [
-            "3T"
-          ],
-          "subject": "CTL(L) 309A(下)"
+          "subject": "CTL(T) 207(上)／CTL(L) 309A(下)"
         },
         {
           "day": "E",
@@ -1551,15 +1423,7 @@
           "classes": [
             "3K"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "E",
-          "period": 1,
-          "classes": [
-            "3K"
-          ],
-          "subject": "CTL(L) 309A(下)"
+          "subject": "CTL(T) 207(上)／CTL(L) 309A(下)"
         },
         {
           "day": "E",
@@ -1567,15 +1431,7 @@
           "classes": [
             "3K"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "E",
-          "period": 2,
-          "classes": [
-            "3K"
-          ],
-          "subject": "CTL(L) 309A(下)"
+          "subject": "CTL(T) 207(上)／CTL(L) 309A(下)"
         },
         {
           "day": "E",
@@ -1583,15 +1439,7 @@
           "classes": [
             "3W"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "E",
-          "period": 3,
-          "classes": [
-            "3W"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 207(上)／CTL(AI) 207(下)"
         },
         {
           "day": "E",
@@ -1599,15 +1447,7 @@
           "classes": [
             "3W"
           ],
-          "subject": "CTL(T) 207(上)"
-        },
-        {
-          "day": "E",
-          "period": 4,
-          "classes": [
-            "3W"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 207(上)／CTL(AI) 207(下)"
         },
         {
           "day": "E",
@@ -1623,15 +1463,7 @@
           "classes": [
             "1W"
           ],
-          "subject": "CTL(AI) 207(上)"
-        },
-        {
-          "day": "F",
-          "period": 1,
-          "classes": [
-            "1W"
-          ],
-          "subject": "CTL(T) 207(下)"
+          "subject": "CTL(AI) 207(上)／CTL(T) 207(下)"
         },
         {
           "day": "F",
@@ -1639,15 +1471,7 @@
           "classes": [
             "1W"
           ],
-          "subject": "CTL(AI) 207(上)"
-        },
-        {
-          "day": "F",
-          "period": 2,
-          "classes": [
-            "1W"
-          ],
-          "subject": "CTL(T) 207(下)"
+          "subject": "CTL(AI) 207(上)／CTL(T) 207(下)"
         },
         {
           "day": "F",
@@ -1655,15 +1479,7 @@
           "classes": [
             "1T"
           ],
-          "subject": "CTL(L) 309A(上)"
-        },
-        {
-          "day": "F",
-          "period": 3,
-          "classes": [
-            "1T"
-          ],
-          "subject": "CTL(T) 207(下)"
+          "subject": "CTL(L) 309A(上)／CTL(T) 207(下)"
         },
         {
           "day": "F",
@@ -1671,15 +1487,7 @@
           "classes": [
             "1T"
           ],
-          "subject": "CTL(L) 309A(上)"
-        },
-        {
-          "day": "F",
-          "period": 4,
-          "classes": [
-            "1T"
-          ],
-          "subject": "CTL(T) 207(下)"
+          "subject": "CTL(L) 309A(上)／CTL(T) 207(下)"
         },
         {
           "day": "F",
@@ -3720,15 +3528,7 @@
           "classes": [
             "3K"
           ],
-          "subject": "CTL(T) 309B(上)"
-        },
-        {
-          "day": "E",
-          "period": 1,
-          "classes": [
-            "3K"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 309B(上)／CTL(AI) 207(下)"
         },
         {
           "day": "E",
@@ -3736,15 +3536,7 @@
           "classes": [
             "3K"
           ],
-          "subject": "CTL(T) 309B(上)"
-        },
-        {
-          "day": "E",
-          "period": 2,
-          "classes": [
-            "3K"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 309B(上)／CTL(AI) 207(下)"
         },
         {
           "day": "E",
@@ -3868,15 +3660,7 @@
           "classes": [
             "2K"
           ],
-          "subject": "CTL(T) 513(上)"
-        },
-        {
-          "day": "B",
-          "period": 4,
-          "classes": [
-            "2K"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 513(上)／CTL(AI) 207(下)"
         },
         {
           "day": "B",
@@ -3884,15 +3668,7 @@
           "classes": [
             "2K"
           ],
-          "subject": "CTL(T) 513(上)"
-        },
-        {
-          "day": "B",
-          "period": 5,
-          "classes": [
-            "2K"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 513(上)／CTL(AI) 207(下)"
         },
         {
           "day": "B",
@@ -3900,15 +3676,7 @@
           "classes": [
             "2P"
           ],
-          "subject": "CTL(T) 513(上)"
-        },
-        {
-          "day": "B",
-          "period": 6,
-          "classes": [
-            "2P"
-          ],
-          "subject": "CTL(L) 513(下)"
+          "subject": "CTL(T) 513(上)／CTL(L) 513(下)"
         },
         {
           "day": "B",
@@ -3916,15 +3684,7 @@
           "classes": [
             "2P"
           ],
-          "subject": "CTL(T) 513(上)"
-        },
-        {
-          "day": "B",
-          "period": 7,
-          "classes": [
-            "2P"
-          ],
-          "subject": "CTL(L) 513(下)"
+          "subject": "CTL(T) 513(上)／CTL(L) 513(下)"
         },
         {
           "day": "C",
@@ -3950,15 +3710,7 @@
           "classes": [
             "2W"
           ],
-          "subject": "CTL(T) 513(上)"
-        },
-        {
-          "day": "C",
-          "period": 4,
-          "classes": [
-            "2W"
-          ],
-          "subject": "CTL(L) 513(下)"
+          "subject": "CTL(T) 513(上)／CTL(L) 513(下)"
         },
         {
           "day": "C",
@@ -3966,15 +3718,7 @@
           "classes": [
             "2W"
           ],
-          "subject": "CTL(T) 513(上)"
-        },
-        {
-          "day": "C",
-          "period": 5,
-          "classes": [
-            "2W"
-          ],
-          "subject": "CTL(L) 513(下)"
+          "subject": "CTL(T) 513(上)／CTL(L) 513(下)"
         },
         {
           "day": "C",
@@ -9202,15 +8946,7 @@
           "classes": [
             "1K"
           ],
-          "subject": "CTL(AI) 207(上)"
-        },
-        {
-          "day": "A",
-          "period": 1,
-          "classes": [
-            "1K"
-          ],
-          "subject": "CTL(T) 309B(下)"
+          "subject": "CTL(AI) 207(上)／CTL(T) 309B(下)"
         },
         {
           "day": "A",
@@ -9218,15 +8954,7 @@
           "classes": [
             "1K"
           ],
-          "subject": "CTL(AI) 207(上)"
-        },
-        {
-          "day": "A",
-          "period": 2,
-          "classes": [
-            "1K"
-          ],
-          "subject": "CTL(T) 309B(下)"
+          "subject": "CTL(AI) 207(上)／CTL(T) 309B(下)"
         },
         {
           "day": "A",
@@ -9299,15 +9027,7 @@
           "classes": [
             "1P"
           ],
-          "subject": "CTL(L) 309A(上)"
-        },
-        {
-          "day": "C",
-          "period": 1,
-          "classes": [
-            "1P"
-          ],
-          "subject": "CTL(T) 309B(下)"
+          "subject": "CTL(L) 309A(上)／CTL(T) 309B(下)"
         },
         {
           "day": "C",
@@ -9315,15 +9035,7 @@
           "classes": [
             "1P"
           ],
-          "subject": "CTL(L) 309A(上)"
-        },
-        {
-          "day": "C",
-          "period": 2,
-          "classes": [
-            "1P"
-          ],
-          "subject": "CTL(T) 309B(下)"
+          "subject": "CTL(L) 309A(上)／CTL(T) 309B(下)"
         },
         {
           "day": "C",
@@ -9353,15 +9065,7 @@
           "classes": [
             "2T"
           ],
-          "subject": "CTL(T) 513(上)"
-        },
-        {
-          "day": "C",
-          "period": 6,
-          "classes": [
-            "2T"
-          ],
-          "subject": "CTL(L) 513(下)"
+          "subject": "CTL(T) 513(上)／CTL(L) 513(下)"
         },
         {
           "day": "C",
@@ -9369,15 +9073,7 @@
           "classes": [
             "2T"
           ],
-          "subject": "CTL(T) 513(上)"
-        },
-        {
-          "day": "C",
-          "period": 7,
-          "classes": [
-            "2T"
-          ],
-          "subject": "CTL(L) 513(下)"
+          "subject": "CTL(T) 513(上)／CTL(L) 513(下)"
         },
         {
           "day": "D",
@@ -9404,15 +9100,7 @@
           "classes": [
             "3P"
           ],
-          "subject": "CTL(T) 309B(上)"
-        },
-        {
-          "day": "D",
-          "period": 4,
-          "classes": [
-            "3P"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 309B(上)／CTL(AI) 207(下)"
         },
         {
           "day": "D",
@@ -9420,15 +9108,7 @@
           "classes": [
             "3P"
           ],
-          "subject": "CTL(T) 309B(上)"
-        },
-        {
-          "day": "D",
-          "period": 5,
-          "classes": [
-            "3P"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 309B(上)／CTL(AI) 207(下)"
         },
         {
           "day": "D",
@@ -9436,15 +9116,7 @@
           "classes": [
             "3T"
           ],
-          "subject": "CTL(T) 309B(上)"
-        },
-        {
-          "day": "D",
-          "period": 6,
-          "classes": [
-            "3T"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 309B(上)／CTL(AI) 207(下)"
         },
         {
           "day": "D",
@@ -9452,15 +9124,7 @@
           "classes": [
             "3T"
           ],
-          "subject": "CTL(T) 309B(上)"
-        },
-        {
-          "day": "D",
-          "period": 7,
-          "classes": [
-            "3T"
-          ],
-          "subject": "CTL(AI) 207(下)"
+          "subject": "CTL(T) 309B(上)／CTL(AI) 207(下)"
         },
         {
           "day": "E",
@@ -9468,15 +9132,7 @@
           "classes": [
             "3W"
           ],
-          "subject": "CTL(T) 309B(上)"
-        },
-        {
-          "day": "E",
-          "period": 3,
-          "classes": [
-            "3W"
-          ],
-          "subject": "CTL(L) 309A(下)"
+          "subject": "CTL(T) 309B(上)／CTL(L) 309A(下)"
         },
         {
           "day": "E",
@@ -9484,15 +9140,7 @@
           "classes": [
             "3W"
           ],
-          "subject": "CTL(T) 309B(上)"
-        },
-        {
-          "day": "E",
-          "period": 4,
-          "classes": [
-            "3W"
-          ],
-          "subject": "CTL(L) 309A(下)"
+          "subject": "CTL(T) 309B(上)／CTL(L) 309A(下)"
         },
         {
           "day": "E",
@@ -9508,15 +9156,7 @@
           "classes": [
             "1W"
           ],
-          "subject": "CTL(L) 309A(上)"
-        },
-        {
-          "day": "F",
-          "period": 1,
-          "classes": [
-            "1W"
-          ],
-          "subject": "CTL(T) 309B(下)"
+          "subject": "CTL(L) 309A(上)／CTL(T) 309B(下)"
         },
         {
           "day": "F",
@@ -9524,15 +9164,7 @@
           "classes": [
             "1W"
           ],
-          "subject": "CTL(L) 309A(上)"
-        },
-        {
-          "day": "F",
-          "period": 2,
-          "classes": [
-            "1W"
-          ],
-          "subject": "CTL(T) 309B(下)"
+          "subject": "CTL(L) 309A(上)／CTL(T) 309B(下)"
         },
         {
           "day": "F",
@@ -9540,15 +9172,7 @@
           "classes": [
             "1T"
           ],
-          "subject": "CTL(AI) 207(上)"
-        },
-        {
-          "day": "F",
-          "period": 3,
-          "classes": [
-            "1T"
-          ],
-          "subject": "CTL(T) 309B(下)"
+          "subject": "CTL(AI) 207(上)／CTL(T) 309B(下)"
         },
         {
           "day": "F",
@@ -9556,15 +9180,7 @@
           "classes": [
             "1T"
           ],
-          "subject": "CTL(AI) 207(上)"
-        },
-        {
-          "day": "F",
-          "period": 4,
-          "classes": [
-            "1T"
-          ],
-          "subject": "CTL(T) 309B(下)"
+          "subject": "CTL(AI) 207(上)／CTL(T) 309B(下)"
         }
       ]
     },

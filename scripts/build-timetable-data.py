@@ -41,7 +41,7 @@ def convert(workbook_path: Path, academic_year: str) -> dict:
     for sheet in workbook.worksheets:
         code = sheet.title.strip()
         full_name = str(sheet["A3"].value or "").strip()
-        lessons = []
+        slot_groups: dict[tuple[str, int], dict[str, set[str] | list[str]]] = {}
 
         for column, day in enumerate(DAYS, start=2):
             for period, row in enumerate(PERIOD_ROWS, start=1):
@@ -57,15 +57,21 @@ def convert(workbook_path: Path, academic_year: str) -> dict:
                     if not classes:
                         continue
 
-                    classes.sort(key=class_sort_key)
                     all_classes.update(classes)
-                    subject = " ".join(CLASS_PATTERN.sub(" ", raw).split()).strip(" ,;/")
-                    lessons.append({
-                        "day": day,
-                        "period": period,
-                        "classes": classes,
-                        "subject": subject or "（科目／地點未列明）",
-                    })
+                    subject = " ".join(CLASS_PATTERN.sub(" ", raw).split()).strip(" ,;/") or "（科目／地點未列明）"
+                    group = slot_groups.setdefault((day, period), {"classes": set(), "subjects": []})
+                    group["classes"].update(classes)
+                    if subject not in group["subjects"]:
+                        group["subjects"].append(subject)
+
+        lessons = []
+        for (day, period), group in sorted(slot_groups.items(), key=lambda item: (DAYS.index(item[0][0]), item[0][1])):
+            lessons.append({
+                "day": day,
+                "period": period,
+                "classes": sorted(group["classes"], key=class_sort_key),
+                "subject": "／".join(group["subjects"]),
+            })
 
         teachers.append({
             "code": code,
