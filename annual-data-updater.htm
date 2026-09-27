@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="自行整理 QMSS 年度教師課表及校曆資料。">
+  <title>年度資料更新｜QMSS Tools</title>
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" onerror="window.sheetJsFailed = true"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --canvas: #f6f4ee;
+      --paper: #fffefa;
+      --ink: #1b3438;
+      --muted: #687a78;
+      --line: #d9dfd8;
+      --green: #21645b;
+      --green-dark: #174d46;
+      --green-soft: #e8f1ec;
+      --gold: #bd8a42;
+      --red: #a94038;
+      --red-soft: #fbefec;
+      --shadow: 0 18px 48px rgba(27, 52, 56, .08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: radial-gradient(ellipse at 85% 0, #e5efe9 0, transparent 34rem), var(--canvas);
+      color: var(--ink);
+      font: 16px/1.65 "Noto Sans HK", "PingFang HK", "Microsoft JhengHei", system-ui, sans-serif;
+    }
+    button, input { font: inherit; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 3px solid #d2a65d;
+      outline-offset: 3px;
+    }
+    .wrap { width: min(900px, calc(100% - 36px)); margin: 0 auto; }
+    .topbar {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(27, 52, 56, .1);
+    }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand-mark {
+      display: grid; width: 37px; height: 37px; place-items: center;
+      border-radius: 12px; background: var(--ink); color: white; font-weight: 800;
+    }
+    .brand-name { font-size: 15px; font-weight: 800; }
+    .top-label { color: var(--muted); font-size: 14px; }
+    main { padding: 38px 0 60px; }
+    .eyebrow { margin: 0 0 8px; color: var(--green); font-size: 13px; font-weight: 800; letter-spacing: .1em; }
+    h1 { margin: 0; font-size: clamp(29px, 5vw, 40px); letter-spacing: -.045em; line-height: 1.2; }
+    .intro { max-width: 720px; margin: 13px 0 22px; color: var(--muted); }
+    .privacy-note {
+      display: flex; gap: 11px; align-items: flex-start;
+      margin: 0 0 22px; padding: 14px 16px;
+      border: 1px solid #d5e3d9; border-radius: 15px; background: rgba(232, 241, 236, .82);
+      color: #345b52;
+    }
+    .privacy-mark {
+      flex: 0 0 auto; display: grid; place-items: center; width: 24px; height: 24px;
+      border-radius: 8px; background: #d6e9de; color: var(--green-dark); font-size: 14px; font-weight: 900;
+    }
+    .card {
+      margin-top: 16px; padding: clamp(18px, 3vw, 27px);
+      border: 1px solid rgba(27, 52, 56, .1); border-radius: 21px;
+      background: rgba(255, 254, 250, .94); box-shadow: var(--shadow);
+    }
+    .card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+    .card-head h2 { margin: 0; font-size: 20px; letter-spacing: -.025em; }
+    .step { flex: 0 0 auto; color: #73827e; font-size: 13px; font-weight: 750; letter-spacing: .08em; }
+    .year-grid, .upload-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .field-label { display: block; margin: 0 0 7px; color: #405b59; font-size: 14px; font-weight: 750; }
+    .control {
+      width: 100%; min-height: 47px; padding: 10px 12px;
+      border: 1px solid #cbd5d0; border-radius: 11px; background: white; color: var(--ink);
+    }
+    .upload-box {
+      display: flex; min-height: 120px; flex-direction: column; justify-content: center; gap: 6px;
+      padding: 16px; border: 1px dashed #aabbb2; border-radius: 14px; background: #f9fbf8;
+      cursor: pointer; transition: border-color .16s ease, background .16s ease;
+    }
+    .upload-box:hover { border-color: var(--green); background: #f1f7f2; }
+    .upload-box input { width: 100%; margin-top: 7px; color: #4e6965; font-size: 14px; }
+    .upload-box strong { color: var(--ink); font-size: 15px; }
+    .upload-box span { color: var(--muted); font-size: 13px; }
+    .hint { margin: 7px 0 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .format-note {
+      margin-top: 17px; padding-top: 15px; border-top: 1px solid #e6e9e4;
+      color: #657672; font-size: 13px;
+    }
+    .format-note p { margin: 5px 0; }
+    .actions { display: flex; align-items: center; gap: 14px; margin-top: 21px; }
+    .primary, .download {
+      min-height: 46px; padding: 10px 17px; border: 0; border-radius: 12px;
+      background: var(--green-dark); color: white; font-weight: 800; cursor: pointer;
+      transition: transform .12s ease, background .12s ease, opacity .12s ease;
+    }
+    .primary:hover:not(:disabled), .download:hover:not(:disabled) { background: #103f39; transform: translateY(-1px); }
+    .primary:disabled, .download:disabled { opacity: .48; cursor: not-allowed; }
+    .status { margin: 0; color: var(--muted); font-size: 14px; }
+    .status[data-state="ready"] { color: #28694d; font-weight: 750; }
+    .status[data-state="error"] { color: var(--red); font-weight: 750; }
+    .status[data-state="warning"] { color: #8b631f; }
+    .results { margin-top: 20px; padding-top: 18px; border-top: 1px solid #e2e8e1; }
+    .results h3 { margin: 0 0 12px; font-size: 16px; }
+    .result-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .result-tile { min-width: 0; padding: 14px; border: 1px solid #dbe4dc; border-radius: 13px; background: #f7faf6; }
+    .result-tile strong { display: block; margin-bottom: 4px; font-size: 14px; }
+    .result-tile p { margin: 0; color: #526a64; font-size: 14px; }
+    .day-counts { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 9px; }
+    .day-counts span { padding: 3px 8px; border-radius: 999px; background: #e8f1ec; color: #315d54; font-size: 13px; font-weight: 700; }
+    .download-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+    .download { background: white; border: 1px solid #bdd0c6; color: var(--green-dark); }
+    .publish-steps { margin: 15px 0 0; padding-left: 22px; color: #536965; font-size: 14px; }
+    .publish-steps li { padding: 3px 0; }
+    .publish-steps a { color: var(--green-dark); font-weight: 750; }
+    .warning-list { margin: 12px 0 0; padding: 11px 14px 11px 32px; border-radius: 12px; background: #fff7e9; color: #795b28; font-size: 13px; }
+    .footer { display: flex; justify-content: space-between; gap: 16px; margin-top: 19px; color: var(--muted); font-size: 13px; }
+    .footer a { text-decoration: none; }
+    .footer a:hover { color: var(--green-dark); text-decoration: underline; }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 26px, 900px); }
+      main { padding-top: 27px; }
+      .year-grid, .upload-grid, .result-grid { grid-template-columns: 1fr; }
+      .actions { align-items: flex-start; flex-direction: column; }
+      .footer { flex-direction: column; gap: 5px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar wrap">
+    <a class="brand" href="./index.html" aria-label="返回 QMSS Tools 首頁">
+      <span class="brand-mark" aria-hidden="true">Q</span>
+      <span class="brand-name">QMSS Tools</span>
+    </a>
+    <span class="top-label">年度資料整理</span>
+  </header>
+  <main class="wrap">
+    <p class="eyebrow">ANNUAL UPDATE</p>
+    <h1>整理新學年資料</h1>
+    <p class="intro">上載年度教師課表和 QMSS Calendar 校曆檔，工具會按現有格式整理成調堂小幫手使用的資料。</p>
+    <div class="privacy-note">
+      <span class="privacy-mark" aria-hidden="true">✓</span>
+      <div><strong>原始檔只在此瀏覽器處理。</strong>工具不會把 Excel 或校曆檔上傳到 QMSS 網站。完成後只下載整理好的 JSON 資料檔；不要把原始檔放到公開網站。</div>
+    </div>
+
+    <section class="card" aria-labelledby="source-title">
+      <div class="card-head">
+        <h2 id="source-title">選擇本年度資料</h2>
+        <span class="step">STEP 01</span>
+      </div>
+      <div class="year-grid">
+        <div>
+          <label class="field-label" for="academic-year">學年名稱</label>
+          <input class="control" id="academic-year" type="text" value="2026–2027" autocomplete="off">
+        </div>
+        <div>
+          <label class="field-label" for="date-start">校曆開始日期</label>
+          <input class="control" id="date-start" type="date" value="2026-08-01">
+        </div>
+        <div>
+          <label class="field-label" for="date-end">校曆結束日期</label>
+          <input class="control" id="date-end" type="date" value="2027-07-31">
+        </div>
+      </div>
+      <div class="upload-grid" style="margin-top:18px">
+        <label class="upload-box" for="timetable-file">
+          <strong>年度教師課表</strong>
+          <span>選擇學校提供的 .xlsx 檔</span>
+          <input id="timetable-file" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+        </label>
+        <label class="upload-box" for="calendar-file">
+          <strong>QMSS Calendar 校曆</strong>
+          <span>選擇 QMSS Calendar 的 .ics 檔</span>
+          <input id="calendar-file" type="file" accept=".ics,text/calendar">
+        </label>
+      </div>
+      <div class="format-note">
+        <p><strong>課表格式：</strong>沿用目前年度課表版式，每張工作表一位老師，Day A–F 分列，課節在固定欄位。</p>
+        <p><strong>校曆檔：</strong>Google Calendar 匯出如為 ZIP，先解壓縮，再選取 QMSS Calendar.ics。若 Day 活動設定為重複事件，請先提供已展開成實際日期的 .ics。</p>
+      </div>
+      <div class="actions">
+        <button class="primary" id="process-button" type="button" disabled>檢查並整理資料</button>
+        <p class="status" id="status" role="status" aria-live="polite" data-state="idle">請先選擇 Excel 和 .ics 檔案。</p>
+      </div>
+      <ul class="warning-list" id="warnings" hidden></ul>
+      <div class="results" id="results" hidden aria-live="polite">
+        <h3>檢查結果</h3>
+        <div class="result-grid">
+          <div class="result-tile">
+            <strong>教師課表</strong>
+            <p id="timetable-result"></p>
+          </div>
+          <div class="result-tile">
+            <strong>QMSS Calendar</strong>
+            <p id="calendar-result"></p>
+            <div class="day-counts" id="day-counts"></div>
+          </div>
+        </div>
+        <div class="download-row">
+          <button class="download" id="download-timetable" type="button">下載 timetable.json</button>
+          <button class="download" id="download-calendar" type="button">下載 school-days.json</button>
+        </div>
+        <ol class="publish-steps">
+          <li>下載以上兩個資料檔。</li>
+          <li>到 <a href="https://github.com/cheukwing129/QMSS-tools/tree/main/data" target="_blank" rel="noreferrer">QMSS-tools 的 data 資料夾</a>，以這兩個檔案覆蓋同名 JSON。</li>
+          <li>提交更新後，網站沿用既有部署流程更新。其他使用者毋須上載資料。</li>
+        </ol>
+      </div>
+    </section>
+    <footer class="footer">
+      <span>校曆未列出的日期會保留手動選擇 Day 的方式。</span>
+      <a href="./adjustment-timetable.htm">返回調堂小幫手</a>
+    </footer>
+  </main>
+  <script>
+    (function () {
+      'use strict';
+      var fileTimetable = document.getElementById('timetable-file');
+      var fileCalendar = document.getElementById('calendar-file');
+      var processButton = document.getElementById('process-button');
+      var statusText = document.getElementById('status');
+      var results = document.getElementById('results');
+      var warningsList = document.getElementById('warnings');
+      var prepared = null;
+      var DAY_NAMES = ['A', 'B', 'C', 'D', 'E', 'F'];
+      var PERIOD_ROWS = [7, 8, 10, 11, 12, 14, 15, 16];
+      var CLASS_PATTERN = /(?<![A-Za-z0-9])([1-6][KPTW])(?=$|[\s,;/])/g;
+
+      function hkToday() {
+        var parts = new Intl.DateTimeFormat('en-CA', {
+          timeZone: 'Asia/Hong_Kong', year: 'numeric', month: '2-digit', day: '2-digit'
+        }).formatToParts(new Date());
+        var values = {};
+        parts.forEach(function (part) { values[part.type] = part.value; });
+        return values.year + '-' + values.month + '-' + values.day;
+      }
+      function setStatus(message, state) {
+        statusText.textContent = message;
+        statusText.dataset.state = state || 'idle';
+      }
+      function clearResult() {
+        prepared = null;
+        results.hidden = true;
+        warningsList.hidden = true;
+        warningsList.replaceChildren();
+        document.getElementById('download-timetable').disabled = true;
+        document.getElementById('download-calendar').disabled = true;
+      }
+      function refreshButton() {
+        processButton.disabled = !fileTimetable.files.length || !fileCalendar.files.length;
+      }
+      [fileTimetable, fileCalendar].forEach(function (input) {
+        input.addEventListener('change', function () {
+          clearResult();
+          refreshButton();
+          if (fileTimetable.files.length && fileCalendar.files.length) setStatus('資料已選好，可以開始檢查。', 'idle');
+          else setStatus('請選擇年度教師課表和 QMSS Calendar .ics 檔。', 'idle');
+        });
+      });
+
+      function compareText(a, b) { return a < b ? -1 : a > b ? 1 : 0; }
+      function classSortKey(code) {
+        return [Number(code.charAt(0)), 'KPTW'.indexOf(code.charAt(1))];
+      }
+      function compareClass(a, b) {
+        var ak = classSortKey(a), bk = classSortKey(b);
+        return ak[0] - bk[0] || ak[1] - bk[1];
+      }
+      function normalizeRaw(value) {
+        return String(value == null ? '' : value).replace(/\r/g, '\n').split('\n')
+          .map(function (line) { return line.replace(/\s+/g, ' ').trim(); })
+          .filter(Boolean);
+      }
+      function extractClasses(raw) {
+        return Array.from(raw.matchAll(new RegExp(CLASS_PATTERN.source, 'g')), function (match) { return match[1]; });
+      }
+      function stripClasses(raw) {
+        return raw.replace(new RegExp(CLASS_PATTERN.source, 'g'), ' ')
+          .replace(/\s+/g, ' ').trim().replace(/^[,;/]+|[,;/]+$/g, '') || '（科目／地點未列明）';
+      }
+      function displayName(fullName, code) {
+        var chineseName = fullName;
+        if (fullName.indexOf(',') !== -1) {
+          chineseName = fullName.split(',', 2)[1].replace(/\s*\([^)]*\)\s*$/, '').trim();
+        }
+        if (!/[\u3400-\u9fff]/.test(chineseName)) chineseName = fullName;
+        return chineseName + '（' + code + '）';
+      }
+      function sheetCell(sheet, column, row) {
+        var address = String.fromCharCode(64 + column) + String(row);
+        return sheet[address] ? sheet[address].v : null;
+      }
+      async function parseTimetable(file, academicYear) {
+        if (!window.XLSX) throw new Error('Excel 解析元件未能載入。請確認網絡連線後重新整理頁面。');
+        var workbook = XLSX.read(await file.arrayBuffer(), { cellDates: false });
+        if (!workbook.SheetNames || workbook.SheetNames.length < 2) throw new Error('這個 Excel 看起來不是完整的年度教師課表。');
+        var teachers = [];
+        var allClasses = new Set();
+        var codes = new Set();
+        workbook.SheetNames.forEach(function (sheetName) {
+          var code = String(sheetName).trim();
+          var sheet = workbook.Sheets[sheetName];
+          var fullName = String(sheetCell(sheet, 1, 3) || '').trim();
+          if (!code || !fullName) throw new Error('工作表「' + sheetName + '」缺少老師代號或 A3 姓名，請確認課表版式。');
+          if (codes.has(code)) throw new Error('課表中有重複老師代號：' + code);
+          codes.add(code);
+          var slotGroups = new Map();
+          DAY_NAMES.forEach(function (day, dayIndex) {
+            PERIOD_ROWS.forEach(function (row, periodIndex) {
+              var column = dayIndex + 2;
+              normalizeRaw(sheetCell(sheet, column, row)).forEach(function (raw) {
+                var foundClasses = Array.from(new Set(extractClasses(raw)));
+                if (!foundClasses.length) return;
+                foundClasses.forEach(function (classCode) { allClasses.add(classCode); });
+                var subject = stripClasses(raw);
+                var key = day + '|' + (periodIndex + 1);
+                if (!slotGroups.has(key)) slotGroups.set(key, { day: day, period: periodIndex + 1, classes: new Set(), subjects: [] });
+                var group = slotGroups.get(key);
+                foundClasses.forEach(function (classCode) { group.classes.add(classCode); });
+                if (group.subjects.indexOf(subject) === -1) group.subjects.push(subject);
+              });
+            });
+          });
+          var lessons = Array.from(slotGroups.values()).map(function (group) {
+            return {
+              day: group.day,
+              period: group.period,
+              classes: Array.from(group.classes).sort(compareClass),
+              subject: group.subjects.join('／')
+            };
+          }).sort(function (a, b) { return DAY_NAMES.indexOf(a.day) - DAY_NAMES.indexOf(b.day) || a.period - b.period; });
+          teachers.push({ code: code, name: fullName, displayName: displayName(fullName, code), lessons: lessons });
+        });
+        var classes = Array.from(allClasses).sort(compareClass);
+        var lessonCount = teachers.reduce(function (total, teacher) { return total + teacher.lessons.length; }, 0);
+        if (teachers.length < 10 || teachers.length > 200 || classes.length < 10 || lessonCount < 100) {
+          throw new Error('提取出的課表資料量異常（' + teachers.length + ' 位老師、' + classes.length + ' 個班別、' + lessonCount + ' 節），請確認上載的是完整年度課表。');
+        }
+        teachers.sort(function (a, b) { return compareText(a.displayName, b.displayName) || compareText(a.code, b.code); });
+        return {
+          data: {
+            academicYear: academicYear,
+            sourceFile: file.name,
+            days: DAY_NAMES,
+            periods: [1, 2, 3, 4, 5, 6, 7, 8],
+            classes: classes,
+            teachers: teachers
+          },
+          teacherCount: teachers.length,
+          classCount: classes.length,
+          lessonCount: lessonCount
+        };
+      }
+
+      function unescapeICSText(value) {
+        return value.replace(/\\n/gi, '\n').replace(/\\,/g, ',').replace(/\\;/g, ';').replace(/\\\\/g, '\\');
+      }
+      function icsDate(value) {
+        var match = String(value || '').trim().match(/^(\d{4})-?(\d{2})-?(\d{2})/);
+        return match ? match[1] + '-' + match[2] + '-' + match[3] : '';
+      }
+      function parseCalendarText(text, startDate, endDate, academicYear) {
+        var unfolded = text.replace(/^\uFEFF/, '').replace(/\r\n[ \t]/g, '').replace(/\n[ \t]/g, '');
+        var lines = unfolded.split(/\r\n|\n|\r/);
+        var calendarName = '';
+        var current = null;
+        var dayEvents = [];
+        lines.forEach(function (line) {
+          if (!current && /^X-WR-CALNAME(?:;[^:]*)?:/i.test(line)) {
+            calendarName = unescapeICSText(line.slice(line.indexOf(':') + 1));
+          }
+          if (line === 'BEGIN:VEVENT') { current = {}; return; }
+          if (line === 'END:VEVENT' && current) {
+            if (current.summary && /\bDAY\s*([A-F])\b/i.test(current.summary)) dayEvents.push(current);
+            current = null;
+            return;
+          }
+          if (!current) return;
+          var colon = line.indexOf(':');
+          if (colon < 1) return;
+          var left = line.slice(0, colon);
+          var value = line.slice(colon + 1);
+          var parts = left.split(';');
+          var key = parts[0].toUpperCase();
+          if (key === 'SUMMARY') current.summary = unescapeICSText(value);
+          else if (key === 'DTSTART') current.date = icsDate(value);
+          else if (key === 'RRULE' || key === 'RDATE') current.recurrence = value;
+          else if (key === 'STATUS') current.status = value.toUpperCase();
+        });
+        if (calendarName && !/QMSS\s*Calendar/i.test(calendarName)) {
+          throw new Error('上載的日曆名稱是「' + calendarName + '」，請選取 QMSS Calendar.ics。');
+        }
+        var recurring = dayEvents.find(function (event) { return event.status !== 'CANCELLED' && event.recurrence; });
+        if (recurring) throw new Error('校曆含有重複的 Day 活動。請先把 Day 活動展開為每個實際日期，再匯出 .ics。');
+        var dayMap = {};
+        var conflicts = [];
+        var skipped = 0;
+        dayEvents.forEach(function (event) {
+          if (event.status === 'CANCELLED') return;
+          var match = event.summary.match(/\bDAY\s*([A-F])\b/i);
+          if (!event.date || !match) { skipped += 1; return; }
+          if (event.date < startDate || event.date > endDate) return;
+          var day = match[1].toUpperCase();
+          if (dayMap[event.date] && dayMap[event.date] !== day) conflicts.push(event.date);
+          dayMap[event.date] = day;
+        });
+        if (conflicts.length) throw new Error('同一日期有不同的 Day 標記：' + Array.from(new Set(conflicts)).slice(0, 8).join('、') + '。請先修正校曆。');
+        var dates = Object.keys(dayMap).sort();
+        if (dates.length < 30) throw new Error('只找到 ' + dates.length + ' 個 Day 日期。請確認選取的是 QMSS Calendar.ics 和正確的校曆日期範圍。');
+        var counts = DAY_NAMES.reduce(function (result, day) { result[day] = 0; return result; }, {});
+        dates.forEach(function (date) { counts[dayMap[date]] += 1; });
+        var dayData = {};
+        dates.forEach(function (date) { dayData[date] = dayMap[date]; });
+        return {
+          data: {
+            calendarName: 'QMSS Calendar',
+            academicYear: academicYear,
+            lastSynced: hkToday(),
+            days: dayData
+          },
+          count: dates.length,
+          firstDate: dates[0],
+          lastDate: dates[dates.length - 1],
+          counts: counts,
+          warnings: (dates.length < 100 ? ['日別日期少於 100 日，請確認匯出範圍包含整個學年。'] : [])
+            .concat(DAY_NAMES.filter(function (day) { return counts[day] === 0; }).length ? ['校曆中未找到所有 Day A–F，請核對日曆內容。'] : [])
+            .concat(skipped ? ['有 ' + skipped + ' 個 Day 活動缺少日期，已略過。'] : [])
+        };
+      }
+
+      function downloadJSON(fileName, value) {
+        var blob = new Blob([JSON.stringify(value, null, 2) + '\n'], { type: 'application/json;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('a');
+        link.href = url;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        window.setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+      }
+      function showResults(timetable, calendar) {
+        document.getElementById('timetable-result').textContent =
+          timetable.teacherCount + ' 位老師 · ' + timetable.classCount + ' 個班別 · ' + timetable.lessonCount + ' 節課堂';
+        document.getElementById('calendar-result').textContent =
+          calendar.count + ' 個日期 · ' + calendar.firstDate + ' 至 ' + calendar.lastDate;
+        var chips = document.getElementById('day-counts');
+        chips.replaceChildren();
+        DAY_NAMES.forEach(function (day) {
+          var chip = document.createElement('span');
+          chip.textContent = 'Day ' + day + ' · ' + calendar.counts[day];
+          chips.appendChild(chip);
+        });
+        results.hidden = false;
+        document.getElementById('download-timetable').disabled = false;
+        document.getElementById('download-calendar').disabled = false;
+        var messages = calendar.warnings.slice();
+        warningsList.replaceChildren();
+        messages.forEach(function (message) {
+          var li = document.createElement('li');
+          li.textContent = message;
+          warningsList.appendChild(li);
+        });
+        warningsList.hidden = messages.length === 0;
+        setStatus(messages.length ? '資料已整理，請先核對提醒，再決定是否下載。' : '資料檢查完成，可以下載兩個 JSON 檔。', messages.length ? 'warning' : 'ready');
+      }
+
+      processButton.addEventListener('click', async function () {
+        clearResult();
+        var academicYear = document.getElementById('academic-year').value.trim();
+        var startDate = document.getElementById('date-start').value;
+        var endDate = document.getElementById('date-end').value;
+        if (!academicYear || !startDate || !endDate || startDate > endDate) {
+          setStatus('請填寫學年名稱，並確認校曆開始日期早於結束日期。', 'error');
+          return;
+        }
+        processButton.disabled = true;
+        setStatus('正在讀取課表和校曆……', 'idle');
+        try {
+          var timetable = await parseTimetable(fileTimetable.files[0], academicYear);
+          var calendarText = await fileCalendar.files[0].text();
+          var calendar = parseCalendarText(calendarText, startDate, endDate, academicYear);
+          prepared = { timetable: timetable.data, calendar: calendar.data };
+          showResults(timetable, calendar);
+        } catch (error) {
+          setStatus(error && error.message ? error.message : '資料無法讀取，請檢查檔案格式。', 'error');
+        } finally {
+          processButton.disabled = false;
+        }
+      });
+      document.getElementById('download-timetable').addEventListener('click', function () {
+        if (prepared) downloadJSON('timetable.json', prepared.timetable);
+      });
+      document.getElementById('download-calendar').addEventListener('click', function () {
+        if (prepared) downloadJSON('school-days.json', prepared.calendar);
+      });
+      if (window.sheetJsFailed) setStatus('Excel 解析元件未能載入。請確認網絡連線後重新整理頁面。', 'error');
+    }());
+  </script>
+</body>
+</html>
