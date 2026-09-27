@@ -182,7 +182,8 @@
         </label>
       </div>
       <div class="format-note">
-        <p><strong>課表格式：</strong>沿用目前年度課表版式，每張工作表一位老師，Day A–F 分列，課節在固定欄位。</p>
+        <p><strong>課表格式：</strong>每張工作表一位老師，Day A–F 分列，沿用目前課表版式。</p>
+        <p><strong>九節制對應：</strong>全日編號為第 1–9 節。Day F 課表第 6 列為第 1 節；其後 8 個固定課節列依序為第 2–9 節。Day A–E 的正式課堂也由第 2 節開始。</p>
         <p><strong>校曆檔：</strong>Google Calendar 匯出如為 ZIP，先解壓縮，再選取 QMSS Calendar.ics。若 Day 活動設定為重複事件，請先提供已展開成實際日期的 .ics。</p>
         <p><strong>匯出權限：</strong>Google Calendar 匯出需要「Make changes and manage sharing」權限；若你只有訂閱／查看權限，請日曆擁有人或管理員匯出 QMSS Calendar.ics 給你。</p>
       </div>
@@ -231,6 +232,7 @@
       var warningsList = document.getElementById('warnings');
       var prepared = null;
       var DAY_NAMES = ['A', 'B', 'C', 'D', 'E', 'F'];
+      var DAY_F_FIRST_PERIOD_ROW = 6;
       var PERIOD_ROWS = [7, 8, 10, 11, 12, 14, 15, 16];
       var CLASS_PATTERN = /(?<![A-Za-z0-9])([1-6][KPTW])(?=$|[\s,;/])/g;
 
@@ -314,15 +316,19 @@
           codes.add(code);
           var slotGroups = new Map();
           DAY_NAMES.forEach(function (day, dayIndex) {
-            PERIOD_ROWS.forEach(function (row, periodIndex) {
-              var column = dayIndex + 2;
-              normalizeRaw(sheetCell(sheet, column, row)).forEach(function (raw) {
+            var column = dayIndex + 2;
+            var daySlots = PERIOD_ROWS.map(function (row, periodIndex) {
+              return { row: row, period: periodIndex + 2 };
+            });
+            if (day === 'F') daySlots.unshift({ row: DAY_F_FIRST_PERIOD_ROW, period: 1 });
+            daySlots.forEach(function (timeSlot) {
+              normalizeRaw(sheetCell(sheet, column, timeSlot.row)).forEach(function (raw) {
                 var foundClasses = Array.from(new Set(extractClasses(raw)));
                 if (!foundClasses.length) return;
                 foundClasses.forEach(function (classCode) { allClasses.add(classCode); });
                 var subject = stripClasses(raw);
-                var key = day + '|' + (periodIndex + 1);
-                if (!slotGroups.has(key)) slotGroups.set(key, { day: day, period: periodIndex + 1, classes: new Set(), subjects: [] });
+                var key = day + '|' + timeSlot.period;
+                if (!slotGroups.has(key)) slotGroups.set(key, { day: day, period: timeSlot.period, classes: new Set(), subjects: [] });
                 var group = slotGroups.get(key);
                 foundClasses.forEach(function (classCode) { group.classes.add(classCode); });
                 if (group.subjects.indexOf(subject) === -1) group.subjects.push(subject);
@@ -350,7 +356,7 @@
             academicYear: academicYear,
             sourceFile: file.name,
             days: DAY_NAMES,
-            periods: [1, 2, 3, 4, 5, 6, 7, 8],
+            periods: [1, 2, 3, 4, 5, 6, 7, 8, 9],
             classes: classes,
             teachers: teachers
           },
