@@ -518,7 +518,7 @@
         previewSection.hidden = true;
       }
       function loadTimetable() {
-        fetch('./data/timetable.json?v=2627-20260927', { cache: 'force-cache' }).then(function (response) {
+        fetch('./data/timetable.json?v=2627-20260927-r2', { cache: 'force-cache' }).then(function (response) {
           if (!response.ok) throw new Error('HTTP ' + response.status);
           return response.json();
         }).then(function (timetable) {
