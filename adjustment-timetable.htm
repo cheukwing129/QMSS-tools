@@ -317,7 +317,7 @@
         </div>
         <div class="cycle-note">
           <span class="note-mark" aria-hidden="true">!</span>
-          <span><strong>Day 會按日期從 QMSS Calendar 自動帶入。</strong>若校曆沒有該日的對照，表格會提示你手動補選 A–F。</span>
+          <span><strong id="calendar-note-title">QMSS Calendar 日期對照尚未載入。</strong><span id="calendar-note-copy">完成日別同步後，Day 會按日期自動帶入；目前可手動補選 A–F。</span></span>
         </div>
       </div>
 
@@ -613,6 +613,8 @@
           document.getElementById('year-pill').textContent = '課表版本 · ' + data.academicYear;
           var calendarDateCount = Object.keys(calendarDays).length;
           var calendarUpdate = calendarMeta.lastSynced ? '（更新至 ' + calendarMeta.lastSynced + '）' : '';
+          document.getElementById('calendar-note-title').textContent = calendarDateCount ? 'QMSS Calendar 日期對照已載入。' : 'QMSS Calendar 日期對照尚未載入。';
+          document.getElementById('calendar-note-copy').textContent = calendarDateCount ? '選日期後自動帶入 Day A–F；若校曆沒有該日，才手動補選。' : '完成日別同步後會按日期自動帶入；目前可手動補選 A–F。';
           document.getElementById('data-foot').textContent = data.academicYear + ' 課表已預載；QMSS Calendar 日別資料 ' + (calendarDateCount ? '已載入 ' + calendarDateCount + ' 日' + calendarUpdate : '尚未載入，日期可手動補選') + '。使用者毋須登入或上載。';
           classSelect.innerHTML = '<option value="">選擇班別</option>' + data.classes.map(function (classCode) { return '<option value="' + escapeHtml(classCode) + '">' + escapeHtml(classCode) + '</option>'; }).join('');
           classSelect.disabled = false;
