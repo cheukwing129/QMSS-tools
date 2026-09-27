@@ -6,26 +6,6 @@
   <meta name="theme-color" content="#f6f4ee">
   <meta name="description" content="預載 2026–2027 課表，安排二人或三人調堂並列印各份通知。">
   <title>調堂小幫手｜QMSS Tools</title>
-  <link rel="stylesheet" href="https://esm.sh/@santi020k/lumen-elements@1.6.0/styles.css">
-  <script>
-    window.installLumenButtonFallback = function () {
-      document.querySelectorAll('lumen-button').forEach(function (button) {
-        button.setAttribute('role', 'button');
-        button.setAttribute('tabindex', '0');
-        button.setAttribute('aria-disabled', String(button.hasAttribute('disabled')));
-        button.addEventListener('keydown', function (event) {
-          if ((event.key === 'Enter' || event.key === ' ') && !button.hasAttribute('disabled')) {
-            event.preventDefault();
-            button.click();
-          }
-        });
-        button.addEventListener('click', function (event) {
-          if (button.hasAttribute('disabled')) event.preventDefault();
-        });
-      });
-    };
-  </script>
-  <script type="module" src="https://esm.sh/@santi020k/lumen-elements@1.6.0/define" onerror="window.installLumenButtonFallback()"></script>
   <style>
     :root {
       color-scheme: light;
@@ -67,7 +47,7 @@
       line-height: 1.6;
     }
     button, input, select { font: inherit; }
-    button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible, lumen-button:focus-visible {
+    button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible {
       outline: 3px solid hsl(var(--accent));
       outline-offset: 3px;
     }
@@ -98,7 +78,6 @@
       display: block; margin-top: 8px; padding: clamp(18px, 3vw, 30px); border: 1px solid hsl(var(--ink) / .09);
       border-radius: var(--radius); background: var(--paper); box-shadow: var(--shadow);
     }
-    lumen-card.builder-card, lumen-card.preview-card { display: block; }
     .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
     .section-heading h2 { margin: 0; font-size: 19px; letter-spacing: -.035em; }
     .section-heading p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
@@ -129,7 +108,6 @@
     .period-note { margin: 14px 0 0; padding: 11px 14px; border: 1px solid hsl(var(--brand) / .15); border-radius: 12px; background: hsl(var(--brand-soft) / .55); color: var(--green-dark); font-size: 11px; line-height: 1.6; }
     .teacher-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; margin-top: 17px; }
     .teacher-card { display: block; min-width: 0; padding: 17px; border: 1px solid hsl(var(--ink) / .1); border-radius: 17px; background: hsl(var(--surface) / .72); }
-    lumen-card.teacher-card { display: block; }
     .teacher-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 13px; }
     .teacher-title { display: flex; align-items: center; gap: 9px; min-width: 0; }
     .teacher-avatar { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 10px; background: var(--green-soft); color: var(--green-dark); font-size: 12px; font-weight: 850; }
@@ -144,11 +122,10 @@
     .status-text { max-width: 640px; margin: 0; color: var(--muted); font-size: 11px; }
     .status-text[data-state="ready"] { color: hsl(var(--success)); font-weight: 750; }
     .status-text[data-state="error"] { color: hsl(var(--danger)); font-weight: 750; }
-    lumen-button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; padding: 0 18px; border: 0; border-radius: 12px; background: var(--green-dark); color: white; cursor: pointer; font-size: 12px; font-weight: 800; }
-    lumen-button[variant="default"] { --brand: 171 47% 32%; --brand-solid: 171 49% 25%; }
-    lumen-button[variant="secondary"] { border: 1px solid var(--border); background: var(--paper); color: var(--green-dark); }
-    lumen-button[disabled] { opacity: .48; pointer-events: none; cursor: not-allowed; }
-    .lumen-button-label { display: inline-flex; align-items: center; gap: 9px; }
+    .lumen-action { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; padding: 0 18px; border: 0; border-radius: 12px; background: var(--green-dark); color: white; cursor: pointer; font-size: 12px; font-weight: 800; }
+    .lumen-action.secondary { border: 1px solid var(--border); background: var(--paper); color: var(--green-dark); }
+    .lumen-action:disabled { opacity: .48; pointer-events: none; cursor: not-allowed; }
+    .button-label { display: inline-flex; align-items: center; gap: 9px; }
     .btn-arrow { font-size: 15px; line-height: 1; }
     .data-error { display: none; margin: 16px 0 0; padding: 13px 15px; border: 1px solid hsl(var(--danger) / .24); border-radius: 12px; background: hsl(var(--danger) / .06); color: hsl(var(--danger)); font-size: 12px; }
     .data-error.is-visible { display: block; }
@@ -341,9 +318,7 @@
       .teacher-fields { grid-template-columns: 1fr; }
       .teacher-fields .wide { grid-column: auto; }
       .builder-bottom, .preview-toolbar { align-items: stretch; flex-direction: column; }
-      .builder-bottom lumen-button, .preview-actions lumen-button { width: 100%; }
-      .builder-bottom lumen-button::part(button), .preview-actions lumen-button::part(button) { width: 100%; }
-      .builder-bottom .lumen-fallback-button, .preview-actions .lumen-fallback-button { width: 100%; }
+      .builder-bottom .lumen-action, .preview-actions .lumen-action { width: 100%; }
       .print-sheet { padding-left: 2.5%; padding-right: 2.5%; }
       .print-sheet[data-mode="3"] { padding-left: 1%; padding-right: 1%; }
       .page-foot { flex-direction: column; gap: 5px; }
@@ -384,7 +359,7 @@
       <p class="intro-copy">先選身份和班別，再從課表選擇原課及可交換課節；最後按每個課節的 Day 選擇實際日期。</p>
     </section>
 
-    <lumen-card class="builder-card" variant="unstyled" as="section" aria-labelledby="setup-title">
+    <section class="builder-card" aria-labelledby="setup-title">
       <div class="section-heading">
         <div><h2 id="setup-title">調堂安排</h2><p>按步驟選擇身份、課節和日期；課表會即時標示可調換時段。</p></div>
         <span class="step-label">逐步安排</span>
@@ -410,6 +385,7 @@
           </div>
           <span class="step-label" id="copy-count-label">二人互調 · 4 個列印區</span>
         </div>
+        <p class="hint mode-hint">更改調堂人數會清除已選課節；如要調整，請重新選擇。</p>
 
         <div class="workflow-heading class-step-heading">
           <span class="workflow-number">02</span>
@@ -463,18 +439,18 @@
       <div id="data-error" class="data-error" role="alert"></div>
       <div class="builder-bottom">
         <p id="form-status" class="status-text" role="status" aria-live="polite">先選擇你的身份。</p>
-        <lumen-button id="preview-button" variant="default" size="lg" type="button" disabled aria-label="預覽調堂列印表格">
-          <span class="lumen-button-label">預覽調堂列印版面 <span class="btn-arrow" aria-hidden="true">→</span></span>
-        </lumen-button>
+        <button id="preview-button" class="lumen-action" type="button" disabled aria-label="預覽調堂列印表格">
+          <span class="button-label">預覽調堂列印版面 <span class="btn-arrow" aria-hidden="true">→</span></span>
+        </button>
       </div>
-    </lumen-card>
+    </section>
 
         <section id="preview-section" class="preview-section" aria-labelledby="preview-title" hidden>
       <div class="preview-toolbar">
         <div><h2 id="preview-title">列印預覽</h2><p class="hint" id="preview-count"></p></div>
         <div class="preview-actions">
-          <lumen-button id="edit-button" variant="secondary" type="button">返回修改</lumen-button>
-          <lumen-button id="print-button" variant="default" type="button"><span class="lumen-button-label">列印／另存 PDF <span class="btn-arrow" aria-hidden="true">↗</span></span></lumen-button>
+          <button id="edit-button" class="lumen-action secondary" type="button">返回修改</button>
+          <button id="print-button" class="lumen-action" type="button"><span class="button-label">列印／另存 PDF <span class="btn-arrow" aria-hidden="true">↗</span></span></button>
         </div>
       </div>
       <div id="print-sheet" class="print-sheet" aria-label="調堂通知列印版面"></div>
@@ -841,7 +817,6 @@
         formStatus.dataset.state = result.valid ? 'ready' : (result.error ? 'error' : '');
         previewButton.toggleAttribute('disabled', !result.valid);
         previewButton.setAttribute('aria-disabled', String(!result.valid));
-        if (window.customElements && !window.customElements.get('lumen-button')) previewButton.tabIndex = 0;
       }
       function validate() {
         if (!data) return { valid: false, message: '正在載入課表資料。' };
