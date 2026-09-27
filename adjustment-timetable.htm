@@ -346,6 +346,7 @@
 
     <footer class="page-foot">
       <span id="data-foot">課表和 QMSS Calendar 日別每學年更新一次；使用者毋須登入或上載資料。</span>
+      <a href="./annual-data-updater.htm">維護者：更新年度資料</a>
       <a href="./index.html">返回工具首頁</a>
     </footer>
   </main>
@@ -595,11 +596,11 @@
         previewSection.hidden = true;
       }
       function loadTimetable() {
-        var timetableRequest = fetch('./data/timetable.json?v=2627-20260927-r3', { cache: 'force-cache' }).then(function (response) {
+        var timetableRequest = fetch('./data/timetable.json', { cache: 'no-cache' }).then(function (response) {
           if (!response.ok) throw new Error('HTTP ' + response.status);
           return response.json();
         });
-        var calendarRequest = fetch('./data/school-days.json?v=2627-20260927-r4', { cache: 'force-cache' }).then(function (response) {
+        var calendarRequest = fetch('./data/school-days.json', { cache: 'no-cache' }).then(function (response) {
           if (!response.ok) return { days: {}, calendarName: 'QMSS Calendar' };
           return response.json();
         }).catch(function () { return { days: {}, calendarName: 'QMSS Calendar' }; });
