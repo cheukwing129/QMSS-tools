@@ -599,7 +599,7 @@
           if (!response.ok) throw new Error('HTTP ' + response.status);
           return response.json();
         });
-        var calendarRequest = fetch('./data/school-days.json?v=2627-20260927-r3', { cache: 'force-cache' }).then(function (response) {
+        var calendarRequest = fetch('./data/school-days.json?v=2627-20260927-r4', { cache: 'force-cache' }).then(function (response) {
           if (!response.ok) return { days: {}, calendarName: 'QMSS Calendar' };
           return response.json();
         }).catch(function () { return { days: {}, calendarName: 'QMSS Calendar' }; });
