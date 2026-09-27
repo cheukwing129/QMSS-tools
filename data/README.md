@@ -12,7 +12,7 @@
    python scripts/build-timetable-data.py "新學年教師課表.xlsx" --year "2027–2028" --out data/timetable.json
    ```
 
-4. 按新課表年份更新 `adjustment-timetable.htm` 載入 JSON 的 `v=` 版本值，並提交網頁和 JSON。若新課表列、欄位置不同，先調整轉換程式內的 `PERIOD_ROWS` 和 `DAYS`。
+4. 按新課表年份更新 `adjustment-timetable.htm` 載入 JSON 的 `v=` 版本值，並提交網頁和 JSON。若新課表列、欄位置不同，先調整轉換程式內的 `PERIOD_ROWS` 和 `DAYS`。全日節數為 1–9；Day F 第 6 列是第 1 節，其他固定課節列依序是第 2–9 節。
 
 ## QMSS Calendar 日別更新
 
