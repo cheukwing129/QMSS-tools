@@ -136,7 +136,7 @@
     .workflow-number { flex: 0 0 auto; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; background: var(--green-dark); color: white; font-size: 10px; font-weight: 850; }
     .identity-field { max-width: 480px; }
     .identity-field .control { min-height: 48px; }
-    #after-identity[hidden], #timetable-workflow[hidden], #date-step[hidden], #manual-panel[hidden] { display: none !important; }
+    #after-identity[hidden], #timetable-workflow[hidden], #date-step[hidden], #schedule-view[hidden], #manual-panel[hidden], #manual-entry-button[hidden] { display: none !important; }
     .timetable-workflow { margin-top: 22px; padding-top: 22px; border-top: 1px solid hsl(var(--ink) / .09); }
     .timetable-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
     .timetable-heading h3 { margin: 4px 0 0; font-size: 19px; letter-spacing: -.035em; }
@@ -159,6 +159,7 @@
     .remove-slot { flex: 0 0 auto; padding: 6px 9px; border: 1px solid hsl(var(--ink) / .15); border-radius: 8px; background: white; color: hsl(var(--ink-soft)); cursor: pointer; font-size: 10px; }
     .remove-slot:hover { border-color: hsl(var(--danger) / .4); color: hsl(var(--danger)); }
     .manual-hint { margin: 0 0 9px; color: var(--muted); font-size: 10px; line-height: 1.65; }
+    .manual-entry-actions { display: flex; justify-content: flex-end; margin-top: 11px; }
     .manual-panel { margin: 0 0 13px; padding: 15px; border: 1px solid hsl(var(--warning) / .3); border-radius: 14px; background: hsl(var(--warning) / .08); color: hsl(var(--ink-soft)); font-size: 11px; line-height: 1.65; }
     .manual-panel h4 { margin: 0 0 5px; color: hsl(var(--ink)); font-size: 13px; }
     .manual-panel p { margin: 5px 0; }
@@ -412,29 +413,36 @@
         <p class="rotation"><strong>調堂方式：</strong>二人互調時 A 接 B 的課節、B 接 A 的課節；三人互調時 A 接 B、B 接 C、C 接 A。系統會檢查各老師在新時段是否另有課堂。</p>
 
         <section id="timetable-workflow" class="timetable-workflow" aria-labelledby="timetable-title" hidden>
-          <div class="timetable-heading">
-            <div>
-              <span class="step-label" id="selection-step-label">STEP 03 · 選擇你的原課</span>
-              <h3 id="timetable-title">班別課表</h3>
-              <p id="selection-prompt" class="timetable-prompt">先在課表點選你想調走的課節。</p>
-            </div>
-            <div class="timetable-legend" aria-label="課表標示說明">
-              <label class="split-toggle" for="hide-split-lessons">
-                <input id="hide-split-lessons" type="checkbox" checked>
-                隱藏拆班課節
-              </label>
-              <span><i class="legend-dot available" aria-hidden="true"></i>可調換</span>
-              <span><i class="legend-dot own" aria-hidden="true"></i>你的課節</span>
-              <span><i class="legend-dot manual" aria-hidden="true"></i>手動選擇</span>
-            </div>
-          </div>
-
           <div id="selected-lessons" class="selected-lessons" aria-live="polite"></div>
-          <div id="manual-panel" class="manual-panel" role="region" aria-live="polite" hidden></div>
-          <p class="manual-hint">沒有高亮的課節仍可選。預載課表未必反映已調走的課或中六安排；選取後系統會提示你確認。</p>
-          <div class="timetable-scroll" tabindex="0" aria-label="可左右滑動查看班別課表">
-            <div id="class-timetable"></div>
+          <div id="schedule-view">
+            <div class="timetable-heading">
+              <div>
+                <span class="step-label" id="selection-step-label">STEP 03 · 選擇你的原課</span>
+                <h3 id="timetable-title">班別課表</h3>
+                <p id="selection-prompt" class="timetable-prompt">先在課表點選你想調走的課節。</p>
+              </div>
+              <div class="timetable-legend" aria-label="課表標示說明">
+                <label class="split-toggle" for="hide-split-lessons">
+                  <input id="hide-split-lessons" type="checkbox" checked>
+                  隱藏拆班課節
+                </label>
+                <span><i class="legend-dot available" aria-hidden="true"></i>可調換</span>
+                <span><i class="legend-dot own" aria-hidden="true"></i>你的課節</span>
+                <span><i class="legend-dot manual" aria-hidden="true"></i>手動選擇</span>
+              </div>
+            </div>
+
+            <p class="manual-hint">沒有高亮的課節仍可直接選取。若課表未列出已調走或特殊安排的課節，可使用下方手動輸入。</p>
+            <div class="timetable-scroll" tabindex="0" aria-label="可左右滑動查看班別課表">
+              <div id="class-timetable"></div>
+            </div>
+            <div class="manual-entry-actions">
+              <button id="manual-entry-button" class="lumen-action secondary" type="button" aria-controls="manual-panel" aria-expanded="false">
+                <span class="button-label">手動輸入課節 <span class="btn-arrow" aria-hidden="true">＋</span></span>
+              </button>
+            </div>
           </div>
+          <div id="manual-panel" class="manual-panel" role="region" aria-live="polite" hidden></div>
 
           <section id="date-step" class="date-step" aria-labelledby="date-title" hidden>
             <div class="workflow-heading">
@@ -490,6 +498,8 @@
       var classSelect = document.getElementById('class-select');
       var timetableWorkflow = document.getElementById('timetable-workflow');
       var classTimetable = document.getElementById('class-timetable');
+      var scheduleView = document.getElementById('schedule-view');
+      var manualEntryButton = document.getElementById('manual-entry-button');
       var hideSplitToggle = document.getElementById('hide-split-lessons');
       var selectedLessons = document.getElementById('selected-lessons');
       var selectionPrompt = document.getElementById('selection-prompt');
@@ -675,7 +685,7 @@
           selectionPrompt.textContent = '選擇老師和班別後，課表會顯示可選課節。';
           selectionStepLabel.textContent = 'STEP 02 · 選擇班別';
         } else if (!selectedSlots.length) {
-          selectionPrompt.textContent = '先在課表點選你想調走的課節。你的課節以金色標示。';
+          selectionPrompt.textContent = '先點選你想調走的課節；也可按「手動輸入課節」。你的課節以金色標示。';
           selectionStepLabel.textContent = 'STEP 03 · 選擇你的原課';
         } else if (selectedSlots.length < peopleCount) {
           var nextPerson = selectedSlots.length + 1;
@@ -688,6 +698,11 @@
         }
       }
       function renderManualPanel() {
+        var globalManual = Boolean(pendingChoice && pendingChoice.globalManual);
+        scheduleView.hidden = globalManual;
+        manualEntryButton.hidden = globalManual;
+        manualEntryButton.disabled = !data || !classSelect.value || selectedSlots.length >= peopleCount;
+        manualEntryButton.setAttribute('aria-expanded', String(globalManual));
         if (!pendingChoice) {
           manualPanel.hidden = true;
           manualPanel.innerHTML = '';
@@ -695,26 +710,58 @@
         }
         var choosingTeacher = !pendingChoice.teacher;
         var course = pendingChoice.subject || '';
-        var title = pendingChoice.empty ? '此格沒有預載課堂資料' : (pendingChoice.manual ? '手動指定此時段' : '此課節未高亮：請確認是否仍要調換');
-        var note = pendingChoice.empty
-          ? '這個時段在預載課表中沒有課堂。若課節已調走或屬中六安排，請選擇實際調堂老師並確認。'
-          : (pendingChoice.manual
-            ? '此格已有預載課堂。若課節已調走或想手動指定老師／課堂，請核實後再確認。'
-            : '系統偵測到以下課表衝突。若該課已調走或課表有特殊安排，請核實後再手動確認。');
+        var title = globalManual ? '手動輸入課節' :
+          (pendingChoice.empty ? '此格沒有預載課堂資料' : (pendingChoice.manual ? '手動指定此時段' : '此課節未高亮：請確認是否仍要調換'));
+        var heading = globalManual ? title : title + ' · Day ' + escapeHtml(pendingChoice.day) + ' 第 ' + escapeHtml(pendingChoice.period) + ' 節';
+        var note = globalManual
+          ? '請選擇 Day 和節數，核實老師及科目。系統會檢查該老師在這個時段是否另有課堂。'
+          : (pendingChoice.empty
+            ? '這個時段在預載課表中沒有課堂。若課節已調走或屬中六安排，請選擇實際調堂老師並確認。'
+            : (pendingChoice.manual
+              ? '此格已有預載課堂。若課節已調走或想手動指定老師／課堂，請核實後再確認。'
+              : '系統偵測到以下課表衝突。若該課已調走或課表有特殊安排，請核實後再手動確認。'));
+        var timeFields = '';
+        if (globalManual) {
+          var dayOptions = '<option value="">選擇 Day</option>' + data.days.map(function (day) {
+            return '<option value="' + escapeHtml(day) + '"' + (pendingChoice.day === day ? ' selected' : '') + '>Day ' + escapeHtml(day) + '</option>';
+          }).join('');
+          var periodOptions = '<option value="">選擇節數</option>' + data.periods.map(function (period) {
+            return '<option value="' + escapeHtml(period) + '"' + (Number(pendingChoice.period) === Number(period) ? ' selected' : '') + '>第 ' + escapeHtml(period) + ' 節</option>';
+          }).join('');
+          timeFields = '<div class="field"><label class="field-label" for="manual-day">Day</label><select id="manual-day" class="control">' + dayOptions + '</select></div>' +
+            '<div class="field"><label class="field-label" for="manual-period">節數</label><select id="manual-period" class="control">' + periodOptions + '</select></div>';
+        }
         var teacherField = choosingTeacher
           ? '<div class="field"><label class="field-label" for="manual-teacher">該時段的老師</label><select id="manual-teacher" class="control"><option value="">選擇老師</option>' + teacherOptions('') + '</select></div>'
           : '<div class="field"><span class="field-label">該時段的老師</span><p>' + escapeHtml((teacherByCode(pendingChoice.teacher) || {}).displayName || pendingChoice.teacher) + '</p></div>';
-        var initialStatus = pendingChoice.teacher ? manualChoiceStatus(pendingChoice, pendingChoice.teacher) : { conflicts: [] };
+        var canAssess = pendingChoice.teacher && (!globalManual || (pendingChoice.day && pendingChoice.period));
+        var initialStatus = canAssess ? manualChoiceStatus(pendingChoice, pendingChoice.teacher) : { conflicts: [] };
         var conflicts = pendingChoice.conflicts && pendingChoice.conflicts.length ? pendingChoice.conflicts : initialStatus.conflicts;
-        var conflictHtml = conflicts.length
+        var splitBlocked = globalManual && hideSplitToggle.checked && pendingChoice.day && pendingChoice.period &&
+          isSplitLesson(classSelect.value, pendingChoice.day, pendingChoice.period);
+        var previewCopy = '';
+        if (splitBlocked) {
+          previewCopy = '此時段是拆班課節；啟用「隱藏拆班課節」時不能手動選取。';
+        } else if (globalManual) {
+          var missing = [];
+          if (!pendingChoice.day) missing.push('Day');
+          if (!pendingChoice.period) missing.push('節數');
+          if (choosingTeacher) missing.push('老師');
+          previewCopy = missing.length
+            ? '請先選擇' + missing.join('、') + '，系統便會檢查課表衝突。'
+            : '目前沒有偵測到固定課表衝突；請核實所選課節資料。';
+        } else {
+          previewCopy = choosingTeacher
+            ? '選擇老師後，系統會顯示可檢查到的其他課節。'
+            : '目前沒有偵測到固定課表衝突；此選擇仍按手動例外處理。';
+        }
+        var conflictHtml = conflicts.length && !splitBlocked
           ? '<ul>' + conflicts.map(function (conflict) { return '<li>' + escapeHtml(conflictText(conflict)) + '</li>'; }).join('') + '</ul>'
-          : '<p class="manual-conflict-preview" id="manual-conflict-preview">' +
-            (choosingTeacher ? '選擇老師後，系統會顯示可檢查到的其他課節。' : '目前沒有偵測到固定課表衝突；此選擇仍按手動例外處理。') + '</p>';
-        manualPanel.innerHTML = '<h4>' + title + ' · Day ' + escapeHtml(pendingChoice.day) + ' 第 ' +
-          escapeHtml(pendingChoice.period) + ' 節</h4><p>' + note + '</p>' + conflictHtml +
-          '<div class="manual-fields">' + teacherField +
+          : '<p class="manual-conflict-preview" id="manual-conflict-preview">' + previewCopy + '</p>';
+        manualPanel.innerHTML = '<h4>' + heading + '</h4><p>' + note + '</p>' + conflictHtml +
+          '<div class="manual-fields">' + timeFields + teacherField +
           '<div class="field"><label class="field-label" for="manual-subject">科目／課堂（可修改）</label><input id="manual-subject" class="control" type="text" maxlength="48" value="' + escapeHtml(course) + '" placeholder="留空則列印為 (X)"></div></div>' +
-          '<div class="manual-actions"><button type="button" class="primary" data-action="confirm-manual">確認手動選擇</button><button type="button" data-action="cancel-manual">取消</button></div>';
+          '<div class="manual-actions"><button type="button" class="primary" data-action="confirm-manual">確認手動選擇</button><button type="button" data-action="cancel-manual">返回課表</button></div>';
         manualPanel.hidden = false;
       }
       function renderDateChoices() {
@@ -819,12 +866,6 @@
                     escapeHtml(entry.teacherName) + '</span>' + (status ? '<span class="entry-status">' + escapeHtml(status) + '</span>' : '') +
                     '</button>';
                 }).join('');
-              }
-              if (!entries.length || selectedSlots.length < peopleCount) {
-                var emptyDisabled = selectedSlots.length >= peopleCount;
-                html += '<button type="button" class="empty-slot" data-kind="empty" data-day="' + day + '" data-period="' + period +
-                  '" ' + (emptyDisabled ? 'disabled' : '') + '><span>' + (entries.length ? '另選手動時段' : '空堂 · 手動選') +
-                  '</span><span class="entry-status">需確認</span></button>';
               }
             }
             return '<td><div class="timetable-cell">' + html + '</div></td>';
@@ -997,12 +1038,33 @@
       function openManualChoice(choice) {
         pendingChoice = choice;
         renderManualPanel();
-        if (choice.conflicts && choice.conflicts.length) {
+        if (choice.globalManual || (choice.conflicts && choice.conflicts.length)) {
           manualPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       }
       function finishManualChoice() {
         if (!pendingChoice) return;
+        if (selectedSlots.length >= peopleCount) {
+          formStatus.textContent = '已選滿調堂人數，請先移除一位老師再輸入。';
+          formStatus.dataset.state = 'error';
+          return;
+        }
+        if (pendingChoice.globalManual) {
+          var dayField = document.getElementById('manual-day');
+          var periodField = document.getElementById('manual-period');
+          if (!dayField || !dayField.value || !periodField || !periodField.value) {
+            formStatus.textContent = '請先選擇 Day 和節數。';
+            formStatus.dataset.state = 'error';
+            return;
+          }
+          pendingChoice.day = dayField.value;
+          pendingChoice.period = Number(periodField.value);
+          if (hideSplitToggle.checked && isSplitLesson(classSelect.value, pendingChoice.day, pendingChoice.period)) {
+            formStatus.textContent = '此時段是拆班課節；請返回課表並取消「隱藏拆班課節」後再手動選取。';
+            formStatus.dataset.state = 'error';
+            return;
+          }
+        }
         var teacherCode = pendingChoice.teacher;
         var teacherField = document.getElementById('manual-teacher');
         if (teacherField) teacherCode = teacherField.value;
@@ -1052,19 +1114,6 @@
         if (!button || button.disabled || !classSelect.value) return;
         var day = button.dataset.day;
         var period = Number(button.dataset.period);
-        if (button.dataset.kind === 'empty') {
-          var cellHasLessons = entriesFor(classSelect.value, day, period).length > 0;
-          openManualChoice({
-            empty: !cellHasLessons,
-            manual: true,
-            teacher: selectedSlots.length ? '' : ownerCode,
-            day: day,
-            period: period,
-            subject: '',
-            conflicts: []
-          });
-          return;
-        }
         var teacherCode = button.dataset.teacher;
         var subject = button.dataset.subject || '';
         var slot = { teacher: teacherCode, day: day, period: period, subject: subject, date: '', manualDate: false, manualDayConfirmed: false, manualOverride: false };
@@ -1097,17 +1146,34 @@
         }
       }
       function handleManualTeacherChange(event) {
-        if (!event.target.matches('#manual-teacher') || !pendingChoice) return;
+        if (!pendingChoice) return;
+        if (pendingChoice.globalManual) {
+          var daySelect = document.getElementById('manual-day');
+          var periodSelect = document.getElementById('manual-period');
+          pendingChoice.day = daySelect ? daySelect.value : '';
+          pendingChoice.period = periodSelect && periodSelect.value ? Number(periodSelect.value) : '';
+        }
         var preview = document.getElementById('manual-conflict-preview');
         if (!preview) return;
-        if (!event.target.value) {
-          preview.textContent = '選擇老師後，系統會顯示可檢查到的其他課節。';
+        var teacherField = document.getElementById('manual-teacher');
+        var teacherCode = teacherField ? teacherField.value : pendingChoice.teacher;
+        var missing = [];
+        if (pendingChoice.globalManual && !pendingChoice.day) missing.push('Day');
+        if (pendingChoice.globalManual && !pendingChoice.period) missing.push('節數');
+        if (!teacherCode) missing.push('老師');
+        if (missing.length) {
+          preview.textContent = '請先選擇' + missing.join('、') + '，系統便會檢查課表衝突。';
           return;
         }
-        var status = manualChoiceStatus(pendingChoice, event.target.value);
+        if (pendingChoice.globalManual && hideSplitToggle.checked &&
+            isSplitLesson(classSelect.value, pendingChoice.day, pendingChoice.period)) {
+          preview.textContent = '此時段是拆班課節；啟用「隱藏拆班課節」時不能手動選取。';
+          return;
+        }
+        var status = manualChoiceStatus(pendingChoice, teacherCode);
         preview.innerHTML = status.conflicts.length
           ? '課表找到以下衝突：<ul>' + status.conflicts.map(function (conflict) { return '<li>' + escapeHtml(conflictText(conflict)) + '</li>'; }).join('') + '</ul>你仍可手動確認。'
-          : '沒有偵測到固定課表衝突；此空堂仍需按手動安排確認。';
+          : '沒有偵測到固定課表衝突；請核實手動輸入的課節。';
       }
       function handleDateChange(event) {
         var target = event.target;
@@ -1229,6 +1295,19 @@
         });
       });
       classTimetable.addEventListener('click', handleScheduleClick);
+      manualEntryButton.addEventListener('click', function () {
+        if (manualEntryButton.disabled || !classSelect.value) return;
+        openManualChoice({
+          empty: false,
+          manual: true,
+          globalManual: true,
+          teacher: selectedSlots.length ? '' : ownerCode,
+          day: '',
+          period: '',
+          subject: '',
+          conflicts: []
+        });
+      });
       hideSplitToggle.addEventListener('change', handleSplitToggle);
       selectedLessons.addEventListener('click', handleScheduleClick);
       manualPanel.addEventListener('click', handleManualPanelClick);
