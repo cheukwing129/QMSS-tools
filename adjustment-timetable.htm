@@ -631,8 +631,8 @@
       }
       function teacherOptions(selectedCode) {
         return data.teachers.slice().sort(function (a, b) {
-          return (a.displayName || a.code).localeCompare(b.displayName || b.code, 'en', { sensitivity: 'base' }) ||
-            String(a.code).localeCompare(String(b.code), 'en', { sensitivity: 'base' });
+          return String(a.code).localeCompare(String(b.code), 'en', { sensitivity: 'base' }) ||
+            (a.displayName || a.code).localeCompare(b.displayName || b.code, 'en', { sensitivity: 'base' });
         }).map(function (teacher) {
           var disabled = selectedSlots.some(function (slot) { return slot.teacher === teacher.code; }) && teacher.code !== selectedCode;
           return '<option value="' + escapeHtml(teacher.code) + '" ' + (teacher.code === selectedCode ? 'selected ' : '') +
@@ -1156,8 +1156,8 @@
           calendarDays = calendarMeta.days || {};
           buildScheduleIndex();
           teacherSelect.innerHTML = '<option value="">選擇老師</option>' + data.teachers.slice().sort(function (a, b) {
-            return (a.displayName || a.code).localeCompare(b.displayName || b.code, 'en', { sensitivity: 'base' }) ||
-            String(a.code).localeCompare(String(b.code), 'en', { sensitivity: 'base' });
+            return String(a.code).localeCompare(String(b.code), 'en', { sensitivity: 'base' }) ||
+            (a.displayName || a.code).localeCompare(b.displayName || b.code, 'en', { sensitivity: 'base' });
           }).map(function (teacher) {
             return '<option value="' + escapeHtml(teacher.code) + '">' + escapeHtml(teacher.displayName || teacher.code) + '</option>';
           }).join('');
