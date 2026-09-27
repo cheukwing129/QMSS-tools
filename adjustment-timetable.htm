@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="預載 2026–2027 課表，安排二人或三人調堂並列印各份通知。">
+  <title>調堂小幫手｜QMSS Tools</title>
+  <link rel="stylesheet" href="https://esm.sh/@santi020k/lumen-elements@1.6.0/styles.css">
+  <script>
+    window.installLumenButtonFallback = function () {
+      document.querySelectorAll('lumen-button').forEach(function (button) {
+        button.setAttribute('role', 'button');
+        button.setAttribute('tabindex', '0');
+        button.setAttribute('aria-disabled', String(button.hasAttribute('disabled')));
+        button.addEventListener('keydown', function (event) {
+          if ((event.key === 'Enter' || event.key === ' ') && !button.hasAttribute('disabled')) {
+            event.preventDefault();
+            button.click();
+          }
+        });
+        button.addEventListener('click', function (event) {
+          if (button.hasAttribute('disabled')) event.preventDefault();
+        });
+      });
+    };
+  </script>
+  <script type="module" src="https://esm.sh/@santi020k/lumen-elements@1.6.0/define" onerror="window.installLumenButtonFallback()"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --canvas: 42 32% 96%;
+      --surface: 48 100% 99%;
+      --surface-muted: 76 20% 94%;
+      --surface-strong: 75 17% 89%;
+      --line: 70 13% 85%;
+      --ink: 197 34% 16%;
+      --ink-soft: 190 15% 35%;
+      --ink-muted: 174 8% 49%;
+      --brand: 171 47% 32%;
+      --brand-solid: 171 49% 25%;
+      --brand-soft: 145 30% 92%;
+      --on-brand: 0 0% 100%;
+      --accent: 36 74% 62%;
+      --success: 145 47% 37%;
+      --warning: 37 88% 46%;
+      --danger: 0 66% 47%;
+      --on-danger: 0 0% 100%;
+      --page: hsl(var(--canvas));
+      --paper: hsl(var(--surface));
+      --text: hsl(var(--ink));
+      --muted: hsl(var(--ink-muted));
+      --green: hsl(var(--brand));
+      --green-dark: hsl(var(--brand-solid));
+      --green-soft: hsl(var(--brand-soft));
+      --border: hsl(var(--line));
+      --shadow: 0 16px 38px hsl(var(--ink) / .08);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: radial-gradient(ellipse at 82% 2%, hsl(var(--brand-soft) / .78), transparent 32rem), var(--page);
+      color: var(--text);
+      font-family: "Noto Sans HK", "PingFang HK", "Microsoft JhengHei", system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    button, input, select { font: inherit; }
+    button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible, lumen-button:focus-visible {
+      outline: 3px solid hsl(var(--accent));
+      outline-offset: 3px;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1100px, calc(100% - 40px)); margin-inline: auto; }
+    .topbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 1px solid hsl(var(--ink) / .09);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand-mark {
+      width: 39px; height: 39px; display: grid; place-items: center; border-radius: 13px;
+      background: hsl(var(--ink)); color: white; font-size: 18px; font-weight: 800;
+    }
+    .brand-name { display: block; font-size: 14px; font-weight: 800; line-height: 1.2; }
+    .brand-caption { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; font-weight: 750; letter-spacing: .16em; }
+    .year-pill { padding: 7px 12px; border: 1px solid hsl(var(--brand) / .22); border-radius: 999px; background: hsl(var(--surface) / .8); color: var(--green-dark); font-size: 11px; font-weight: 750; white-space: nowrap; }
+    main { padding-bottom: 60px; }
+    .intro { padding: 45px 0 25px; }
+    .eyebrow { margin: 0 0 7px; color: var(--green-dark); font-size: 10px; font-weight: 800; letter-spacing: .16em; }
+    h1 { margin: 0; font-size: clamp(30px, 5vw, 43px); line-height: 1.2; letter-spacing: -.055em; }
+    .intro-copy { max-width: 650px; margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .builder-card, .preview-card {
+      display: block; margin-top: 8px; padding: clamp(18px, 3vw, 30px); border: 1px solid hsl(var(--ink) / .09);
+      border-radius: var(--radius); background: var(--paper); box-shadow: var(--shadow);
+    }
+    lumen-card.builder-card, lumen-card.preview-card { display: block; }
+    .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .section-heading h2 { margin: 0; font-size: 19px; letter-spacing: -.035em; }
+    .section-heading p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+    .step-label { color: var(--muted); font-size: 10px; font-weight: 750; letter-spacing: .08em; white-space: nowrap; }
+    .mode-row { display: flex; align-items: center; gap: 13px; flex-wrap: wrap; margin: 21px 0 17px; }
+    .mode-label, .field-label { display: block; color: hsl(var(--ink-soft)); font-size: 11px; font-weight: 750; }
+    .mode-switch { display: inline-flex; gap: 4px; padding: 4px; border: 1px solid var(--border); border-radius: 14px; background: hsl(var(--surface-muted)); }
+    .mode-switch button {
+      min-height: 39px; padding: 0 15px; border: 0; border-radius: 10px; background: transparent;
+      color: hsl(var(--ink-soft)); cursor: pointer; font-size: 12px; font-weight: 750; transition: background .16s ease, color .16s ease, box-shadow .16s ease;
+    }
+    .mode-switch button:hover { color: var(--green-dark); }
+    .mode-switch button[aria-pressed="true"] { background: var(--paper); color: var(--green-dark); box-shadow: 0 2px 7px hsl(var(--ink) / .09); }
+    .class-row { display: grid; grid-template-columns: minmax(180px, 260px) 1fr; align-items: end; gap: 17px; padding: 19px 0; border-top: 1px solid hsl(var(--ink) / .08); border-bottom: 1px solid hsl(var(--ink) / .08); }
+    .field { min-width: 0; }
+    .field-label { margin-bottom: 7px; }
+    .control {
+      width: 100%; min-height: 44px; padding: 9px 12px; border: 1px solid hsl(var(--ink) / .17); border-radius: 11px;
+      background: var(--paper); color: var(--text); font-size: 13px;
+    }
+    .control:focus { border-color: hsl(var(--brand)); }
+    .hint { margin: 5px 0 0; color: var(--muted); font-size: 10px; line-height: 1.55; }
+    .cycle-note { display: flex; align-items: flex-start; gap: 10px; padding: 11px 13px; border: 1px solid hsl(var(--warning) / .2); border-radius: 13px; background: hsl(var(--warning) / .07); color: hsl(var(--ink-soft)); font-size: 11px; line-height: 1.6; }
+    .cycle-note strong { color: hsl(var(--ink)); }
+    .note-mark { flex: 0 0 auto; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 7px; background: hsl(var(--warning) / .16); color: hsl(var(--warning)); font-size: 12px; font-weight: 900; }
+    .rotation { margin: 17px 0 0; padding: 13px 15px; border-radius: 13px; background: hsl(var(--brand-soft)); color: var(--green-dark); font-size: 11px; }
+    .rotation strong { font-weight: 800; }
+    .teacher-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; margin-top: 17px; }
+    .teacher-card { display: block; min-width: 0; padding: 17px; border: 1px solid hsl(var(--ink) / .1); border-radius: 17px; background: hsl(var(--surface) / .72); }
+    lumen-card.teacher-card { display: block; }
+    .teacher-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 13px; }
+    .teacher-title { display: flex; align-items: center; gap: 9px; min-width: 0; }
+    .teacher-avatar { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 10px; background: var(--green-soft); color: var(--green-dark); font-size: 12px; font-weight: 850; }
+    .teacher-title h3 { margin: 0; font-size: 14px; letter-spacing: -.02em; }
+    .teacher-seq { color: var(--muted); font-size: 9px; font-weight: 700; }
+    .teacher-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 10px; }
+    .teacher-fields .wide { grid-column: 1 / -1; }
+    .teacher-fields .control { min-height: 42px; font-size: 12px; }
+    .lesson-readout { min-height: 46px; margin: 12px 0 0; padding: 9px 11px; border-radius: 11px; background: hsl(var(--surface-muted)); color: hsl(var(--ink-soft)); font-size: 10px; line-height: 1.55; }
+    .lesson-readout strong { display: block; margin-bottom: 2px; color: hsl(var(--ink)); font-size: 9px; letter-spacing: .03em; }
+    .builder-bottom { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 20px; padding-top: 17px; border-top: 1px solid hsl(var(--ink) / .08); }
+    .status-text { max-width: 640px; margin: 0; color: var(--muted); font-size: 11px; }
+    .status-text[data-state="ready"] { color: hsl(var(--success)); font-weight: 750; }
+    .status-text[data-state="error"] { color: hsl(var(--danger)); font-weight: 750; }
+    lumen-button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; padding: 0 18px; border: 0; border-radius: 12px; background: var(--green-dark); color: white; cursor: pointer; font-size: 12px; font-weight: 800; }
+    lumen-button[variant="default"] { --brand: 171 47% 32%; --brand-solid: 171 49% 25%; }
+    lumen-button[variant="secondary"] { border: 1px solid var(--border); background: var(--paper); color: var(--green-dark); }
+    lumen-button[disabled] { opacity: .48; pointer-events: none; cursor: not-allowed; }
+    .lumen-button-label { display: inline-flex; align-items: center; gap: 9px; }
+    .btn-arrow { font-size: 15px; line-height: 1; }
+    .data-error { display: none; margin: 16px 0 0; padding: 13px 15px; border: 1px solid hsl(var(--danger) / .24); border-radius: 12px; background: hsl(var(--danger) / .06); color: hsl(var(--danger)); font-size: 12px; }
+    .data-error.is-visible { display: block; }
+    .page-foot { display: flex; justify-content: space-between; gap: 18px; margin-top: 17px; color: var(--muted); font-size: 10px; }
+    .page-foot a { text-decoration: none; }
+    .page-foot a:hover { color: var(--green-dark); text-decoration: underline; }
+    .preview-section { margin-top: 28px; }
+    .preview-section[hidden] { display: none !important; }
+    .preview-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin: 0 0 13px; }
+    .preview-toolbar h2 { margin: 0; font-size: 18px; }
+    .preview-actions { display: flex; gap: 9px; flex-wrap: wrap; }
+    .print-sheet { --copy-count: 4; display: grid; gap: 9px; }
+    .print-copy { display: grid; grid-template-columns: minmax(150px, 190px) minmax(0, 1fr); gap: 13px; min-width: 0; padding: 13px; border: 1px solid var(--border); border-radius: 15px; background: white; }
+    .copy-meta { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: 4px 13px 4px 5px; border-right: 1px dashed var(--border); }
+    .copy-mark { color: var(--green-dark); font-size: 9px; font-weight: 800; letter-spacing: .08em; }
+    .copy-recipient { margin: 3px 0 0; font-size: 15px; font-weight: 850; line-height: 1.3; overflow-wrap: anywhere; }
+    .copy-desc { margin: 4px 0 0; color: var(--muted); font-size: 9px; }
+    .lesson-list { display: grid; grid-template-columns: repeat(var(--participant-count), minmax(0, 1fr)); gap: 8px; min-width: 0; }
+    .notice-card { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: 9px 10px; border: 1px solid hsl(var(--ink) / .1); border-radius: 11px; }
+    .notice-top { display: flex; align-items: center; justify-content: space-between; gap: 5px; color: var(--green-dark); font-size: 9px; font-weight: 800; }
+    .notice-class { padding: 2px 6px; border-radius: 99px; background: var(--green-soft); white-space: nowrap; }
+    .notice-subject { margin: 5px 0 0; color: hsl(var(--ink)); font-size: 12px; font-weight: 850; line-height: 1.35; overflow-wrap: anywhere; }
+    .notice-date { margin: 3px 0 0; color: hsl(var(--ink-soft)); font-size: 9px; line-height: 1.35; }
+    .notice-teacher { margin: 1px 0 0; color: var(--muted); font-size: 9px; overflow-wrap: anywhere; }
+    .empty-slot { display: none; }
+    .print-hint { margin: 10px 1px 0; color: var(--muted); font-size: 10px; }
+    .loading { color: var(--muted); font-size: 12px; }
+
+    @media (max-width: 720px) {
+      .teacher-grid { grid-template-columns: 1fr; }
+      .class-row { grid-template-columns: minmax(0, 1fr); gap: 13px; }
+      .print-copy { grid-template-columns: 138px minmax(0, 1fr); }
+      .copy-recipient { font-size: 13px; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 28px); }
+      .topbar { min-height: 64px; }
+      .year-pill { padding: 6px 9px; font-size: 9px; }
+      .intro { padding: 34px 0 19px; }
+      .intro-copy { font-size: 12px; }
+      .section-heading { align-items: flex-start; }
+      .teacher-fields { grid-template-columns: 1fr; }
+      .teacher-fields .wide { grid-column: auto; }
+      .builder-bottom, .preview-toolbar { align-items: stretch; flex-direction: column; }
+      .builder-bottom lumen-button, .preview-actions lumen-button { width: 100%; }
+      .builder-bottom lumen-button::part(button), .preview-actions lumen-button::part(button) { width: 100%; }
+      .builder-bottom .lumen-fallback-button, .preview-actions .lumen-fallback-button { width: 100%; }
+      .print-copy { grid-template-columns: 1fr; gap: 9px; }
+      .copy-meta { padding: 0 0 8px; border-right: 0; border-bottom: 1px dashed var(--border); }
+      .lesson-list { grid-template-columns: 1fr; }
+      .page-foot { flex-direction: column; gap: 5px; }
+    }
+    @media print {
+      @page { size: A4 landscape; margin: 7mm; }
+      html, body { width: auto; min-width: 0; margin: 0; background: white !important; color: #142b31; }
+      .site-header, .intro, .builder-card, .page-foot, .preview-toolbar, .print-hint, .data-error { display: none !important; }
+      main, .wrap, .preview-section { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+      .preview-section { display: block !important; }
+      .preview-section[hidden] { display: none !important; }
+      .print-sheet { display: grid !important; height: 196mm; gap: 0; grid-template-rows: repeat(var(--copy-count), minmax(0, 1fr)); }
+      .print-copy { min-height: 0; height: 100%; overflow: hidden; grid-template-columns: 42mm minmax(0, 1fr); gap: 2.5mm; padding: 2.2mm 1.2mm; border: 0; border-bottom: .25mm dashed #87938f; border-radius: 0; break-inside: avoid; background: white; }
+      .print-copy:last-child { border-bottom: 0; }
+      .copy-meta { padding: 1mm 2mm 1mm 1mm; }
+      .copy-mark { font-size: 6.2pt; }
+      .copy-recipient { margin-top: 1mm; font-size: 10pt; line-height: 1.2; }
+      .copy-desc { margin-top: 1mm; font-size: 6.5pt; }
+      .lesson-list { gap: 1.5mm; }
+      .notice-card { padding: 1.3mm 1.7mm; border: .25mm solid #c8d0cc; border-radius: 1.5mm; }
+      .notice-top { gap: 1mm; font-size: 6.3pt; }
+      .notice-class { padding: .2mm 1.2mm; }
+      .notice-subject { margin-top: .8mm; font-size: 8pt; line-height: 1.2; }
+      .notice-date, .notice-teacher { margin-top: .5mm; font-size: 6.1pt; line-height: 1.15; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar site-header">
+    <a class="brand" href="./index.html" aria-label="返回 QMSS Tools 首頁">
+      <span class="brand-mark" aria-hidden="true">Q</span>
+      <span><span class="brand-name">QMSS Tools</span><span class="brand-caption">TEACHER TOOLKIT</span></span>
+    </a>
+    <span class="year-pill" id="year-pill">正在讀取課表…</span>
+  </header>
+
+  <main class="wrap">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">教務安排 · 課表已預載</p>
+      <h1 id="page-title">調堂小幫手</h1>
+      <p class="intro-copy">選好班別，再填寫每位老師原本的上課日期、循環日和節數；系統會按輪流接課的方式整理通知，列印給各位老師、班房和行政主任 Florence。</p>
+    </section>
+
+    <lumen-card class="builder-card" variant="unstyled" as="section" aria-labelledby="setup-title">
+      <div class="section-heading">
+        <div><h2 id="setup-title">調堂資料</h2><p>所有老師的原課須屬於同一班別。</p></div>
+        <span class="step-label">STEP 01 · 填寫安排</span>
+      </div>
+
+      <div class="mode-row">
+        <span class="mode-label" id="mode-label">調堂人數</span>
+        <div class="mode-switch" role="group" aria-labelledby="mode-label">
+          <button type="button" data-count="2" aria-pressed="true">二人互調</button>
+          <button type="button" data-count="3" aria-pressed="false">三人互調</button>
+        </div>
+        <span class="step-label" id="copy-count-label">將列印 4 份</span>
+      </div>
+
+      <div class="class-row">
+        <div class="field">
+          <label class="field-label" for="class-select">共同班別</label>
+          <select class="control" id="class-select" required disabled><option value="">正在讀取班別…</option></select>
+        </div>
+        <div class="cycle-note">
+          <span class="note-mark" aria-hidden="true">!</span>
+          <span><strong>日期和 A–F 循環日要分別選擇。</strong>年度課表列出 Day A 至 Day F，沒有日期對照；請按校曆核對後，為每位老師手動選擇循環日。</span>
+        </div>
+      </div>
+
+      <p class="rotation"><strong>調堂方式：</strong>二人互調時 A 接 B 的課節、B 接 A 的課節；三人互調時 A 接 B、B 接 C、C 接 A。每位老師保留自己的科目／課堂內容。</p>
+      <div id="teacher-cards" class="teacher-grid" aria-live="polite"><p class="loading">正在載入年度課表…</p></div>
+      <div id="data-error" class="data-error" role="alert"></div>
+      <div class="builder-bottom">
+        <p id="form-status" class="status-text" role="status" aria-live="polite">先選班別，再為每位老師填妥原課資料。</p>
+        <lumen-button id="preview-button" variant="default" size="lg" type="button" disabled aria-label="預覽調堂列印表格">
+          <span class="lumen-button-label">預覽列印版面 <span class="btn-arrow" aria-hidden="true">→</span></span>
+        </lumen-button>
+      </div>
+    </lumen-card>
+
+    <section id="preview-section" class="preview-section" aria-labelledby="preview-title" hidden>
+      <div class="preview-toolbar">
+        <div><h2 id="preview-title">列印預覽</h2><p class="hint" id="preview-count"></p></div>
+        <div class="preview-actions">
+          <lumen-button id="edit-button" variant="secondary" type="button">返回修改</lumen-button>
+          <lumen-button id="print-button" variant="default" type="button"><span class="lumen-button-label">列印／另存 PDF <span class="btn-arrow" aria-hidden="true">↗</span></span></lumen-button>
+        </div>
+      </div>
+      <div id="print-sheet" class="print-sheet" aria-label="調堂通知列印版面"></div>
+      <p class="print-hint">列印設定：A4 橫向、縮放 100%；會一次列印全部份數。</p>
+    </section>
+
+    <footer class="page-foot">
+      <span id="data-foot">課表每學年更新一次；使用者毋須登入或上載課表。</span>
+      <a href="./index.html">返回工具首頁</a>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+      var data;
+      var peopleCount = 2;
+      var slots = [];
+      var classSelect = document.getElementById('class-select');
+      var teacherCards = document.getElementById('teacher-cards');
+      var formStatus = document.getElementById('form-status');
+      var previewButton = document.getElementById('preview-button');
+      var previewSection = document.getElementById('preview-section');
+      var printSheet = document.getElementById('print-sheet');
+      var modeButtons = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
+
+      function escapeHtml(value) {
+        return String(value == null ? '' : value).replace(/[&<>"']/g, function (character) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+        });
+      }
+      function teacherByCode(code) {
+        return data.teachers.find(function (teacher) { return teacher.code === code; });
+      }
+      function lessonsFor(teacher, classCode, day) {
+        if (!teacher) return [];
+        return teacher.lessons.filter(function (lesson) {
+          return lesson.day === day && lesson.classes.indexOf(classCode) !== -1;
+        }).sort(function (a, b) { return a.period - b.period; });
+      }
+      function matchingLesson(slot) {
+        var teacher = teacherByCode(slot.teacher);
+        return lessonsFor(teacher, classSelect.value, slot.day).find(function (lesson) {
+          return String(lesson.period) === String(slot.period);
+        }) || null;
+      }
+      function eligibleTeachers(classCode) {
+        return data.teachers.filter(function (teacher) {
+          return teacher.lessons.some(function (lesson) { return lesson.classes.indexOf(classCode) !== -1; });
+        }).sort(function (a, b) { return a.displayName.localeCompare(b.displayName, 'zh-Hant'); });
+      }
+      function setPeopleCount(count) {
+        var dates = slots.map(function (slot) { return slot.date; });
+        var days = slots.map(function (slot) { return slot.day; });
+        var kept = slots.slice(0, count);
+        while (kept.length < count) kept.push({ teacher: '', date: '', day: '', period: '' });
+        slots = kept;
+        peopleCount = count;
+        modeButtons.forEach(function (button) {
+          button.setAttribute('aria-pressed', String(Number(button.dataset.count) === count));
+        });
+        document.getElementById('copy-count-label').textContent = '將列印 ' + (count + 2) + ' 份';
+        renderTeacherCards();
+        updateFormStatus();
+        previewSection.hidden = true;
+      }
+      function renderTeacherCards(focusId) {
+        if (!data) return;
+        var classCode = classSelect.value;
+        var teachers = classCode ? eligibleTeachers(classCode) : [];
+        var html = '';
+        for (var index = 0; index < peopleCount; index += 1) {
+          var slot = slots[index];
+          var teacher = teacherByCode(slot.teacher);
+          var dayLessons = lessonsFor(teacher, classCode, slot.day);
+          var periodOptions = dayLessons.map(function (lesson) {
+            return '<option value="' + lesson.period + '" ' + (String(lesson.period) === String(slot.period) ? 'selected' : '') + '>第 ' + lesson.period + ' 節 · ' + escapeHtml(lesson.subject) + '</option>';
+          }).join('');
+          var teacherOptions = teachers.map(function (item) {
+            return '<option value="' + escapeHtml(item.code) + '" ' + (item.code === slot.teacher ? 'selected' : '') + '>' + escapeHtml(item.displayName) + '</option>';
+          }).join('');
+          var course = matchingLesson(slot);
+          var courseLine = course ? escapeHtml(course.subject) : (slot.teacher && slot.day && !dayLessons.length ? '這位老師在所選循環日沒有該班課堂，請改選老師或日期／循環日。' : '選擇老師、日期、循環日和原課節後，課堂內容會自動帶入。');
+          var title = String.fromCharCode(65 + index);
+          html += '<lumen-card class="teacher-card" variant="unstyled" as="section" aria-labelledby="teacher-title-' + index + '">' +
+            '<div class="teacher-head"><div class="teacher-title"><span class="teacher-avatar" aria-hidden="true">' + title + '</span><div><h3 id="teacher-title-' + index + '">老師 ' + title + '</h3><span class="teacher-seq">第 ' + (index + 1) + ' 位調堂老師</span></div></div><span class="step-label">原課資料</span></div>' +
+            '<div class="teacher-fields">' +
+              '<div class="field wide"><label class="field-label" for="teacher-' + index + '">老師</label><select class="control" id="teacher-' + index + '" data-slot-index="' + index + '" data-field="teacher" required ' + (!classCode ? 'disabled' : '') + '><option value="">' + (classCode ? '選擇老師' : '請先選班別') + '</option>' + teacherOptions + '</select></div>' +
+              '<div class="field"><label class="field-label" for="date-' + index + '">上課日期</label><input class="control" id="date-' + index + '" type="date" data-slot-index="' + index + '" data-field="date" value="' + escapeHtml(slot.date) + '" required></div>' +
+              '<div class="field"><label class="field-label" for="day-' + index + '">循環日</label><select class="control" id="day-' + index + '" data-slot-index="' + index + '" data-field="day" required><option value="">選擇 A–F</option>' + data.days.map(function (day) { return '<option value="' + day + '" ' + (slot.day === day ? 'selected' : '') + '>Day ' + day + '</option>'; }).join('') + '</select><p class="hint">請按校曆核對</p></div>' +
+              '<div class="field wide"><label class="field-label" for="period-' + index + '">原課節</label><select class="control" id="period-' + index + '" data-slot-index="' + index + '" data-field="period" required ' + (!teacher || !slot.day || !dayLessons.length ? 'disabled' : '') + '><option value="">' + (teacher && slot.day ? (dayLessons.length ? '選擇節數' : '該日沒有此班課堂') : '先選老師和循環日') + '</option>' + periodOptions + '</select></div>' +
+            '</div><div class="lesson-readout" aria-live="polite"><strong>該節課堂／科目（由年度課表帶入）</strong>' + courseLine + '</div></lumen-card>';
+        }
+        teacherCards.innerHTML = html;
+        if (focusId) {
+          var focus = document.getElementById(focusId);
+          if (focus) focus.focus();
+        }
+      }
+      function validate() {
+        var chosen = [];
+        var missing = false;
+        for (var i = 0; i < peopleCount; i += 1) {
+          var slot = slots[i];
+          var lesson = matchingLesson(slot);
+          if (!slot.teacher || !slot.date || !slot.day || !slot.period || !lesson) missing = true;
+          chosen.push({ slot: slot, lesson: lesson, teacher: teacherByCode(slot.teacher) });
+        }
+        if (missing) return { valid: false, message: '請填妥每位老師的老師、日期、循環日和有效課節。' };
+        var seenTeachers = new Set();
+        for (var t = 0; t < chosen.length; t += 1) {
+          if (seenTeachers.has(chosen[t].slot.teacher)) return { valid: false, message: '每位老師只能選一次，請更換重複的老師。' };
+          seenTeachers.add(chosen[t].slot.teacher);
+        }
+        var seenTimes = new Set();
+        for (var s = 0; s < chosen.length; s += 1) {
+          var timeKey = chosen[s].slot.date + '|' + chosen[s].slot.period;
+          if (seenTimes.has(timeKey)) return { valid: false, message: '同一班別不能在同一日期、同一節安排兩位老師，請檢查日期和節數。' };
+          seenTimes.add(timeKey);
+        }
+        return { valid: true, message: '資料已齊全，可以預覽 ' + (peopleCount + 2) + ' 份列印版面。' };
+      }
+      function updateFormStatus() {
+        var result = validate();
+        formStatus.textContent = result.message;
+        formStatus.dataset.state = result.valid ? 'ready' : (result.message.indexOf('重複') !== -1 || result.message.indexOf('同一班別') !== -1 ? 'error' : '');
+        previewButton.toggleAttribute('disabled', !result.valid);
+        previewButton.setAttribute('aria-disabled', String(!result.valid));
+        if (window.customElements && !window.customElements.get('lumen-button')) previewButton.tabIndex = 0;
+      }
+      function dateLabel(isoDate) {
+        var parts = isoDate.split('-').map(Number);
+        var date = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+        var week = ['日', '一', '二', '三', '四', '五', '六'][date.getUTCDay()];
+        return parts[0] + '年' + String(parts[1]).padStart(2, '0') + '月' + String(parts[2]).padStart(2, '0') + '日（' + week + '）';
+      }
+      function appendText(parent, tagName, className, text) {
+        var element = document.createElement(tagName);
+        if (className) element.className = className;
+        element.textContent = text;
+        parent.appendChild(element);
+        return element;
+      }
+      function buildCopies() {
+        var result = validate();
+        if (!result.valid) {
+          updateFormStatus();
+          return;
+        }
+        var participants = result.valid ? slots.slice(0, peopleCount).map(function (slot) {
+          return { slot: slot, teacher: teacherByCode(slot.teacher), lesson: matchingLesson(slot) };
+        }) : [];
+        var assignments = participants.map(function (participant, index) {
+          var incoming = participants[(index + 1) % participants.length];
+          return {
+            teacher: participant.teacher.displayName,
+            subject: participant.lesson.subject,
+            classCode: classSelect.value,
+            date: incoming.slot.date,
+            day: incoming.slot.day,
+            period: incoming.slot.period
+          };
+        });
+        var copies = participants.map(function (participant, index) {
+          return { mark: '調堂通知 · ' + data.academicYear + ' · 老師用第 ' + (index + 1) + ' 份', recipient: participant.teacher.displayName, desc: '請按以下新日期及節數上課。' };
+        });
+        copies.push({ mark: '調堂通知 · ' + data.academicYear + ' · 班房張貼第 ' + (peopleCount + 1) + ' 份', recipient: '貼於 ' + classSelect.value + ' 班房', desc: '供學生查看調堂後的上課安排。' });
+        copies.push({ mark: '調堂通知 · ' + data.academicYear + ' · 行政存檔第 ' + (peopleCount + 2) + ' 份', recipient: '交行政主任 Florence', desc: '請交回行政主任 Florence 保存。' });
+        printSheet.style.setProperty('--copy-count', String(copies.length));
+        printSheet.style.setProperty('--participant-count', String(peopleCount));
+        printSheet.replaceChildren();
+        copies.forEach(function (copy) {
+          var section = document.createElement('section');
+          section.className = 'print-copy';
+          section.setAttribute('aria-label', copy.recipient + '副本');
+          var meta = document.createElement('div');
+          meta.className = 'copy-meta';
+          appendText(meta, 'span', 'copy-mark', copy.mark);
+          appendText(meta, 'h3', 'copy-recipient', copy.recipient);
+          appendText(meta, 'p', 'copy-desc', copy.desc);
+          section.appendChild(meta);
+          var list = document.createElement('div');
+          list.className = 'lesson-list';
+          assignments.forEach(function (assignment, assignmentIndex) {
+            var card = document.createElement('article');
+            card.className = 'notice-card';
+            var top = document.createElement('div');
+            top.className = 'notice-top';
+            appendText(top, 'span', '', '新安排 ' + String.fromCharCode(65 + assignmentIndex));
+            appendText(top, 'span', 'notice-class', assignment.classCode);
+            card.appendChild(top);
+            appendText(card, 'strong', 'notice-subject', assignment.subject);
+            appendText(card, 'p', 'notice-date', dateLabel(assignment.date) + ' · Day ' + assignment.day + ' · 第 ' + assignment.period + ' 節');
+            appendText(card, 'p', 'notice-teacher', '上課老師：' + assignment.teacher);
+            list.appendChild(card);
+          });
+          section.appendChild(list);
+          printSheet.appendChild(section);
+        });
+        document.getElementById('preview-count').textContent = '共 ' + copies.length + ' 份：' + peopleCount + ' 位老師各一份、班房張貼一份、Florence 一份。';
+        previewSection.hidden = false;
+        previewSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      function onFormChange(event) {
+        var target = event.target;
+        if (!target.matches('[data-slot-index]')) return;
+        var index = Number(target.dataset.slotIndex);
+        var field = target.dataset.field;
+        var value = target.value;
+        slots[index][field] = value;
+        if (field === 'teacher' || field === 'day') slots[index].period = '';
+        renderTeacherCards(target.id);
+        updateFormStatus();
+        previewSection.hidden = true;
+      }
+      function loadTimetable() {
+        fetch('./data/timetable.json?v=2627-20260927', { cache: 'force-cache' }).then(function (response) {
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          return response.json();
+        }).then(function (timetable) {
+          data = timetable;
+          slots = [{ teacher: '', date: '', day: '', period: '' }, { teacher: '', date: '', day: '', period: '' }];
+          document.getElementById('year-pill').textContent = '課表版本 · ' + data.academicYear;
+          document.getElementById('data-foot').textContent = data.academicYear + ' 課表已預載；使用者毋須登入或上載。新學年由工具維護者更新課表資料。';
+          classSelect.innerHTML = '<option value="">選擇班別</option>' + data.classes.map(function (classCode) { return '<option value="' + escapeHtml(classCode) + '">' + escapeHtml(classCode) + '</option>'; }).join('');
+          classSelect.disabled = false;
+          classSelect.addEventListener('change', function () {
+            slots = slots.map(function (slot) { return { teacher: '', date: slot.date, day: slot.day, period: '' }; });
+            renderTeacherCards();
+            updateFormStatus();
+            previewSection.hidden = true;
+          });
+          teacherCards.addEventListener('change', onFormChange);
+          document.getElementById('data-error').classList.remove('is-visible');
+          renderTeacherCards();
+          updateFormStatus();
+        }).catch(function () {
+          var error = document.getElementById('data-error');
+          error.textContent = '未能載入預載課表，請重新整理頁面；如問題持續，請聯絡工具維護者。';
+          error.classList.add('is-visible');
+          teacherCards.innerHTML = '<p class="loading">課表暫時未能載入。</p>';
+          classSelect.disabled = true;
+        });
+      }
+
+      modeButtons.forEach(function (button) {
+        button.addEventListener('click', function () { setPeopleCount(Number(button.dataset.count)); });
+      });
+      previewButton.addEventListener('click', buildCopies);
+      document.getElementById('edit-button').addEventListener('click', function () {
+        previewSection.hidden = true;
+        document.getElementById('setup-title').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      document.getElementById('print-button').addEventListener('click', function () { window.print(); });
+      loadTimetable();
+    }());
+  </script>
+</body>
+</html>

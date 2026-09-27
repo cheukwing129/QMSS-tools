@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f4ee">
-  <meta name="description" content="QMSS 校務工具入口：頒獎禮排隊控場、交流團點名，以及即將推出的調堂工具。">
+  <meta name="description" content="QMSS 校務工具入口：頒獎禮控場、交流團點名及調堂列印工具。">
   <title>QMSS Tools｜校務工具入口</title>
   <style>
     :root {
@@ -421,7 +421,7 @@
       <a href="#tools">工具清單</a>
       <a href="#footer">關於工具站</a>
     </nav>
-    <span class="live-count"><span class="live-dot" aria-hidden="true"></span><span id="header-live-count">2 款工具可用</span></span>
+    <span class="live-count"><span class="live-dot" aria-hidden="true"></span><span id="header-live-count">3 款工具可用</span></span>
   </header>
 
   <main class="wrap">
@@ -429,7 +429,7 @@
       <div>
         <p class="eyebrow">QMSS · 教師工具站</p>
         <h1 id="hero-title">校務日常，<br>一頁找到順手工具。</h1>
-        <p class="hero-copy">把活動控場、學生點名等工作小工具集中在這裡。選擇工具即可開啟，之後新增的工具也會在此整理。</p>
+        <p class="hero-copy">把活動控場、學生點名和調堂安排等工作小工具集中在這裡。選擇工具即可開啟，之後新增的工具也會在此整理。</p>
         <a class="primary-link" href="#tools">
           查看所有工具
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -439,8 +439,8 @@
         <div class="overview-kicker">TOOLKIT SNAPSHOT</div>
         <div class="overview-title">小工具，讓現場流程更順。</div>
         <div class="overview-stats">
-          <div><span class="stat-number" id="available-count">02</span><span class="stat-label">可直接使用</span></div>
-          <div><span class="stat-number" id="planned-count">01</span><span class="stat-label">規劃中</span></div>
+          <div><span class="stat-number" id="available-count">03</span><span class="stat-label">可直接使用</span></div>
+          <div><span class="stat-number" id="planned-count">00</span><span class="stat-label">規劃中</span></div>
         </div>
         <div class="overview-foot"><span class="live-dot" aria-hidden="true"></span>工具清單會隨新功能更新</div>
       </aside>
@@ -505,19 +505,21 @@
           </div>
         </article>
 
-        <article class="tool-card planned" data-category="academic" data-status="planned" data-search="調堂 調課 課堂 課節 教務 安排">
+        <article class="tool-card adjustment" data-category="academic" data-status="available" data-search="調堂 調課 課堂 課節 教務 安排 老師 二人 三人 列印">
           <div class="card-top">
             <span class="tool-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M8 3.5v3m8-3v3M3.5 9h17M8 13h3m2 0h3m-8 4h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
             </span>
-            <span class="status-badge upcoming"><span class="status-dot" aria-hidden="true"></span>規劃中</span>
+            <span class="status-badge"><span class="status-dot" aria-hidden="true"></span>已上線</span>
           </div>
           <div class="category">教務安排</div>
           <h3>調堂小幫手</h3>
-          <p>整理調堂安排與課節資料，讓臨時改動更容易查看。工具正在規劃中。</p>
+          <p>按年度預載課表設定二人或三人互調，自動整理老師、班房及行政主任的列印通知。</p>
           <div class="card-bottom">
-            <span class="feature-tag">即將加入工具清單</span>
-            <span class="coming-label">尚未開放</span>
+            <span class="feature-tag">課表預載 · 二人／三人互調</span>
+            <a class="card-link" href="./adjustment-timetable.htm?v=adjustment-ui-20260927">開啟工具
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
         </article>
       </div>
