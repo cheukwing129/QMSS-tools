@@ -143,6 +143,10 @@
     .timetable-prompt { margin: 5px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
     .timetable-legend { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: hsl(var(--ink-soft)); font-size: 10px; }
     .timetable-legend span { display: inline-flex; align-items: center; gap: 5px; }
+    .split-toggle { display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 4px 8px; border: 1px solid hsl(var(--brand) / .28); border-radius: 8px; background: hsl(var(--brand-soft) / .55); color: hsl(var(--ink)); font-size: 10px; font-weight: 750; cursor: pointer; }
+    .split-toggle input { width: 14px; height: 14px; margin: 0; accent-color: hsl(var(--brand)); }
+    .split-toggle:focus-within { outline: 2px solid hsl(var(--brand) / .55); outline-offset: 2px; }
+    .split-hidden-note { min-height: 52px; display: flex; align-items: center; justify-content: center; padding: 6px; border: 1px dashed hsl(var(--ink) / .16); border-radius: 9px; background: hsl(var(--ink) / .035); color: var(--muted); font-size: 9px; font-weight: 700; line-height: 1.5; text-align: center; }
     .legend-dot { width: 9px; height: 9px; border-radius: 50%; background: hsl(var(--ink) / .2); }
     .legend-dot.available { background: hsl(var(--brand)); }
     .legend-dot.own { background: hsl(var(--accent)); }
@@ -413,6 +417,10 @@
               <p id="selection-prompt" class="timetable-prompt">先在課表點選你想調走的課節。</p>
             </div>
             <div class="timetable-legend" aria-label="課表標示說明">
+              <label class="split-toggle" for="hide-split-lessons">
+                <input id="hide-split-lessons" type="checkbox" checked>
+                隱藏拆班課節
+              </label>
               <span><i class="legend-dot available" aria-hidden="true"></i>可調換</span>
               <span><i class="legend-dot own" aria-hidden="true"></i>你的課節</span>
               <span><i class="legend-dot manual" aria-hidden="true"></i>手動選擇</span>
@@ -480,6 +488,7 @@
       var classSelect = document.getElementById('class-select');
       var timetableWorkflow = document.getElementById('timetable-workflow');
       var classTimetable = document.getElementById('class-timetable');
+      var hideSplitToggle = document.getElementById('hide-split-lessons');
       var selectedLessons = document.getElementById('selected-lessons');
       var selectionPrompt = document.getElementById('selection-prompt');
       var selectionStepLabel = document.getElementById('selection-step-label');
@@ -539,12 +548,19 @@
       function entriesFor(classCode, day, period) {
         return scheduleIndex[classCode + '|' + day + '|' + period] || [];
       }
+      function isSplitLesson(classCode, day, period) {
+        return new Set(entriesFor(classCode, day, period).map(function (entry) {
+          return entry.teacher;
+        })).size > 1;
+      }
       function classesFor(teacher) {
         var taught = new Set();
         (teacher.lessons || []).forEach(function (lesson) {
           (lesson.classes || []).forEach(function (classCode) { taught.add(classCode); });
         });
-        return data.classes.filter(function (classCode) { return taught.has(classCode); });
+        return data.classes.filter(function (classCode) { return taught.has(classCode); }).sort(function (a, b) {
+          return a.localeCompare(b, 'en', { numeric: true, sensitivity: 'base' });
+        });
       }
       function datesForDay(day) {
         return Object.keys(calendarDays).filter(function (date) {
@@ -615,7 +631,8 @@
       }
       function teacherOptions(selectedCode) {
         return data.teachers.slice().sort(function (a, b) {
-          return (a.displayName || a.code).localeCompare(b.displayName || b.code, 'zh-Hant');
+          return (a.displayName || a.code).localeCompare(b.displayName || b.code, 'en', { sensitivity: 'base' }) ||
+            String(a.code).localeCompare(String(b.code), 'en', { sensitivity: 'base' });
         }).map(function (teacher) {
           var disabled = selectedSlots.some(function (slot) { return slot.teacher === teacher.code; }) && teacher.code !== selectedCode;
           return '<option value="' + escapeHtml(teacher.code) + '" ' + (teacher.code === selectedCode ? 'selected ' : '') +
@@ -741,67 +758,72 @@
         var rows = data.periods.map(function (period) {
           var cells = data.days.map(function (day) {
             var entries = entriesFor(classCode, day, period);
+            var splitHidden = hideSplitToggle.checked && isSplitLesson(classCode, day, period);
             var isOwnPhase = selectedSlots.length === 0;
             var canChoose = selectedSlots.length < peopleCount;
             var html = '';
             if (period === 1 && day !== 'F') {
               html += '<div class="period-note-inline">早會／閱讀</div>';
             }
-            if (entries.length) {
-              html += entries.map(function (entry) {
-                var chosenIndex = selectedSlots.findIndex(function (slot) {
-                  return slot.teacher === entry.teacher && slot.day === day && Number(slot.period) === Number(period) && slot.subject === entry.subject;
-                });
-                var isChosen = chosenIndex !== -1;
-                var selectedTeacher = selectedSlots.some(function (slot) { return slot.teacher === entry.teacher; });
-                var ownEntry = entry.teacher === ownerCode;
-                var available = false;
-                var conflicts = [];
-                var selectable = false;
-                var status = '';
-                var classes = ['timetable-entry'];
-                if (isChosen) {
-                  classes.push('is-selected');
-                  status = '已選課節';
-                } else if (isOwnPhase) {
-                  selectable = canChoose && ownEntry;
-                  if (ownEntry) {
-                    classes.push('is-owner-lesson');
-                    status = '你的課節';
-                  }
-                } else {
-                  selectable = canChoose && !selectedTeacher;
-                  if (selectable) {
-                    var candidate = { teacher: entry.teacher, subject: entry.subject, day: day, period: Number(period), manualOverride: false };
-                    var statusCheck = assessCycle(selectedSlots.concat([candidate]), selectedSlots.length + 1 === peopleCount);
-                    conflicts = statusCheck.conflicts;
-                    available = statusCheck.available;
-                    if (available) {
-                      classes.push('is-highlighted');
-                      status = selectedSlots.length + 1 === peopleCount ? '可調換' : '目前可行';
-                    } else {
-                      classes.push('is-muted');
-                      status = '可選 · 請確認';
+            if (splitHidden) {
+              html += '<div class="split-hidden-note" aria-label="拆班課節已隱藏">拆班課節<br>已隱藏</div>';
+            } else {
+              if (entries.length) {
+                html += entries.map(function (entry) {
+                  var chosenIndex = selectedSlots.findIndex(function (slot) {
+                    return slot.teacher === entry.teacher && slot.day === day && Number(slot.period) === Number(period) && slot.subject === entry.subject;
+                  });
+                  var isChosen = chosenIndex !== -1;
+                  var selectedTeacher = selectedSlots.some(function (slot) { return slot.teacher === entry.teacher; });
+                  var ownEntry = entry.teacher === ownerCode;
+                  var available = false;
+                  var conflicts = [];
+                  var selectable = false;
+                  var status = '';
+                  var classes = ['timetable-entry'];
+                  if (isChosen) {
+                    classes.push('is-selected');
+                    status = '已選課節';
+                  } else if (isOwnPhase) {
+                    selectable = canChoose && ownEntry;
+                    if (ownEntry) {
+                      classes.push('is-owner-lesson');
+                      status = '你的課節';
                     }
-                  } else if (selectedTeacher) {
-                    status = '已選此老師';
+                  } else {
+                    selectable = canChoose && !selectedTeacher;
+                    if (selectable) {
+                      var candidate = { teacher: entry.teacher, subject: entry.subject, day: day, period: Number(period), manualOverride: false };
+                      var statusCheck = assessCycle(selectedSlots.concat([candidate]), selectedSlots.length + 1 === peopleCount);
+                      conflicts = statusCheck.conflicts;
+                      available = statusCheck.available;
+                      if (available) {
+                        classes.push('is-highlighted');
+                        status = selectedSlots.length + 1 === peopleCount ? '可調換' : '目前可行';
+                      } else {
+                        classes.push('is-muted');
+                        status = '可選 · 請確認';
+                      }
+                    } else if (selectedTeacher) {
+                      status = '已選此老師';
+                    }
                   }
-                }
-                var title = entry.subject + ' · ' + entry.teacherName + ' · Day ' + day + ' 第 ' + period + ' 節';
-                if (conflicts.length) title += ' · ' + conflicts.map(conflictText).join('');
-                return '<button type="button" class="' + classes.join(' ') + '" data-kind="lesson" data-day="' + day +
-                  '" data-period="' + period + '" data-teacher="' + escapeHtml(entry.teacher) + '" data-subject="' +
-                  escapeHtml(entry.subject) + '" title="' + escapeHtml(title) + '"' + (selectable ? '' : ' disabled') + '>' +
-                  '<span class="entry-subject">' + escapeHtml(entry.subject || '課堂') + '</span><span class="entry-teacher">' +
-                  escapeHtml(entry.teacherName) + '</span>' + (status ? '<span class="entry-status">' + escapeHtml(status) + '</span>' : '') +
-                  '</button>';
-              }).join('');
-            }
-            if (!entries.length || selectedSlots.length < peopleCount) {
-              var emptyDisabled = selectedSlots.length >= peopleCount;
-              html += '<button type="button" class="empty-slot" data-kind="empty" data-day="' + day + '" data-period="' + period +
-                '" ' + (emptyDisabled ? 'disabled' : '') + '><span>' + (entries.length ? '另選手動時段' : '空堂 · 手動選') +
-                '</span><span class="entry-status">需確認</span></button>';
+                  var title = entry.subject + ' · ' + entry.teacherName + ' · Day ' + day + ' 第 ' + period + ' 節';
+                  if (conflicts.length) title += ' · ' + conflicts.map(conflictText).join('');
+                  return '<button type="button" class="' + classes.join(' ') + '" data-kind="lesson" data-day="' + day +
+                    '" data-period="' + period + '" data-teacher="' + escapeHtml(entry.teacher) + '" data-subject="' +
+                    escapeHtml(entry.subject) + '" title="' + escapeHtml(title) + '"' + (selectable ? '' : ' disabled') + '>' +
+                    '<span class="entry-subject">' + escapeHtml(entry.subject || '課堂') + '</span><span class="entry-teacher">' +
+                    escapeHtml(entry.teacherName) + '</span>' + (status ? '<span class="entry-status">' + escapeHtml(status) + '</span>' : '') +
+                    '</button>';
+                }).join('');
+              }
+              if (!entries.length || selectedSlots.length < peopleCount) {
+                var emptyDisabled = selectedSlots.length >= peopleCount;
+                html += '<button type="button" class="empty-slot" data-kind="empty" data-day="' + day + '" data-period="' + period +
+                  '" ' + (emptyDisabled ? 'disabled' : '') + '><span>' + (entries.length ? '另選手動時段' : '空堂 · 手動選') +
+                  '</span><span class="entry-status">需確認</span></button>';
+              }
             }
             return '<td><div class="timetable-cell">' + html + '</div></td>';
           }).join('');
@@ -810,6 +832,29 @@
         var headers = data.days.map(function (day) { return '<th scope="col">Day ' + day + '</th>'; }).join('');
         classTimetable.innerHTML = '<table class="class-timetable" aria-label="' + escapeHtml(classCode) +
           ' 班循環課表"><thead><tr><th scope="col">節數</th>' + headers + '</tr></thead><tbody>' + rows + '</tbody></table>';
+      }
+      function handleSplitToggle() {
+        if (!hideSplitToggle.checked || !classSelect.value) {
+          renderSchedule();
+          return;
+        }
+        var firstHiddenIndex = selectedSlots.findIndex(function (slot) {
+          return isSplitLesson(classSelect.value, slot.day, slot.period);
+        });
+        if (firstHiddenIndex !== -1) {
+          selectedSlots = selectedSlots.slice(0, firstHiddenIndex);
+          pendingChoice = null;
+          renderAll();
+          previewSection.hidden = true;
+          return;
+        }
+        if (pendingChoice && isSplitLesson(classSelect.value, pendingChoice.day, pendingChoice.period)) {
+          pendingChoice = null;
+          renderAll();
+          previewSection.hidden = true;
+          return;
+        }
+        renderSchedule();
       }
       function updateFormStatus() {
         var result = validate();
@@ -1111,7 +1156,8 @@
           calendarDays = calendarMeta.days || {};
           buildScheduleIndex();
           teacherSelect.innerHTML = '<option value="">選擇老師</option>' + data.teachers.slice().sort(function (a, b) {
-            return (a.displayName || a.code).localeCompare(b.displayName || b.code, 'zh-Hant');
+            return (a.displayName || a.code).localeCompare(b.displayName || b.code, 'en', { sensitivity: 'base' }) ||
+            String(a.code).localeCompare(String(b.code), 'en', { sensitivity: 'base' });
           }).map(function (teacher) {
             return '<option value="' + escapeHtml(teacher.code) + '">' + escapeHtml(teacher.displayName || teacher.code) + '</option>';
           }).join('');
@@ -1176,6 +1222,7 @@
         });
       });
       classTimetable.addEventListener('click', handleScheduleClick);
+      hideSplitToggle.addEventListener('change', handleSplitToggle);
       selectedLessons.addEventListener('click', handleScheduleClick);
       manualPanel.addEventListener('click', handleManualPanelClick);
       manualPanel.addEventListener('change', handleManualTeacherChange);
