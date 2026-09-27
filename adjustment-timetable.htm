@@ -830,7 +830,7 @@
             return '<td><div class="timetable-cell">' + html + '</div></td>';
           }).join('');
           var lessonRow = '<tr><td>第 ' + period + ' 節</td>' + cells + '</tr>';
-          var breakLabel = Number(period) === 2 ? '小息' : (Number(period) === 6 ? '午息' : '');
+          var breakLabel = Number(period) === 3 ? '小息' : (Number(period) === 6 ? '午息' : '');
           if (!breakLabel) return lessonRow;
           var breakClass = breakLabel === '午息' ? ' timetable-break-row lunch' : ' timetable-break-row';
           return lessonRow + '<tr class="' + breakClass.trim() + '"><td colspan="' + (data.days.length + 1) +
