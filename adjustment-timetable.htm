@@ -126,6 +126,7 @@
     .note-mark { flex: 0 0 auto; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 7px; background: hsl(var(--warning) / .16); color: hsl(var(--warning)); font-size: 12px; font-weight: 900; }
     .rotation { margin: 17px 0 0; padding: 13px 15px; border-radius: 13px; background: hsl(var(--brand-soft)); color: var(--green-dark); font-size: 11px; }
     .rotation strong { font-weight: 800; }
+    .period-note { margin: 14px 0 0; padding: 11px 14px; border: 1px solid hsl(var(--brand) / .15); border-radius: 12px; background: hsl(var(--brand-soft) / .55); color: var(--green-dark); font-size: 11px; line-height: 1.6; }
     .teacher-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; margin-top: 17px; }
     .teacher-card { display: block; min-width: 0; padding: 17px; border: 1px solid hsl(var(--ink) / .1); border-radius: 17px; background: hsl(var(--surface) / .72); }
     lumen-card.teacher-card { display: block; }
@@ -321,6 +322,7 @@
         </div>
       </div>
 
+      <p class="period-note"><strong>節數對齊：</strong>全日按第 1–9 節編號。Day F 第 1 節對應其他日子的早會／閱讀時段；Day A–E 正式課堂由第 2 節開始。</p>
       <p class="rotation"><strong>調堂方式：</strong>二人互調時 A 接 B 的課節、B 接 A 的課節；三人互調時 A 接 B、B 接 C、C 接 A。每位老師保留自己的科目／課堂內容。</p>
       <div id="teacher-cards" class="teacher-grid" aria-live="polite"><p class="loading">正在載入年度課表…</p></div>
       <div id="data-error" class="data-error" role="alert"></div>
