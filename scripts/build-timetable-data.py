@@ -2,7 +2,7 @@
 """Convert the school's annual teacher timetable workbook to public web data.
 
 Expected source layout: teacher name in A3; Day A–F in B:G; Day F period 1
-in row 6, and periods 2–9 in rows 7, 8, 10, 11, 12, 14, and 16. Requires openpyxl.
+in row 6, and periods 2–9 in rows 7, 8, 10, 11, 12, 14, 15, and 16. Requires openpyxl.
 """
 from __future__ import annotations
 
