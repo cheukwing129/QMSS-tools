@@ -158,6 +158,24 @@
         },
         {
           "day": "C",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 1EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
           "period": 7,
           "classes": [
             "3P"
@@ -165,6 +183,24 @@
           "subject": "ENG 402"
         },
         {
+          "day": "C",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 3EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP LAP",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "D",
           "period": 2,
           "classes": [
@@ -195,6 +231,15 @@
             "3P"
           ],
           "subject": "ENG 402"
+        },
+        {
+          "day": "E",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Form-Co. Meeting",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "E",
@@ -259,6 +304,24 @@
             "2K"
           ],
           "subject": "LAE 113"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 6EN",
+          "specials": [
+            "clp"
+          ]
         }
       ]
     },
@@ -277,6 +340,15 @@
         },
         {
           "day": "A",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 5EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
           "period": 7,
           "classes": [
             "5P"
@@ -338,6 +410,15 @@
             "6W"
           ],
           "subject": "ENG_W 606"
+        },
+        {
+          "day": "C",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 1EN",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "C",
@@ -429,11 +510,29 @@
         },
         {
           "day": "E",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Form-Co. Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "E",
           "period": 8,
           "classes": [
             "6W"
           ],
           "subject": "ENG_W 606"
+        },
+        {
+          "day": "E",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP ENG Society Meeting",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "F",
@@ -474,6 +573,24 @@
             "6W"
           ],
           "subject": "Consultation"
+        },
+        {
+          "day": "F",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 6EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -492,6 +609,42 @@
         },
         {
           "day": "A",
+          "period": 4,
+          "classes": [],
+          "subject": "CLP Principal Core Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Principal Core Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 5EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP School Improvement Team Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
           "period": 9,
           "classes": [
             "6W"
@@ -505,6 +658,24 @@
             "6W"
           ],
           "subject": "ENG_E 607"
+        },
+        {
+          "day": "B",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -529,6 +700,51 @@
             "6W"
           ],
           "subject": "ENG_E 607"
+        },
+        {
+          "day": "C",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 1EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 3EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP LAE",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
+          "period": 2,
+          "classes": [],
+          "subject": "CLP 4EN",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "D",
@@ -564,6 +780,15 @@
         },
         {
           "day": "E",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Form-Co. Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "E",
           "period": 6,
           "classes": [
             "2K"
@@ -588,6 +813,24 @@
         },
         {
           "day": "F",
+          "period": 1,
+          "classes": [],
+          "subject": "(CLP School Improvement Team Meeting)",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 2,
+          "classes": [],
+          "subject": "(CLP School Improvement Team Meeting)",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
           "period": 3,
           "classes": [
             "6W"
@@ -601,6 +844,15 @@
             "6W"
           ],
           "subject": "Consultation"
+        },
+        {
+          "day": "F",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 6EN",
+          "specials": [
+            "clp"
+          ]
         }
       ]
     },
@@ -735,6 +987,15 @@
         },
         {
           "day": "D",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP 1MA",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
           "period": 8,
           "classes": [
             "1P"
@@ -833,6 +1094,15 @@
       "lessons": [
         {
           "day": "A",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 5EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
           "period": 7,
           "classes": [
             "5W"
@@ -929,6 +1199,15 @@
         },
         {
           "day": "C",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
           "period": 7,
           "classes": [
             "2P"
@@ -942,6 +1221,15 @@
             "2P"
           ],
           "subject": "ENG 202"
+        },
+        {
+          "day": "C",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP LAE",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "D",
@@ -982,6 +1270,15 @@
             "1K"
           ],
           "subject": "LAE 303AB"
+        },
+        {
+          "day": "E",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Form-Co. Meeting",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "E",
@@ -1072,6 +1369,24 @@
             "5W"
           ],
           "subject": "ENG 302"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 6EN",
+          "specials": [
+            "clp"
+          ]
         }
       ]
     },
@@ -1220,11 +1535,29 @@
         },
         {
           "day": "D",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 4CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
           "period": 6,
           "classes": [
             "3W"
           ],
           "subject": "CHIN 305"
+        },
+        {
+          "day": "E",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP 3CI",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "E",
@@ -1282,6 +1615,15 @@
             "4T"
           ],
           "subject": "CHIN_E 407"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -1529,6 +1871,15 @@
             "2W"
           ],
           "subject": "CTL(C) 309B"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP CTL",
+          "specials": [
+            "clp"
+          ]
         }
       ]
     },
@@ -1820,6 +2171,24 @@
           "subject": "MATH 404"
         },
         {
+          "day": "B",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "C",
           "period": 2,
           "classes": [
@@ -1978,6 +2347,15 @@
         },
         {
           "day": "F",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 3MA",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
           "period": 7,
           "classes": [
             "6T"
@@ -1991,6 +2369,15 @@
             "6T"
           ],
           "subject": "MATH 603"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -2207,6 +2594,15 @@
             "4W"
           ],
           "subject": "BAFS_X2 405"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -2236,6 +2632,15 @@
             "4W"
           ],
           "subject": "THS_X2 404"
+        },
+        {
+          "day": "A",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP 1RS",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -2482,6 +2887,24 @@
         },
         {
           "day": "F",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP Case Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
           "period": 8,
           "classes": [
             "4K",
@@ -2515,6 +2938,15 @@
             "5W"
           ],
           "subject": "MATH_1 506"
+        },
+        {
+          "day": "A",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP School Improvement Team Meeting",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "A",
@@ -2667,7 +3099,19 @@
             "6T",
             "6W"
           ],
-          "subject": "MAEX_X2 602"
+          "subject": "MAEX_X2 602",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 2,
+          "classes": [],
+          "subject": "(CLP School Improvement Team Meeting)",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "F",
@@ -2709,6 +3153,15 @@
             "6W"
           ],
           "subject": "M1 606"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -2741,6 +3194,24 @@
         },
         {
           "day": "A",
+          "period": 4,
+          "classes": [],
+          "subject": "CLP Principal Core Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Principal Core Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
           "period": 6,
           "classes": [
             "6K",
@@ -2749,6 +3220,15 @@
             "6W"
           ],
           "subject": "BIO_X2 414/606"
+        },
+        {
+          "day": "A",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP School Improvement Team Meeting",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -2844,7 +3324,10 @@
             "6T",
             "6W"
           ],
-          "subject": "BIO_X2 414/606"
+          "subject": "BIO_X2 414/606",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "F",
@@ -2855,7 +3338,10 @@
             "6T",
             "6W"
           ],
-          "subject": "BIO_X2 414/606"
+          "subject": "BIO_X2 414/606",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "F",
@@ -3151,6 +3637,15 @@
         },
         {
           "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
           "period": 8,
           "classes": [
             "4K",
@@ -3290,6 +3785,15 @@
         },
         {
           "day": "C",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP 2MA",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
           "period": 9,
           "classes": [
             "2T"
@@ -3390,6 +3894,15 @@
             "1K"
           ],
           "subject": "VA 111"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         },
         {
           "day": "F",
@@ -3668,6 +4181,15 @@
         },
         {
           "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
           "period": 8,
           "classes": [
             "4K",
@@ -3676,6 +4198,15 @@
             "4W"
           ],
           "subject": "ICT_X2 309B"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP CTL",
+          "specials": [
+            "clp"
+          ]
         }
       ]
     },
@@ -3804,6 +4335,15 @@
         },
         {
           "day": "C",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP 2MA",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
           "period": 9,
           "classes": [
             "3W"
@@ -3920,6 +4460,33 @@
             "3W"
           ],
           "subject": "MATH 305"
+        },
+        {
+          "day": "F",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 3MA",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP CTL",
+          "specials": [
+            "clp"
+          ]
         }
       ]
     },
@@ -4050,11 +4617,29 @@
         },
         {
           "day": "D",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 4CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
           "period": 6,
           "classes": [
             "3K"
           ],
           "subject": "CHIN 303"
+        },
+        {
+          "day": "E",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP 3CI",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "E",
@@ -4098,6 +4683,15 @@
         },
         {
           "day": "F",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP 5CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
           "period": 5,
           "classes": [
             "3K"
@@ -4119,6 +4713,15 @@
             "4T"
           ],
           "subject": "CHIN_T 403"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -4235,6 +4838,15 @@
           "subject": "CHEM_X1 607/611"
         },
         {
+          "day": "B",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 1IS",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "C",
           "period": 2,
           "classes": [
@@ -4266,6 +4878,15 @@
             "5W"
           ],
           "subject": "CHEM_X1 505/611"
+        },
+        {
+          "day": "C",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP CHEM",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "C",
@@ -4401,6 +5022,15 @@
             "1T"
           ],
           "subject": "SCJ 103"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -4409,6 +5039,42 @@
       "name": "LAM YUEN TING, 林婉婷 (LYT)",
       "displayName": "林婉婷（LYT）",
       "lessons": [
+        {
+          "day": "A",
+          "period": 4,
+          "classes": [],
+          "subject": "CLP Principal Core Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Principal Core Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP School Improvement Team Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP 1RS",
+          "specials": [
+            "clp"
+          ]
+        },
         {
           "day": "B",
           "period": 2,
@@ -4430,6 +5096,15 @@
             "4W"
           ],
           "subject": "CHIS_X1 403"
+        },
+        {
+          "day": "B",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP Student Affairs",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "C",
@@ -4528,6 +5203,33 @@
         },
         {
           "day": "F",
+          "period": 1,
+          "classes": [],
+          "subject": "(CLP School Improvement Team Meeting)",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 2,
+          "classes": [],
+          "subject": "(CLP School Improvement Team Meeting)",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP Case Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
           "period": 4,
           "classes": [
             "2P"
@@ -4601,6 +5303,24 @@
         },
         {
           "day": "B",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
           "period": 7,
           "classes": [
             "1T"
@@ -4667,6 +5387,15 @@
           "subject": "CHIN 103"
         },
         {
+          "day": "D",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 6CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "E",
           "period": 2,
           "classes": [
@@ -4707,6 +5436,15 @@
             "6W"
           ],
           "subject": "CHIN 606"
+        },
+        {
+          "day": "F",
+          "period": 1,
+          "classes": [],
+          "subject": "CLP 1CI",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "F",
@@ -4756,6 +5494,15 @@
             "6W"
           ],
           "subject": "Consultation"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -4764,6 +5511,15 @@
       "name": "LIANG SIMIN, 梁思敏 (LS)",
       "displayName": "梁思敏（LS）",
       "lessons": [
+        {
+          "day": "A",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2IS",
+          "specials": [
+            "clp"
+          ]
+        },
         {
           "day": "A",
           "period": 7,
@@ -5002,6 +5758,15 @@
             "4W"
           ],
           "subject": "BIO_X2 407/414"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -5036,6 +5801,15 @@
         },
         {
           "day": "A",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2IS",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
           "period": 8,
           "classes": [
             "2W"
@@ -5049,6 +5823,15 @@
             "2W"
           ],
           "subject": "SCJ 511"
+        },
+        {
+          "day": "B",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 1IS",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -5084,6 +5867,15 @@
             "3T"
           ],
           "subject": "IS_C 611"
+        },
+        {
+          "day": "C",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP CHEM",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "C",
@@ -5243,6 +6035,15 @@
             "2T"
           ],
           "subject": "SCJ 511"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         },
         {
           "day": "F",
@@ -5570,6 +6371,15 @@
             "3P"
           ],
           "subject": "GEOG 402"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -5598,6 +6408,15 @@
         },
         {
           "day": "A",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 5EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
           "period": 7,
           "classes": [
             "5W"
@@ -5671,6 +6490,24 @@
           "subject": "ENG_C 407"
         },
         {
+          "day": "C",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP LAE",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
+          "period": 2,
+          "classes": [],
+          "subject": "CLP 4EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "D",
           "period": 4,
           "classes": [
@@ -5730,6 +6567,15 @@
         },
         {
           "day": "E",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Form-Co. Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "E",
           "period": 6,
           "classes": [
             "4K",
@@ -5765,6 +6611,15 @@
         },
         {
           "day": "F",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP Case Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
           "period": 5,
           "classes": [
             "5W"
@@ -5778,6 +6633,24 @@
             "5W"
           ],
           "subject": "ENG 506"
+        },
+        {
+          "day": "F",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 6EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -5804,6 +6677,15 @@
         },
         {
           "day": "A",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 5EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
           "period": 7,
           "classes": [
             "5K",
@@ -5884,6 +6766,15 @@
         },
         {
           "day": "C",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
           "period": 8,
           "classes": [
             "2K"
@@ -5899,6 +6790,15 @@
             "5T"
           ],
           "subject": "ENG_C 502"
+        },
+        {
+          "day": "D",
+          "period": 2,
+          "classes": [],
+          "subject": "CLP 4EN",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "D",
@@ -5943,6 +6843,15 @@
             "5T"
           ],
           "subject": "ENG_C 502"
+        },
+        {
+          "day": "E",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Form-Co. Meeting",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "E",
@@ -6003,6 +6912,15 @@
             "5T"
           ],
           "subject": "ENG_C 502"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -6120,6 +7038,15 @@
         },
         {
           "day": "C",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP 2MA",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
           "period": 8,
           "classes": [
             "1K"
@@ -6158,6 +7085,15 @@
             "4T"
           ],
           "subject": "MATH 403"
+        },
+        {
+          "day": "D",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP 1MA",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "E",
@@ -6230,6 +7166,15 @@
         },
         {
           "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
           "period": 8,
           "classes": [
             "2W"
@@ -6266,6 +7211,15 @@
             "3T"
           ],
           "subject": "ENG_T 304"
+        },
+        {
+          "day": "A",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 5EN",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "A",
@@ -6333,11 +7287,29 @@
         },
         {
           "day": "C",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 1EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
           "period": 6,
           "classes": [
             "1P"
           ],
           "subject": "ENG 104"
+        },
+        {
+          "day": "C",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 3EN",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "C",
@@ -6423,6 +7395,15 @@
           "subject": "ENG 104"
         },
         {
+          "day": "E",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP ENG Society Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "F",
           "period": 4,
           "classes": [
@@ -6453,6 +7434,15 @@
             "3T"
           ],
           "subject": "ENG_T 304"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -6516,6 +7506,15 @@
             "1W"
           ],
           "subject": "PE PG"
+        },
+        {
+          "day": "B",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP Student Affairs",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -6612,6 +7611,15 @@
             "6W"
           ],
           "subject": "E&RE 606"
+        },
+        {
+          "day": "F",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP Case Meeting",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "F",
@@ -6792,6 +7800,15 @@
           "subject": "ECON_X1 503"
         },
         {
+          "day": "C",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP 1CE",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "D",
           "period": 2,
           "classes": [
@@ -6896,6 +7913,15 @@
         },
         {
           "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
           "period": 9,
           "classes": [
             "1W"
@@ -6988,6 +8014,15 @@
         },
         {
           "day": "B",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 1IS",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
           "period": 9,
           "classes": [
             "1T"
@@ -7018,6 +8053,15 @@
             "1K"
           ],
           "subject": "SCJ 511"
+        },
+        {
+          "day": "C",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP CHEM",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "C",
@@ -7079,6 +8123,15 @@
         },
         {
           "day": "D",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP 1MA",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
           "period": 9,
           "classes": [
             "1T"
@@ -7156,6 +8209,15 @@
             "4W"
           ],
           "subject": "CHEM_X3 406/611"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -7179,6 +8241,15 @@
             "4P"
           ],
           "subject": "CSD 405"
+        },
+        {
+          "day": "A",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 6CS",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "A",
@@ -7220,6 +8291,33 @@
             "5W"
           ],
           "subject": "HIST_X2 503"
+        },
+        {
+          "day": "B",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP 4CS",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -7342,6 +8440,24 @@
             "5W"
           ],
           "subject": "HIST_X2 503"
+        },
+        {
+          "day": "E",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 5CS",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "E",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP 3HI",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "F",
@@ -7383,6 +8499,24 @@
             "4P"
           ],
           "subject": "CSD 405"
+        },
+        {
+          "day": "F",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 2HI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -7401,6 +8535,15 @@
         },
         {
           "day": "A",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 6CS",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
           "period": 9,
           "classes": [
             "5K",
@@ -7420,6 +8563,15 @@
             "5W"
           ],
           "subject": "THS_X2 505"
+        },
+        {
+          "day": "B",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP 4CS",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -7660,6 +8812,15 @@
             "6P"
           ],
           "subject": "CSD 605"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -7702,6 +8863,24 @@
           "subject": "MATH 604"
         },
         {
+          "day": "B",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "C",
           "period": 4,
           "classes": [
@@ -7858,6 +9037,15 @@
             "6K"
           ],
           "subject": "MATH 604"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -7952,6 +9140,24 @@
         },
         {
           "day": "C",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 3EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
           "period": 9,
           "classes": [
             "6K",
@@ -7960,6 +9166,15 @@
             "6W"
           ],
           "subject": "ENEX_X3 602"
+        },
+        {
+          "day": "D",
+          "period": 2,
+          "classes": [],
+          "subject": "CLP 4EN",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "D",
@@ -8023,6 +9238,15 @@
         },
         {
           "day": "E",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Form-Co. Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "E",
           "period": 6,
           "classes": [
             "4W"
@@ -8077,6 +9301,15 @@
             "3W"
           ],
           "subject": "ENG_C 205"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -8084,7 +9317,26 @@
       "code": "MTL",
       "name": "MOK TSZ LONG, 莫梓朗 (MTL)",
       "displayName": "莫梓朗（MTL）",
-      "lessons": []
+      "lessons": [
+        {
+          "day": "B",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        }
+      ]
     },
     {
       "code": "MV",
@@ -8120,6 +9372,15 @@
             "5W"
           ],
           "subject": "BIO_X1 414/506"
+        },
+        {
+          "day": "A",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2IS",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "A",
@@ -8165,6 +9426,15 @@
             "1P"
           ],
           "subject": "SCJ 511"
+        },
+        {
+          "day": "B",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 1IS",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "C",
@@ -8322,6 +9592,15 @@
             "2P"
           ],
           "subject": "SCJ 511"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -8356,6 +9635,15 @@
             "1P"
           ],
           "subject": "MUS 309"
+        },
+        {
+          "day": "A",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 1LE",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "A",
@@ -8530,6 +9818,15 @@
             "4K"
           ],
           "subject": "MUS 309"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -8553,6 +9850,15 @@
             "6T"
           ],
           "subject": "CHIN_T 603"
+        },
+        {
+          "day": "A",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP 1RS",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -8585,6 +9891,15 @@
             "5W"
           ],
           "subject": "E&RE 506"
+        },
+        {
+          "day": "B",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP Student Affairs",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -8644,11 +9959,29 @@
         },
         {
           "day": "D",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 4CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
           "period": 6,
           "classes": [
             "1K"
           ],
           "subject": "E&RE 113"
+        },
+        {
+          "day": "D",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 6CI",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "E",
@@ -8684,6 +10017,15 @@
         },
         {
           "day": "F",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP Case Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
           "period": 6,
           "classes": [
             "6T"
@@ -8705,6 +10047,15 @@
             "6P"
           ],
           "subject": "E&RE 605"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -8996,6 +10347,24 @@
         },
         {
           "day": "F",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 3MA",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
           "period": 8,
           "classes": [
             "4K",
@@ -9014,6 +10383,24 @@
       "lessons": [
         {
           "day": "A",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 6CS",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 1LE",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
           "period": 7,
           "classes": [
             "1P"
@@ -9030,11 +10417,29 @@
         },
         {
           "day": "B",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2CE",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
           "period": 7,
           "classes": [
             "2W"
           ],
           "subject": "CES 204"
+        },
+        {
+          "day": "B",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP Student Affairs",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -9062,11 +10467,47 @@
         },
         {
           "day": "C",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP 1CE",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 3EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
           "period": 9,
           "classes": [
             "1T"
           ],
           "subject": "LFED 103/113"
+        },
+        {
+          "day": "D",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2CI",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "D",
@@ -9094,6 +10535,24 @@
         },
         {
           "day": "E",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP 3CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "E",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 5CS",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "E",
           "period": 9,
           "classes": [
             "5P"
@@ -9115,6 +10574,15 @@
             "2P"
           ],
           "subject": "CES 202"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         },
         {
           "day": "F",
@@ -9388,6 +10856,24 @@
             "1T"
           ],
           "subject": "CTL(AI) 207(上)／CTL(T) 309B(下)"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP CTL",
+          "specials": [
+            "clp"
+          ]
         }
       ]
     },
@@ -9435,6 +10921,15 @@
             "2T"
           ],
           "subject": "CES 203"
+        },
+        {
+          "day": "B",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2CE",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -9558,6 +11053,15 @@
         },
         {
           "day": "F",
+          "period": 1,
+          "classes": [],
+          "subject": "CLP 1CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
           "period": 5,
           "classes": [
             "1P"
@@ -9571,6 +11075,15 @@
             "1P"
           ],
           "subject": "CHIN 104"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         },
         {
           "day": "F",
@@ -9709,6 +11222,24 @@
         },
         {
           "day": "D",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 4CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
           "period": 7,
           "classes": [
             "2P"
@@ -9783,12 +11314,30 @@
         },
         {
           "day": "F",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP 5CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
           "period": 4,
           "classes": [
             "5K",
             "5T"
           ],
           "subject": "CHIN_E 502"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         },
         {
           "day": "F",
@@ -9844,6 +11393,15 @@
             "4T"
           ],
           "subject": "CSD 403"
+        },
+        {
+          "day": "B",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP 4CS",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -9905,6 +11463,24 @@
           "subject": "ENG_K 404"
         },
         {
+          "day": "C",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 3EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
+          "period": 2,
+          "classes": [],
+          "subject": "CLP 4EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "D",
           "period": 4,
           "classes": [
@@ -9969,6 +11545,15 @@
           "subject": "CSD 404"
         },
         {
+          "day": "E",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP ENG Society Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "F",
           "period": 1,
           "classes": [
@@ -9999,6 +11584,15 @@
             "4T"
           ],
           "subject": "CSD 403"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         },
         {
           "day": "F",
@@ -10208,6 +11802,15 @@
         },
         {
           "day": "E",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 5CS",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "E",
           "period": 7,
           "classes": [
             "4K",
@@ -10226,12 +11829,39 @@
           "subject": "HIST 105"
         },
         {
+          "day": "E",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP 3HI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "F",
           "period": 1,
           "classes": [
             "1P"
           ],
           "subject": "HIST 104"
+        },
+        {
+          "day": "F",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP Case Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 2HI",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "F",
@@ -10251,6 +11881,15 @@
             "4W"
           ],
           "subject": "HIST_X2 403"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -10346,6 +11985,24 @@
             "6W"
           ],
           "subject": "PHY_X3 613"
+        },
+        {
+          "day": "B",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -10538,6 +12195,15 @@
         },
         {
           "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
           "period": 9,
           "classes": [
             "3P"
@@ -10582,6 +12248,15 @@
             "2P"
           ],
           "subject": "VA 111"
+        },
+        {
+          "day": "A",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP 1RS",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -10792,6 +12467,15 @@
             "3P"
           ],
           "subject": "VA 111"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         },
         {
           "day": "F",
@@ -11031,6 +12715,15 @@
             "3W"
           ],
           "subject": "PE PG"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -11153,6 +12846,15 @@
         },
         {
           "day": "D",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
           "period": 7,
           "classes": [
             "2K"
@@ -11182,6 +12884,15 @@
             "2K"
           ],
           "subject": "CHIN 202A"
+        },
+        {
+          "day": "E",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP 3CI",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "E",
@@ -11222,6 +12933,15 @@
             "2K"
           ],
           "subject": "CHIN 202A"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         },
         {
           "day": "F",
@@ -11371,6 +13091,15 @@
         },
         {
           "day": "D",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 6CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
           "period": 9,
           "classes": [
             "1K"
@@ -11411,6 +13140,15 @@
         },
         {
           "day": "F",
+          "period": 1,
+          "classes": [],
+          "subject": "CLP 1CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
           "period": 2,
           "classes": [
             "2T"
@@ -11424,6 +13162,15 @@
             "6K"
           ],
           "subject": "CHIN_K 604"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         },
         {
           "day": "F",
@@ -11457,6 +13204,24 @@
           "subject": "CSD 606"
         },
         {
+          "day": "A",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 6CS",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP School Improvement Team Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "B",
           "period": 2,
           "classes": [
@@ -11675,11 +13440,38 @@
         },
         {
           "day": "F",
+          "period": 1,
+          "classes": [],
+          "subject": "(CLP School Improvement Team Meeting)",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 2,
+          "classes": [],
+          "subject": "(CLP School Improvement Team Meeting)",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
           "period": 6,
           "classes": [
             "6W"
           ],
           "subject": "CSD 606"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -11687,7 +13479,35 @@
       "code": "CSK2",
       "name": "CHAN SHUN KIT, 陳淳傑 (CSK2)",
       "displayName": "陳淳傑（CSK2）",
-      "lessons": []
+      "lessons": [
+        {
+          "day": "A",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP School Improvement Team Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 1,
+          "classes": [],
+          "subject": "(CLP School Improvement Team Meeting)",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 2,
+          "classes": [],
+          "subject": "(CLP School Improvement Team Meeting)",
+          "specials": [
+            "clp"
+          ]
+        }
+      ]
     },
     {
       "code": "CPW",
@@ -11712,6 +13532,15 @@
         },
         {
           "day": "A",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 5EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
           "period": 7,
           "classes": [
             "5K"
@@ -11725,6 +13554,15 @@
             "5K"
           ],
           "subject": "ENG_K 504"
+        },
+        {
+          "day": "A",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP 1RS",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -11789,6 +13627,15 @@
             "6P"
           ],
           "subject": "ENG_P 605"
+        },
+        {
+          "day": "C",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 1EN",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "C",
@@ -11840,6 +13687,15 @@
         },
         {
           "day": "E",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Form-Co. Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "E",
           "period": 7,
           "classes": [
             "6P"
@@ -11893,6 +13749,24 @@
             "5K"
           ],
           "subject": "ENG_K 504"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 6EN",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "F",
@@ -12146,6 +14020,15 @@
         },
         {
           "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
+        },
+        {
+          "day": "F",
           "period": 8,
           "classes": [
             "1P"
@@ -12273,6 +14156,15 @@
         },
         {
           "day": "D",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "D",
           "period": 7,
           "classes": [
             "2W"
@@ -12297,6 +14189,15 @@
         },
         {
           "day": "E",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP 3CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "E",
           "period": 4,
           "classes": [
             "2W"
@@ -12329,6 +14230,15 @@
         },
         {
           "day": "F",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP 5CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
           "period": 4,
           "classes": [
             "5K"
@@ -12350,6 +14260,15 @@
             "3P"
           ],
           "subject": "CHIN 402"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -12357,7 +14276,80 @@
       "code": "LCH",
       "name": "LUK CHI HO, 陸志豪 (LCH)",
       "displayName": "陸志豪（LCH）",
-      "lessons": []
+      "lessons": [
+        {
+          "day": "A",
+          "period": 4,
+          "classes": [],
+          "subject": "CLP Principal Core Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Principal Core Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "A",
+          "period": 7,
+          "classes": [],
+          "subject": "CLP School Improvement Team Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP Student Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 1,
+          "classes": [],
+          "subject": "(CLP School Improvement Team Meeting)",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 2,
+          "classes": [],
+          "subject": "(CLP School Improvement Team Meeting)",
+          "specials": [
+            "clp"
+          ]
+        }
+      ]
     },
     {
       "code": "NCW",
@@ -12403,6 +14395,24 @@
             "6P"
           ],
           "subject": "CHIN 605"
+        },
+        {
+          "day": "B",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "B",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP Academic Affairs",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -12496,6 +14506,15 @@
           "subject": "CHIN 605"
         },
         {
+          "day": "D",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 6CI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "E",
           "period": 4,
           "classes": [
@@ -12518,6 +14537,15 @@
             "5T"
           ],
           "subject": "CHIN_T 503"
+        },
+        {
+          "day": "F",
+          "period": 3,
+          "classes": [],
+          "subject": "CLP 5CI",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "F",
@@ -12558,6 +14586,15 @@
             "5W"
           ],
           "subject": "CHIN 506"
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -12597,6 +14634,15 @@
             "1T"
           ],
           "subject": "ENG 103"
+        },
+        {
+          "day": "A",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP 1RS",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "B",
@@ -12656,6 +14702,15 @@
         },
         {
           "day": "C",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 1EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
           "period": 6,
           "classes": [
             "1T"
@@ -12669,6 +14724,24 @@
             "3K"
           ],
           "subject": "ENG 303"
+        },
+        {
+          "day": "C",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 3EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP LAE",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "D",
@@ -12759,6 +14832,15 @@
           "subject": "HIST 202"
         },
         {
+          "day": "E",
+          "period": 9,
+          "classes": [],
+          "subject": "CLP ENG Society Meeting",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
           "day": "F",
           "period": 1,
           "classes": [
@@ -12773,6 +14855,24 @@
             "1T"
           ],
           "subject": "ENG 103"
+        },
+        {
+          "day": "F",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP 2HI",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         },
         {
           "day": "F",
@@ -12901,11 +15001,29 @@
         },
         {
           "day": "C",
+          "period": 6,
+          "classes": [],
+          "subject": "CLP 2EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "C",
           "period": 7,
           "classes": [
             "2W"
           ],
           "subject": "ENG 204"
+        },
+        {
+          "day": "D",
+          "period": 2,
+          "classes": [],
+          "subject": "CLP 4EN",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "D",
@@ -12944,6 +15062,15 @@
             "2W"
           ],
           "subject": "ENG 204"
+        },
+        {
+          "day": "E",
+          "period": 5,
+          "classes": [],
+          "subject": "CLP Form-Co. Meeting",
+          "specials": [
+            "clp"
+          ]
         },
         {
           "day": "E",
@@ -13016,6 +15143,24 @@
             "4P"
           ],
           "subject": "ENG 405"
+        },
+        {
+          "day": "F",
+          "period": 8,
+          "classes": [],
+          "subject": "CLP 6EN",
+          "specials": [
+            "clp"
+          ]
+        },
+        {
+          "day": "F",
+          "period": 9,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         }
       ]
     },
@@ -13251,6 +15396,15 @@
             "3T"
           ],
           "subject": "CHIS 304"
+        },
+        {
+          "day": "F",
+          "period": 7,
+          "classes": [],
+          "subject": "Assembly HALL",
+          "specials": [
+            "assemblyHall"
+          ]
         },
         {
           "day": "F",
