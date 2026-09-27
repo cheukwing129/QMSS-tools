@@ -152,6 +152,88 @@
     .btn-arrow { font-size: 15px; line-height: 1; }
     .data-error { display: none; margin: 16px 0 0; padding: 13px 15px; border: 1px solid hsl(var(--danger) / .24); border-radius: 12px; background: hsl(var(--danger) / .06); color: hsl(var(--danger)); font-size: 12px; }
     .data-error.is-visible { display: block; }
+    .workflow-panel { margin-top: 22px; padding: 18px; border: 1px solid hsl(var(--ink) / .09); border-radius: 17px; background: hsl(var(--surface) / .72); }
+    .workflow-heading { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+    .workflow-heading h3 { margin: 0; font-size: 15px; letter-spacing: -.025em; }
+    .workflow-heading p { margin: 4px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .workflow-number { flex: 0 0 auto; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; background: var(--green-dark); color: white; font-size: 10px; font-weight: 850; }
+    .identity-field { max-width: 480px; }
+    .identity-field .control { min-height: 48px; }
+    #after-identity[hidden], #timetable-workflow[hidden], #date-step[hidden], #manual-panel[hidden] { display: none !important; }
+    .timetable-workflow { margin-top: 22px; padding-top: 22px; border-top: 1px solid hsl(var(--ink) / .09); }
+    .timetable-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+    .timetable-heading h3 { margin: 4px 0 0; font-size: 19px; letter-spacing: -.035em; }
+    .timetable-prompt { margin: 5px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .timetable-legend { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: hsl(var(--ink-soft)); font-size: 10px; }
+    .timetable-legend span { display: inline-flex; align-items: center; gap: 5px; }
+    .legend-dot { width: 9px; height: 9px; border-radius: 50%; background: hsl(var(--ink) / .2); }
+    .legend-dot.available { background: hsl(var(--brand)); }
+    .legend-dot.own { background: hsl(var(--accent)); }
+    .legend-dot.manual { background: hsl(var(--warning)); }
+    .selected-lessons { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 9px; margin: 0 0 13px; }
+    .selected-slot { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; border: 1px solid hsl(var(--brand) / .22); border-radius: 12px; background: hsl(var(--brand-soft) / .58); }
+    .selected-slot-main { min-width: 0; }
+    .selected-slot strong { display: block; color: var(--green-dark); font-size: 10px; }
+    .selected-slot span { display: block; margin-top: 3px; color: hsl(var(--ink-soft)); font-size: 10px; line-height: 1.5; overflow-wrap: anywhere; }
+    .remove-slot { flex: 0 0 auto; padding: 6px 9px; border: 1px solid hsl(var(--ink) / .15); border-radius: 8px; background: white; color: hsl(var(--ink-soft)); cursor: pointer; font-size: 10px; }
+    .remove-slot:hover { border-color: hsl(var(--danger) / .4); color: hsl(var(--danger)); }
+    .manual-hint { margin: 0 0 9px; color: var(--muted); font-size: 10px; line-height: 1.65; }
+    .manual-panel { margin: 0 0 13px; padding: 15px; border: 1px solid hsl(var(--warning) / .3); border-radius: 14px; background: hsl(var(--warning) / .08); color: hsl(var(--ink-soft)); font-size: 11px; line-height: 1.65; }
+    .manual-panel h4 { margin: 0 0 5px; color: hsl(var(--ink)); font-size: 13px; }
+    .manual-panel p { margin: 5px 0; }
+    .manual-panel ul { margin: 6px 0; padding-left: 19px; }
+    .manual-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+    .manual-fields .field-label { margin-bottom: 5px; }
+    .manual-fields .control { min-height: 40px; background: white; }
+    .manual-actions { display: flex; gap: 8px; margin-top: 11px; }
+    .manual-actions button { min-height: 38px; padding: 0 13px; border: 1px solid hsl(var(--ink) / .15); border-radius: 9px; background: white; color: hsl(var(--ink-soft)); cursor: pointer; font-size: 11px; font-weight: 750; }
+    .manual-actions button.primary { border-color: var(--green-dark); background: var(--green-dark); color: white; }
+    .manual-conflict-preview { padding: 8px 10px; border-radius: 9px; background: hsl(var(--surface) / .8); }
+    .timetable-scroll { overflow: auto; max-height: min(72vh, 780px); border: 1px solid hsl(var(--ink) / .1); border-radius: 14px; background: hsl(var(--surface) / .6); }
+    .class-timetable { width: 100%; min-width: 900px; border-collapse: separate; border-spacing: 4px; table-layout: fixed; }
+    .class-timetable th { position: sticky; top: 0; z-index: 2; padding: 10px 6px; background: hsl(var(--surface-strong)); color: hsl(var(--ink-soft)); font-size: 11px; text-align: center; }
+    .class-timetable th:first-child { left: 0; z-index: 3; width: 50px; }
+    .class-timetable td { padding: 3px; vertical-align: top; }
+    .class-timetable td:first-child { position: sticky; left: 0; z-index: 1; width: 50px; padding: 8px 4px; background: hsl(var(--surface-strong)); color: hsl(var(--ink-soft)); font-size: 11px; font-weight: 800; text-align: center; }
+    .timetable-cell { display: grid; align-content: start; gap: 4px; min-height: 62px; }
+    .period-note-inline { padding: 4px 5px; border-radius: 7px; background: hsl(var(--ink) / .05); color: var(--muted); font-size: 8px; line-height: 1.4; text-align: center; }
+    .timetable-entry, .empty-slot { width: 100%; min-height: 52px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 6px 7px; border: 1px solid hsl(var(--ink) / .12); border-radius: 9px; background: white; color: hsl(var(--ink)); text-align: left; cursor: pointer; transition: border-color .15s ease, background .15s ease, box-shadow .15s ease; }
+    .timetable-entry .entry-subject { font-size: 9px; font-weight: 800; line-height: 1.35; overflow-wrap: anywhere; }
+    .timetable-entry .entry-teacher { color: hsl(var(--ink-soft)); font-size: 9px; line-height: 1.35; }
+    .timetable-entry .entry-status { color: var(--muted); font-size: 8px; font-weight: 750; line-height: 1.3; }
+    .timetable-entry.is-owner-lesson { border-color: hsl(var(--accent) / .8); background: hsl(var(--accent) / .12); }
+    .timetable-entry.is-highlighted { border-color: hsl(var(--brand) / .7); background: hsl(var(--brand-soft)); box-shadow: inset 0 0 0 1px hsl(var(--brand) / .24); }
+    .timetable-entry.is-selected { border-color: var(--green-dark); box-shadow: 0 0 0 2px hsl(var(--brand) / .2); }
+    .timetable-entry.is-muted { background: hsl(var(--surface-muted)); }
+    .timetable-entry:disabled { cursor: default; opacity: .72; }
+    .timetable-entry:not(:disabled):hover, .empty-slot:hover { border-color: hsl(var(--brand)); box-shadow: 0 0 0 2px hsl(var(--brand) / .12); }
+    .empty-slot { align-items: center; border-style: dashed; background: transparent; color: hsl(var(--ink-soft)); font-size: 8px; line-height: 1.4; text-align: center; }
+    .empty-slot .entry-status { color: hsl(var(--warning)); font-weight: 800; }
+    .date-step { margin-top: 22px; padding: 19px; border: 1px solid hsl(var(--brand) / .18); border-radius: 16px; background: hsl(var(--brand-soft) / .34); }
+    .date-step .workflow-heading { margin-bottom: 12px; }
+    .date-choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 11px; }
+    .date-choice { min-width: 0; padding: 12px; border: 1px solid hsl(var(--ink) / .1); border-radius: 12px; background: hsl(var(--surface) / .85); }
+    .date-choice h4 { margin: 0 0 4px; font-size: 11px; }
+    .date-choice p { margin: 0 0 8px; color: var(--muted); font-size: 9px; line-height: 1.5; }
+    .date-choice .control { min-height: 40px; font-size: 11px; }
+    .date-warning { margin-top: 8px; padding: 8px 9px; border-radius: 9px; background: hsl(var(--warning) / .1); color: hsl(var(--ink-soft)); font-size: 9px; line-height: 1.55; }
+    .date-warning label { display: flex; align-items: flex-start; gap: 7px; }
+    .date-warning input { flex: 0 0 auto; margin-top: 2px; }
+    .date-validation { margin-top: 7px; color: var(--muted); font-size: 9px; }
+    .date-choice .manual-date { margin-top: 8px; }
+    .mode-row[aria-label="調堂人數"] { margin-top: 19px; }
+    .class-row .cycle-note { min-height: 52px; }
+    .class-step-heading { margin: 20px 0 -8px; }
+    @media (max-width: 720px) {
+      .timetable-heading { align-items: flex-start; flex-direction: column; }
+      .manual-fields { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .workflow-panel, .date-step { padding: 13px; }
+      .timetable-legend { gap: 8px; }
+      .manual-actions { flex-wrap: wrap; }
+      .manual-actions button { flex: 1 1 auto; }
+    }
     .page-foot { display: flex; justify-content: space-between; gap: 18px; margin-top: 17px; color: var(--muted); font-size: 10px; }
     .page-foot a { text-decoration: none; }
     .page-foot a:hover { color: var(--green-dark); text-decoration: underline; }
@@ -299,48 +381,95 @@
     <section class="intro" aria-labelledby="page-title">
       <p class="eyebrow">教務安排 · 課表已預載</p>
       <h1 id="page-title">調堂小幫手</h1>
-      <p class="intro-copy">選好班別和每位老師的原課日期、節數；Day A–F 會由 QMSS Calendar 的年度資料自動對照，課堂內容由預載課表帶入。列印版面依照 Excel 的 A4 直向表格排列。</p>
+      <p class="intro-copy">先選身份和班別，再從課表選擇原課及可交換課節；最後按每個課節的 Day 選擇實際日期。</p>
     </section>
 
     <lumen-card class="builder-card" variant="unstyled" as="section" aria-labelledby="setup-title">
       <div class="section-heading">
-        <div><h2 id="setup-title">調堂資料</h2><p>所有老師的原課須屬於同一班別。</p></div>
-        <span class="step-label">STEP 01 · 填寫安排</span>
+        <div><h2 id="setup-title">調堂安排</h2><p>按步驟選擇身份、課節和日期；課表會即時標示可調換時段。</p></div>
+        <span class="step-label">逐步安排</span>
       </div>
 
-      <div class="mode-row">
-        <span class="mode-label" id="mode-label">調堂人數</span>
-        <div class="mode-switch" role="group" aria-labelledby="mode-label">
-          <button type="button" data-count="2" aria-pressed="true">二人互調</button>
-          <button type="button" data-count="3" aria-pressed="false">三人互調</button>
+      <section class="identity-step workflow-panel" aria-labelledby="identity-title">
+        <div class="workflow-heading">
+          <span class="workflow-number">01</span>
+          <div><h3 id="identity-title">選擇你的身份</h3><p>選擇姓名後，系統會列出你任教的班別。</p></div>
         </div>
-        <span class="step-label" id="copy-count-label">頁內有 4 個可裁切區</span>
+        <div class="field identity-field">
+          <label class="field-label" for="teacher-select">老師</label>
+          <select class="control" id="teacher-select" required disabled><option value="">正在讀取老師名單…</option></select>
+        </div>
+      </section>
+
+      <div id="after-identity" hidden>
+        <div class="mode-row" aria-label="調堂人數">
+          <span class="mode-label">調堂人數</span>
+          <div class="mode-switch" role="group" aria-label="選擇調堂人數">
+            <button type="button" data-count="2" aria-pressed="true">二人互調</button>
+            <button type="button" data-count="3" aria-pressed="false">三人互調</button>
+          </div>
+          <span class="step-label" id="copy-count-label">二人互調 · 4 個列印區</span>
+        </div>
+
+        <div class="workflow-heading class-step-heading">
+          <span class="workflow-number">02</span>
+          <div><h3>選擇任教班別</h3><p>只會顯示你在預載課表中任教的班別。</p></div>
+        </div>
+        <div class="class-row">
+          <div class="field">
+            <label class="field-label" for="class-select">任教班別</label>
+            <select class="control" id="class-select" required disabled><option value="">先選擇老師</option></select>
+          </div>
+          <div class="cycle-note">
+            <span class="note-mark" aria-hidden="true">i</span>
+            <span><strong id="calendar-note-title">QMSS Calendar 日期資料載入中。</strong><span id="calendar-note-copy">選好課節後，日期選單會只列出相同 Day 的校曆日期。</span></span>
+          </div>
+        </div>
+
+        <p class="period-note"><strong>節數對齊：</strong>全日按第 1–9 節編號。Day F 第 1 節對應其他日子的早會／閱讀時段；Day A–E 正式課堂由第 2 節開始。</p>
+        <p class="rotation"><strong>調堂方式：</strong>二人互調時 A 接 B 的課節、B 接 A 的課節；三人互調時 A 接 B、B 接 C、C 接 A。系統會檢查各老師在新時段是否另有課堂。</p>
+
+        <section id="timetable-workflow" class="timetable-workflow" aria-labelledby="timetable-title" hidden>
+          <div class="timetable-heading">
+            <div>
+              <span class="step-label" id="selection-step-label">STEP 03 · 選擇你的原課</span>
+              <h3 id="timetable-title">班別課表</h3>
+              <p id="selection-prompt" class="timetable-prompt">先在課表點選你想調走的課節。</p>
+            </div>
+            <div class="timetable-legend" aria-label="課表標示說明">
+              <span><i class="legend-dot available" aria-hidden="true"></i>可調換</span>
+              <span><i class="legend-dot own" aria-hidden="true"></i>你的課節</span>
+              <span><i class="legend-dot manual" aria-hidden="true"></i>手動選擇</span>
+            </div>
+          </div>
+
+          <div id="selected-lessons" class="selected-lessons" aria-live="polite"></div>
+          <div id="manual-panel" class="manual-panel" role="region" aria-live="polite" hidden></div>
+          <p class="manual-hint">沒有高亮的課節仍可選。預載課表未必反映已調走的課或中六安排；選取後系統會提示你確認。</p>
+          <div class="timetable-scroll" tabindex="0" aria-label="可左右滑動查看班別課表">
+            <div id="class-timetable"></div>
+          </div>
+
+          <section id="date-step" class="date-step" aria-labelledby="date-title" hidden>
+            <div class="workflow-heading">
+              <span class="workflow-number">05</span>
+              <div><h3 id="date-title">選擇各課節日期</h3><p>日期選單已按每個課節的 Day 篩選；每位老師可選不同日期。</p></div>
+            </div>
+            <div id="date-choices" class="date-choices"></div>
+          </section>
+        </section>
       </div>
 
-      <div class="class-row">
-        <div class="field">
-          <label class="field-label" for="class-select">共同班別</label>
-          <select class="control" id="class-select" required disabled><option value="">正在讀取班別…</option></select>
-        </div>
-        <div class="cycle-note">
-          <span class="note-mark" aria-hidden="true">!</span>
-          <span><strong id="calendar-note-title">QMSS Calendar 日期對照尚未載入。</strong><span id="calendar-note-copy">完成日別同步後，Day 會按日期自動帶入；目前可手動補選 A–F。</span></span>
-        </div>
-      </div>
-
-      <p class="period-note"><strong>節數對齊：</strong>全日按第 1–9 節編號。Day F 第 1 節對應其他日子的早會／閱讀時段；Day A–E 正式課堂由第 2 節開始。</p>
-      <p class="rotation"><strong>調堂方式：</strong>二人互調時 A 接 B 的課節、B 接 A 的課節；三人互調時 A 接 B、B 接 C、C 接 A。每位老師保留自己的科目／課堂內容。</p>
-      <div id="teacher-cards" class="teacher-grid" aria-live="polite"><p class="loading">正在載入年度課表…</p></div>
       <div id="data-error" class="data-error" role="alert"></div>
       <div class="builder-bottom">
-        <p id="form-status" class="status-text" role="status" aria-live="polite">先選班別，再為每位老師填妥原課資料。</p>
+        <p id="form-status" class="status-text" role="status" aria-live="polite">先選擇你的身份。</p>
         <lumen-button id="preview-button" variant="default" size="lg" type="button" disabled aria-label="預覽調堂列印表格">
-          <span class="lumen-button-label">預覽列印版面 <span class="btn-arrow" aria-hidden="true">→</span></span>
+          <span class="lumen-button-label">預覽調堂列印版面 <span class="btn-arrow" aria-hidden="true">→</span></span>
         </lumen-button>
       </div>
     </lumen-card>
 
-    <section id="preview-section" class="preview-section" aria-labelledby="preview-title" hidden>
+        <section id="preview-section" class="preview-section" aria-labelledby="preview-title" hidden>
       <div class="preview-toolbar">
         <div><h2 id="preview-title">列印預覽</h2><p class="hint" id="preview-count"></p></div>
         <div class="preview-actions">
@@ -366,9 +495,21 @@
       var calendarDays = {};
       var calendarMeta = {};
       var peopleCount = 2;
-      var slots = [];
+      var ownerCode = '';
+      var selectedSlots = [];
+      var pendingChoice = null;
+      var scheduleIndex = Object.create(null);
+      var teacherSelect = document.getElementById('teacher-select');
+      var afterIdentity = document.getElementById('after-identity');
       var classSelect = document.getElementById('class-select');
-      var teacherCards = document.getElementById('teacher-cards');
+      var timetableWorkflow = document.getElementById('timetable-workflow');
+      var classTimetable = document.getElementById('class-timetable');
+      var selectedLessons = document.getElementById('selected-lessons');
+      var selectionPrompt = document.getElementById('selection-prompt');
+      var selectionStepLabel = document.getElementById('selection-step-label');
+      var manualPanel = document.getElementById('manual-panel');
+      var dateStep = document.getElementById('date-step');
+      var dateChoices = document.getElementById('date-choices');
       var formStatus = document.getElementById('form-status');
       var previewButton = document.getElementById('preview-button');
       var previewSection = document.getElementById('preview-section');
@@ -386,121 +527,6 @@
       function calendarDayFor(date) {
         return date && /^[A-F]$/.test(calendarDays[date] || '') ? calendarDays[date] : '';
       }
-      function lessonsFor(teacher, classCode, day) {
-        if (!teacher) return [];
-        var matching = teacher.lessons.filter(function (lesson) {
-          return lesson.day === day && lesson.classes.indexOf(classCode) !== -1;
-        });
-        var grouped = new Map();
-        matching.forEach(function (lesson) {
-          var key = String(lesson.period);
-          var group = grouped.get(key);
-          if (!group) {
-            group = { day: lesson.day, period: lesson.period, classes: [], subjects: [] };
-            grouped.set(key, group);
-          }
-          lesson.classes.forEach(function (classCodeInSlot) {
-            if (group.classes.indexOf(classCodeInSlot) === -1) group.classes.push(classCodeInSlot);
-          });
-          var subject = String(lesson.subject || '').replace(/\s+/g, ' ').trim().replace(/^[\s,;/]+|[\s,;/]+$/g, '');
-          if (subject && group.subjects.indexOf(subject) === -1) group.subjects.push(subject);
-        });
-        return Array.from(grouped.values()).map(function (group) {
-          return { day: group.day, period: group.period, classes: group.classes, subject: group.subjects.join('／') };
-        }).sort(function (a, b) { return a.period - b.period; });
-      }
-      function matchingLesson(slot) {
-        var teacher = teacherByCode(slot.teacher);
-        return lessonsFor(teacher, classSelect.value, slot.day).find(function (lesson) {
-          return String(lesson.period) === String(slot.period);
-        }) || null;
-      }
-      function eligibleTeachers(classCode) {
-        return data.teachers.filter(function (teacher) {
-          return teacher.lessons.some(function (lesson) { return lesson.classes.indexOf(classCode) !== -1; });
-        }).sort(function (a, b) { return a.displayName.localeCompare(b.displayName, 'zh-Hant'); });
-      }
-      function setPeopleCount(count) {
-        var kept = slots.slice(0, count);
-        while (kept.length < count) kept.push({ teacher: '', date: '', day: '', period: '' });
-        slots = kept;
-        peopleCount = count;
-        modeButtons.forEach(function (button) {
-          button.setAttribute('aria-pressed', String(Number(button.dataset.count) === count));
-        });
-        document.getElementById('copy-count-label').textContent = '頁內有 ' + (count + 2) + ' 個可裁切區';
-        renderTeacherCards();
-        updateFormStatus();
-        previewSection.hidden = true;
-      }
-      function renderTeacherCards(focusId) {
-        if (!data) return;
-        var classCode = classSelect.value;
-        var teachers = classCode ? eligibleTeachers(classCode) : [];
-        var html = '';
-        for (var index = 0; index < peopleCount; index += 1) {
-          var slot = slots[index];
-          var teacher = teacherByCode(slot.teacher);
-          var dayLessons = lessonsFor(teacher, classCode, slot.day);
-          var mappedDay = calendarDayFor(slot.date);
-          var periodOptions = dayLessons.map(function (lesson) {
-            return '<option value="' + lesson.period + '" ' + (String(lesson.period) === String(slot.period) ? 'selected' : '') + '>第 ' + lesson.period + ' 節 · ' + escapeHtml(lesson.subject) + '</option>';
-          }).join('');
-          var teacherOptions = teachers.map(function (item) {
-            return '<option value="' + escapeHtml(item.code) + '" ' + (item.code === slot.teacher ? 'selected' : '') + '>' + escapeHtml(item.displayName) + '</option>';
-          }).join('');
-          var dayControl = mappedDay
-            ? '<input class="control" id="day-' + index + '" value="Day ' + mappedDay + '" readonly aria-readonly="true" aria-label="QMSS Calendar 日別：Day ' + mappedDay + '"><p class="hint">由 QMSS Calendar 自動帶入</p>'
-            : '<select class="control" id="day-' + index + '" data-slot-index="' + index + '" data-field="day" required><option value="">' + (slot.date ? '校曆未有此日對照' : '選日期後自動對照') + '</option>' + data.days.map(function (day) { return '<option value="' + day + '" ' + (slot.day === day ? 'selected' : '') + '>Day ' + day + '</option>'; }).join('') + '</select><p class="hint">' + (slot.date ? '校曆未有此日的 Day，請按校曆補選' : '有校曆對照時會自動填入') + '</p>';
-          var course = matchingLesson(slot);
-          var courseLine = course ? escapeHtml(course.subject) : (slot.teacher && slot.day && !dayLessons.length ? '這位老師在所選循環日沒有該班課堂，請改選老師或日期／循環日。' : '選擇老師、日期、循環日和原課節後，課堂內容會自動帶入。');
-          var title = String.fromCharCode(65 + index);
-          html += '<lumen-card class="teacher-card" variant="unstyled" as="section" aria-labelledby="teacher-title-' + index + '">' +
-            '<div class="teacher-head"><div class="teacher-title"><span class="teacher-avatar" aria-hidden="true">' + title + '</span><div><h3 id="teacher-title-' + index + '">老師 ' + title + '</h3><span class="teacher-seq">第 ' + (index + 1) + ' 位調堂老師</span></div></div><span class="step-label">原課資料</span></div>' +
-            '<div class="teacher-fields">' +
-              '<div class="field wide"><label class="field-label" for="teacher-' + index + '">老師</label><select class="control" id="teacher-' + index + '" data-slot-index="' + index + '" data-field="teacher" required ' + (!classCode ? 'disabled' : '') + '><option value="">' + (classCode ? '選擇老師' : '請先選班別') + '</option>' + teacherOptions + '</select></div>' +
-              '<div class="field"><label class="field-label" for="date-' + index + '">上課日期</label><input class="control" id="date-' + index + '" type="date" data-slot-index="' + index + '" data-field="date" value="' + escapeHtml(slot.date) + '" required></div>' +
-              '<div class="field"><label class="field-label" for="day-' + index + '">循環日</label>' + dayControl + '</div>' +
-              '<div class="field wide"><label class="field-label" for="period-' + index + '">原課節</label><select class="control" id="period-' + index + '" data-slot-index="' + index + '" data-field="period" required ' + (!teacher || !slot.day || !dayLessons.length ? 'disabled' : '') + '><option value="">' + (teacher && slot.day ? (dayLessons.length ? '選擇節數' : '該日沒有此班課堂') : '先選老師和循環日') + '</option>' + periodOptions + '</select></div>' +
-            '</div><div class="lesson-readout" aria-live="polite"><strong>該節課堂／科目（由年度課表帶入）</strong>' + courseLine + '</div></lumen-card>';
-        }
-        teacherCards.innerHTML = html;
-        if (focusId) {
-          var focus = document.getElementById(focusId);
-          if (focus) focus.focus();
-        }
-      }
-      function validate() {
-        var chosen = [];
-        var missing = false;
-        for (var i = 0; i < peopleCount; i += 1) {
-          var slot = slots[i];
-          var lesson = matchingLesson(slot);
-          if (!slot.teacher || !slot.date || !slot.day || !slot.period || !lesson) missing = true;
-          chosen.push({ slot: slot, lesson: lesson, teacher: teacherByCode(slot.teacher) });
-        }
-        if (missing) return { valid: false, message: '請填妥每位老師的老師、日期、Day 和有效課節。' };
-        var seenTeachers = new Set();
-        for (var t = 0; t < chosen.length; t += 1) {
-          if (seenTeachers.has(chosen[t].slot.teacher)) return { valid: false, message: '每位老師只能選一次，請更換重複的老師。' };
-          seenTeachers.add(chosen[t].slot.teacher);
-        }
-        var seenTimes = new Set();
-        for (var s = 0; s < chosen.length; s += 1) {
-          var timeKey = chosen[s].slot.date + '|' + chosen[s].slot.period;
-          if (seenTimes.has(timeKey)) return { valid: false, message: '同一班別不能在同一日期、同一節安排兩位老師，請檢查日期和節數。' };
-          seenTimes.add(timeKey);
-        }
-        return { valid: true, message: '資料已齊全，可以預覽 ' + (peopleCount + 2) + ' 個可裁切區。' };
-      }
-      function updateFormStatus() {
-        var result = validate();
-        formStatus.textContent = result.message;
-        formStatus.dataset.state = result.valid ? 'ready' : (result.message.indexOf('重複') !== -1 || result.message.indexOf('同一班別') !== -1 ? 'error' : '');
-        previewButton.toggleAttribute('disabled', !result.valid);
-        previewButton.setAttribute('aria-disabled', String(!result.valid));
-        if (window.customElements && !window.customElements.get('lumen-button')) previewButton.tabIndex = 0;
-      }
       function dateLabel(isoDate) {
         var parts = isoDate.split('-');
         return Number(parts[0]) + '/' + Number(parts[1]) + '/' + Number(parts[2]);
@@ -509,6 +535,342 @@
         var parts = isoDate.split('-').map(Number);
         var date = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
         return ['日', '一', '二', '三', '四', '五', '六'][date.getUTCDay()];
+      }
+      function buildScheduleIndex() {
+        scheduleIndex = Object.create(null);
+        data.teachers.forEach(function (teacher) {
+          (teacher.lessons || []).forEach(function (lesson) {
+            (lesson.classes || []).forEach(function (classCode) {
+              var key = classCode + '|' + lesson.day + '|' + lesson.period;
+              var entries = scheduleIndex[key] || (scheduleIndex[key] = []);
+              var duplicate = entries.some(function (entry) {
+                return entry.teacher === teacher.code && entry.subject === lesson.subject;
+              });
+              if (!duplicate) entries.push({
+                teacher: teacher.code,
+                teacherName: teacher.displayName || teacher.code,
+                subject: String(lesson.subject || '').replace(/\s+/g, ' ').trim().replace(/^[\s,;/]+|[\s,;/]+$/g, '')
+              });
+            });
+          });
+        });
+        Object.keys(scheduleIndex).forEach(function (key) {
+          scheduleIndex[key].sort(function (a, b) {
+            return a.subject.localeCompare(b.subject, 'zh-Hant') || a.teacherName.localeCompare(b.teacherName, 'zh-Hant');
+          });
+        });
+      }
+      function entriesFor(classCode, day, period) {
+        return scheduleIndex[classCode + '|' + day + '|' + period] || [];
+      }
+      function classesFor(teacher) {
+        var taught = new Set();
+        (teacher.lessons || []).forEach(function (lesson) {
+          (lesson.classes || []).forEach(function (classCode) { taught.add(classCode); });
+        });
+        return data.classes.filter(function (classCode) { return taught.has(classCode); });
+      }
+      function datesForDay(day) {
+        return Object.keys(calendarDays).filter(function (date) {
+          return calendarDays[date] === day;
+        }).sort();
+      }
+      function teacherBusyAt(teacherCode, day, period) {
+        var teacher = teacherByCode(teacherCode);
+        if (!teacher) return [];
+        var seen = new Set();
+        return (teacher.lessons || []).filter(function (lesson) {
+          return lesson.day === day && Number(lesson.period) === Number(period);
+        }).map(function (lesson) {
+          var classes = (lesson.classes || []).join('、');
+          var subject = String(lesson.subject || '').trim();
+          var key = classes + '|' + subject;
+          if (seen.has(key)) return null;
+          seen.add(key);
+          return { classes: classes, subject: subject };
+        }).filter(Boolean);
+      }
+      function assessCycle(plan, complete) {
+        var conflicts = [];
+        if (!plan.length) return { available: false, conflicts: conflicts };
+        var edgeCount = complete ? plan.length : plan.length - 1;
+        for (var index = 0; index < edgeCount; index += 1) {
+          var nextIndex = (index + 1) % plan.length;
+          var teacher = teacherByCode(plan[index].teacher);
+          var incoming = plan[nextIndex];
+          var busy = teacherBusyAt(plan[index].teacher, incoming.day, incoming.period);
+          busy.forEach(function (lesson) {
+            conflicts.push({
+              teacher: teacher ? teacher.displayName : plan[index].teacher,
+              day: incoming.day,
+              period: incoming.period,
+              className: lesson.classes || '其他班別',
+              subject: lesson.subject || '課堂'
+            });
+          });
+        }
+        return { available: conflicts.length === 0, conflicts: conflicts };
+      }
+      function conflictText(conflict) {
+        return conflict.teacher + ' 在 Day ' + conflict.day + ' 第 ' + conflict.period + ' 節另有 ' +
+          conflict.className + (conflict.subject ? ' · ' + conflict.subject : '') + '。';
+      }
+      function manualChoiceStatus(choice, teacherCode) {
+        var candidate = { teacher: teacherCode, day: choice.day, period: Number(choice.period), subject: choice.subject || '' };
+        var status = assessCycle(selectedSlots.concat([candidate]), selectedSlots.length + 1 === peopleCount);
+        var conflicts = status.conflicts.slice();
+        if (choice.empty && teacherCode) {
+          var hasClassLesson = entriesFor(classSelect.value, choice.day, choice.period).some(function (entry) {
+            return entry.teacher === teacherCode;
+          });
+          if (!hasClassLesson) {
+            teacherBusyAt(teacherCode, choice.day, choice.period).forEach(function (lesson) {
+              conflicts.push({
+                teacher: (teacherByCode(teacherCode) || {}).displayName || teacherCode,
+                day: choice.day,
+                period: Number(choice.period),
+                className: lesson.classes || '其他班別',
+                subject: lesson.subject || '課堂'
+              });
+            });
+          }
+        }
+        return { available: conflicts.length === 0, conflicts: conflicts };
+      }
+      function teacherOptions(selectedCode) {
+        return data.teachers.slice().sort(function (a, b) {
+          return (a.displayName || a.code).localeCompare(b.displayName || b.code, 'zh-Hant');
+        }).map(function (teacher) {
+          var disabled = selectedSlots.some(function (slot) { return slot.teacher === teacher.code; }) && teacher.code !== selectedCode;
+          return '<option value="' + escapeHtml(teacher.code) + '" ' + (teacher.code === selectedCode ? 'selected ' : '') +
+            (disabled ? 'disabled ' : '') + '>' + escapeHtml(teacher.displayName || teacher.code) + '</option>';
+        }).join('');
+      }
+      function setPeopleCount(count) {
+        peopleCount = count;
+        selectedSlots = [];
+        pendingChoice = null;
+        modeButtons.forEach(function (button) {
+          button.setAttribute('aria-pressed', String(Number(button.dataset.count) === count));
+        });
+        document.getElementById('copy-count-label').textContent =
+          (count === 2 ? '二人互調' : '三人互調') + ' · ' + (count + 2) + ' 個列印區';
+        renderAll();
+        previewSection.hidden = true;
+      }
+      function renderAll() {
+        renderSelectedSlots();
+        renderManualPanel();
+        renderSchedule();
+        renderDateChoices();
+        updateFormStatus();
+      }
+      function renderSelectedSlots() {
+        selectedLessons.innerHTML = selectedSlots.map(function (slot, index) {
+          var teacher = teacherByCode(slot.teacher);
+          var label = index === 0 ? '你的原課' : '第 ' + (index + 1) + ' 位老師原課';
+          var manual = slot.manualOverride ? ' · 手動確認' : '';
+          var course = slot.subject || '課堂／科目未載入';
+          return '<article class="selected-slot"><div class="selected-slot-main"><strong>' + label + ' · ' +
+            escapeHtml(teacher ? teacher.displayName : slot.teacher) + escapeHtml(manual) + '</strong><span>' +
+            escapeHtml(course) + ' · Day ' + escapeHtml(slot.day) + ' · 第 ' + escapeHtml(slot.period) + ' 節</span></div>' +
+            '<button type="button" class="remove-slot" data-remove-slot="' + index + '" aria-label="移除' + label + '">移除</button></article>';
+        }).join('');
+        if (!ownerCode || !classSelect.value) {
+          selectionPrompt.textContent = '選擇老師和班別後，課表會顯示可選課節。';
+          selectionStepLabel.textContent = 'STEP 02 · 選擇班別';
+        } else if (!selectedSlots.length) {
+          selectionPrompt.textContent = '先在課表點選你想調走的課節。你的課節以金色標示。';
+          selectionStepLabel.textContent = 'STEP 03 · 選擇你的原課';
+        } else if (selectedSlots.length < peopleCount) {
+          var nextPerson = selectedSlots.length + 1;
+          selectionPrompt.textContent = '已選 ' + selectedSlots.length + ' / ' + peopleCount +
+            ' 位課節。選擇第 ' + nextPerson + ' 位老師的課；綠色表示目前可確認的交換方向沒有偵測到衝突；三人調堂會在最後一位選好後檢查完整循環。';
+          selectionStepLabel.textContent = 'STEP 04 · 選擇交換課節';
+        } else {
+          selectionPrompt.textContent = '課節已選好。請在下方為每位老師選擇相同 Day 的實際日期。';
+          selectionStepLabel.textContent = 'STEP 05 · 選擇日期';
+        }
+      }
+      function renderManualPanel() {
+        if (!pendingChoice) {
+          manualPanel.hidden = true;
+          manualPanel.innerHTML = '';
+          return;
+        }
+        var choosingTeacher = !pendingChoice.teacher;
+        var course = pendingChoice.subject || '';
+        var title = pendingChoice.empty ? '此格沒有預載課堂資料' : '此課節未高亮：請確認是否仍要調換';
+        var note = pendingChoice.empty
+          ? '這個時段在預載課表中沒有課堂。若課節已調走或屬中六安排，請選擇實際調堂老師並確認。'
+          : '系統偵測到以下課表衝突。若該課已調走或課表有特殊安排，請核實後再手動確認。';
+        var teacherField = choosingTeacher
+          ? '<div class="field"><label class="field-label" for="manual-teacher">該時段的老師</label><select id="manual-teacher" class="control"><option value="">選擇老師</option>' + teacherOptions('') + '</select></div>'
+          : '<div class="field"><span class="field-label">該時段的老師</span><p>' + escapeHtml((teacherByCode(pendingChoice.teacher) || {}).displayName || pendingChoice.teacher) + '</p></div>';
+        var initialStatus = pendingChoice.teacher ? manualChoiceStatus(pendingChoice, pendingChoice.teacher) : { conflicts: [] };
+        var conflicts = pendingChoice.conflicts && pendingChoice.conflicts.length ? pendingChoice.conflicts : initialStatus.conflicts;
+        var conflictHtml = conflicts.length
+          ? '<ul>' + conflicts.map(function (conflict) { return '<li>' + escapeHtml(conflictText(conflict)) + '</li>'; }).join('') + '</ul>'
+          : '<p class="manual-conflict-preview" id="manual-conflict-preview">' +
+            (choosingTeacher ? '選擇老師後，系統會顯示可檢查到的其他課節。' : '目前沒有偵測到固定課表衝突；此選擇仍按手動例外處理。') + '</p>';
+        manualPanel.innerHTML = '<h4>' + title + ' · Day ' + escapeHtml(pendingChoice.day) + ' 第 ' +
+          escapeHtml(pendingChoice.period) + ' 節</h4><p>' + note + '</p>' + conflictHtml +
+          '<div class="manual-fields">' + teacherField +
+          '<div class="field"><label class="field-label" for="manual-subject">科目／課堂（可修改）</label><input id="manual-subject" class="control" type="text" maxlength="48" value="' + escapeHtml(course) + '" placeholder="留空則列印為 (X)"></div></div>' +
+          '<div class="manual-actions"><button type="button" class="primary" data-action="confirm-manual">確認手動選擇</button><button type="button" data-action="cancel-manual">取消</button></div>';
+        manualPanel.hidden = false;
+      }
+      function renderDateChoices() {
+        if (selectedSlots.length !== peopleCount) {
+          dateStep.hidden = true;
+          dateChoices.innerHTML = '';
+          return;
+        }
+        dateStep.hidden = false;
+        dateChoices.innerHTML = selectedSlots.map(function (slot, index) {
+          var teacher = teacherByCode(slot.teacher);
+          var options = datesForDay(slot.day);
+          var isManual = Boolean(slot.manualDate);
+          var selectedMapped = slot.date && calendarDayFor(slot.date) === slot.day;
+          var mismatch = slot.date && !selectedMapped;
+          var optionHtml = '<option value="">選擇 Day ' + escapeHtml(slot.day) + ' 日期</option>' +
+            options.map(function (date) {
+              return '<option value="' + date + '" ' + (!isManual && slot.date === date ? 'selected' : '') + '>' +
+                dateLabel(date) + '（星期' + weekdayLabel(date) + '）</option>';
+            }).join('') +
+            '<option value="__manual" ' + (isManual || !options.length ? 'selected' : '') + '>其他日期／手動輸入</option>';
+          var manualBlock = (isManual || !options.length)
+            ? '<input class="control manual-date" type="date" data-manual-date="' + index + '" aria-label="老師 ' +
+              escapeHtml(teacher ? teacher.displayName : slot.teacher) + ' 手動輸入日期" value="' + escapeHtml(slot.date || '') + '">'
+            : '';
+          var warning = mismatch
+            ? '<div class="date-warning"><label><input type="checkbox" data-day-override="' + index + '" ' +
+              (slot.manualDayConfirmed ? 'checked' : '') + '>我已核實，仍按 Day ' + escapeHtml(slot.day) + ' 的課節安排。</label>' +
+              '<div class="date-validation">所選日期的校曆 Day 為 ' + escapeHtml(calendarDayFor(slot.date) || '未有對照') + '。</div></div>'
+            : '<div class="date-validation">' + (options.length ? '只列出 QMSS Calendar 中的 Day ' + escapeHtml(slot.day) + ' 日期。' : '校曆未有此 Day 的日期，請手動輸入並核實。') + '</div>';
+          return '<article class="date-choice"><h4>' + escapeHtml(teacher ? teacher.displayName : slot.teacher) +
+            ' · Day ' + escapeHtml(slot.day) + ' 第 ' + escapeHtml(slot.period) + ' 節</h4><p>' +
+            escapeHtml(slot.subject || '課堂／科目未載入') + '</p><select class="control" data-date-index="' + index + '">' +
+            optionHtml + '</select>' + manualBlock + warning + '</article>';
+        }).join('');
+      }
+      function renderSchedule() {
+        var classCode = classSelect.value;
+        if (!data || !classCode) {
+          classTimetable.innerHTML = '';
+          return;
+        }
+        var rows = data.periods.map(function (period) {
+          var cells = data.days.map(function (day) {
+            var entries = entriesFor(classCode, day, period);
+            var isOwnPhase = selectedSlots.length === 0;
+            var canChoose = selectedSlots.length < peopleCount;
+            var html = '';
+            if (period === 1 && day !== 'F') {
+              html += '<div class="period-note-inline">早會／閱讀</div>';
+            }
+            if (entries.length) {
+              html += entries.map(function (entry) {
+                var chosenIndex = selectedSlots.findIndex(function (slot) {
+                  return slot.teacher === entry.teacher && slot.day === day && Number(slot.period) === Number(period) && slot.subject === entry.subject;
+                });
+                var isChosen = chosenIndex !== -1;
+                var selectedTeacher = selectedSlots.some(function (slot) { return slot.teacher === entry.teacher; });
+                var ownEntry = entry.teacher === ownerCode;
+                var available = false;
+                var conflicts = [];
+                var selectable = false;
+                var status = '';
+                var classes = ['timetable-entry'];
+                if (isChosen) {
+                  classes.push('is-selected');
+                  status = '已選課節';
+                } else if (isOwnPhase) {
+                  selectable = canChoose && ownEntry;
+                  if (ownEntry) {
+                    classes.push('is-owner-lesson');
+                    status = '你的課節';
+                  }
+                } else {
+                  selectable = canChoose && !selectedTeacher;
+                  if (selectable) {
+                    var candidate = { teacher: entry.teacher, subject: entry.subject, day: day, period: Number(period), manualOverride: false };
+                    var statusCheck = assessCycle(selectedSlots.concat([candidate]), selectedSlots.length + 1 === peopleCount);
+                    conflicts = statusCheck.conflicts;
+                    available = statusCheck.available;
+                    if (available) {
+                      classes.push('is-highlighted');
+                      status = selectedSlots.length + 1 === peopleCount ? '可調換' : '目前可行';
+                    } else {
+                      classes.push('is-muted');
+                      status = '可選 · 請確認';
+                    }
+                  } else if (selectedTeacher) {
+                    status = '已選此老師';
+                  }
+                }
+                var title = entry.subject + ' · ' + entry.teacherName + ' · Day ' + day + ' 第 ' + period + ' 節';
+                if (conflicts.length) title += ' · ' + conflicts.map(conflictText).join('');
+                return '<button type="button" class="' + classes.join(' ') + '" data-kind="lesson" data-day="' + day +
+                  '" data-period="' + period + '" data-teacher="' + escapeHtml(entry.teacher) + '" data-subject="' +
+                  escapeHtml(entry.subject) + '" title="' + escapeHtml(title) + '"' + (selectable ? '' : ' disabled') + '>' +
+                  '<span class="entry-subject">' + escapeHtml(entry.subject || '課堂') + '</span><span class="entry-teacher">' +
+                  escapeHtml(entry.teacherName) + '</span>' + (status ? '<span class="entry-status">' + escapeHtml(status) + '</span>' : '') +
+                  '</button>';
+              }).join('');
+            }
+            if (!entries.length || selectedSlots.length < peopleCount) {
+              var emptyDisabled = selectedSlots.length >= peopleCount;
+              html += '<button type="button" class="empty-slot" data-kind="empty" data-day="' + day + '" data-period="' + period +
+                '" ' + (emptyDisabled ? 'disabled' : '') + '><span>' + (entries.length ? '另選手動時段' : '空堂 · 手動選') +
+                '</span><span class="entry-status">需確認</span></button>';
+            }
+            return '<td><div class="timetable-cell">' + html + '</div></td>';
+          }).join('');
+          return '<tr><td>第 ' + period + ' 節</td>' + cells + '</tr>';
+        }).join('');
+        var headers = data.days.map(function (day) { return '<th scope="col">Day ' + day + '</th>'; }).join('');
+        classTimetable.innerHTML = '<table class="class-timetable" aria-label="' + escapeHtml(classCode) +
+          ' 班循環課表"><thead><tr><th scope="col">節數</th>' + headers + '</tr></thead><tbody>' + rows + '</tbody></table>';
+      }
+      function updateFormStatus() {
+        var result = validate();
+        formStatus.textContent = result.message;
+        formStatus.dataset.state = result.valid ? 'ready' : (result.error ? 'error' : '');
+        previewButton.toggleAttribute('disabled', !result.valid);
+        previewButton.setAttribute('aria-disabled', String(!result.valid));
+        if (window.customElements && !window.customElements.get('lumen-button')) previewButton.tabIndex = 0;
+      }
+      function validate() {
+        if (!data) return { valid: false, message: '正在載入課表資料。' };
+        if (!ownerCode) return { valid: false, message: '先選擇你的身份。' };
+        if (!classSelect.value) return { valid: false, message: '請選擇任教班別。' };
+        if (selectedSlots.length < peopleCount) return { valid: false, message: '請在課表選好 ' + peopleCount + ' 位老師的原課節。' };
+        if (selectedSlots.length > peopleCount) return { valid: false, message: '已選課節數量有誤，請移除多出的課節。', error: true };
+        var seenTeachers = new Set();
+        for (var index = 0; index < selectedSlots.length; index += 1) {
+          var slot = selectedSlots[index];
+          if (!slot.teacher || !slot.day || !slot.period || !slot.date) return { valid: false, message: '請為每位老師選擇日期。' };
+          if (seenTeachers.has(slot.teacher)) return { valid: false, message: '每位老師只能選一次，請更換重複的老師。', error: true };
+          seenTeachers.add(slot.teacher);
+          var mappedDay = calendarDayFor(slot.date);
+          if (mappedDay !== slot.day && !slot.manualDayConfirmed) {
+            return { valid: false, message: '有日期未對應課節的 Day；請核實並勾選手動確認。', error: true };
+          }
+        }
+        for (var a = 0; a < selectedSlots.length; a += 1) {
+          for (var b = a + 1; b < selectedSlots.length; b += 1) {
+            if (selectedSlots[a].date === selectedSlots[b].date &&
+                Number(selectedSlots[a].period) === Number(selectedSlots[b].period)) {
+              return { valid: false, message: '同一班別不能在同一日期、同一節安排兩個課節。', error: true };
+            }
+          }
+        }
+        var cycle = assessCycle(selectedSlots, true);
+        if (!cycle.available && !selectedSlots.some(function (slot) { return slot.manualOverride; })) {
+          return { valid: false, message: '課表顯示有時段衝突，請重新選擇或手動確認例外。', error: true };
+        }
+        return { valid: true, message: '資料已齊全，可以預覽 ' + (peopleCount + 2) + ' 個可裁切區。' };
       }
       function appendText(parent, tagName, className, text) {
         var element = document.createElement(tagName);
@@ -523,14 +885,14 @@
           updateFormStatus();
           return;
         }
-        var participants = result.valid ? slots.slice(0, peopleCount).map(function (slot) {
-          return { slot: slot, teacher: teacherByCode(slot.teacher), lesson: matchingLesson(slot) };
-        }) : [];
+        var participants = selectedSlots.slice(0, peopleCount).map(function (slot) {
+          return { slot: slot, teacher: teacherByCode(slot.teacher), subject: slot.subject || '(X)' };
+        });
         var assignments = participants.map(function (participant, index) {
           var incoming = participants[(index + 1) % participants.length];
           return {
             teacher: participant.teacher.code,
-            subject: participant.lesson.subject,
+            subject: participant.subject,
             classCode: classSelect.value,
             date: incoming.slot.date,
             day: incoming.slot.day,
@@ -538,7 +900,7 @@
           };
         });
         var centerIndex = Math.floor(peopleCount / 2);
-        var copies = participants.map(function (participant, index) {
+        var copies = participants.map(function (participant) {
           return { label: '老師 ' + participant.teacher.code + ' 保存', position: centerIndex, recipient: participant.teacher.displayName };
         });
         copies.push({ label: '貼於 ' + classSelect.value + ' 班房', position: centerIndex, recipient: classSelect.value + ' 班房' });
@@ -555,7 +917,7 @@
           appendText(section, 'div', 'copy-recipient-label', copy.label);
           var list = document.createElement('div');
           list.className = 'lesson-list';
-          assignments.forEach(function (assignment, assignmentIndex) {
+          assignments.forEach(function (assignment) {
             var card = document.createElement('article');
             card.className = 'notice-card';
             appendText(card, 'h3', 'notice-title', '調堂安排');
@@ -570,7 +932,7 @@
             card.appendChild(dateRow);
             var teacherRow = document.createElement('div');
             teacherRow.className = 'notice-row teacher-row';
-            [['老師：', assignment.teacher], ['科目：', assignment.subject || '(X)']].forEach(function (field) {
+            [['老師：', assignment.teacher], ['科目：', assignment.subject]].forEach(function (field) {
               appendText(teacherRow, 'span', 'notice-label', field[0]);
               appendText(teacherRow, 'span', 'notice-value', field[1]);
             });
@@ -587,22 +949,172 @@
           section.appendChild(list);
           printSheet.appendChild(section);
         });
-        document.getElementById('preview-count').textContent = 'A4 直向一頁，共 ' + copies.length + ' 個可裁切區：' + peopleCount + ' 位老師各一份、班房張貼一份、Florence 一份。';
+        document.getElementById('preview-count').textContent = 'A4 直向一頁，共 ' + copies.length +
+          ' 個可裁切區：' + peopleCount + ' 位老師各一份、班房張貼一份、Florence 一份。';
         previewSection.hidden = false;
         previewSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-      function onFormChange(event) {
-        var target = event.target;
-        if (!target.matches('[data-slot-index]')) return;
-        var index = Number(target.dataset.slotIndex);
-        var field = target.dataset.field;
-        var value = target.value;
-        slots[index][field] = value;
-        if (field === 'date') slots[index].day = calendarDayFor(value);
-        if (field === 'teacher' || field === 'day' || field === 'date') slots[index].period = '';
-        renderTeacherCards(target.id);
-        updateFormStatus();
+      function commitSlot(slot) {
+        if (selectedSlots.some(function (existing) { return existing.teacher === slot.teacher; })) {
+          formStatus.textContent = '每位老師只能選一次，請選擇另一位老師。';
+          formStatus.dataset.state = 'error';
+          return;
+        }
+        selectedSlots.push(slot);
+        pendingChoice = null;
         previewSection.hidden = true;
+        renderAll();
+      }
+      function openManualChoice(choice) {
+        pendingChoice = choice;
+        renderManualPanel();
+        if (choice.conflicts && choice.conflicts.length) {
+          manualPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+      function finishManualChoice() {
+        if (!pendingChoice) return;
+        var teacherCode = pendingChoice.teacher;
+        var teacherField = document.getElementById('manual-teacher');
+        if (teacherField) teacherCode = teacherField.value;
+        if (!teacherCode) {
+          formStatus.textContent = '請選擇該時段的老師。';
+          formStatus.dataset.state = 'error';
+          return;
+        }
+        if (selectedSlots.some(function (slot) { return slot.teacher === teacherCode; })) {
+          formStatus.textContent = '這位老師已在調堂名單中，請選擇另一位老師。';
+          formStatus.dataset.state = 'error';
+          return;
+        }
+        var teacher = teacherByCode(teacherCode);
+        var subjectField = document.getElementById('manual-subject');
+        var subject = subjectField ? subjectField.value.trim() : '';
+        var status = manualChoiceStatus(pendingChoice, teacherCode);
+        var reasons = status.conflicts.map(conflictText);
+        var slot = {
+          teacher: teacherCode,
+          day: pendingChoice.day,
+          period: Number(pendingChoice.period),
+          subject: subject || pendingChoice.subject || '',
+          date: '',
+          manualDate: false,
+          manualDayConfirmed: false,
+          manualOverride: true,
+          manualNote: reasons.join(' ')
+        };
+        if (pendingChoice.empty && !teacher) {
+          formStatus.textContent = '未能辨認老師，請重新選擇。';
+          formStatus.dataset.state = 'error';
+          return;
+        }
+        commitSlot(slot);
+      }
+      function handleScheduleClick(event) {
+        var removeButton = event.target.closest('[data-remove-slot]');
+        if (removeButton) {
+          selectedSlots = selectedSlots.slice(0, Number(removeButton.dataset.removeSlot));
+          pendingChoice = null;
+          renderAll();
+          previewSection.hidden = true;
+          return;
+        }
+        var button = event.target.closest('button[data-kind]');
+        if (!button || button.disabled || !classSelect.value) return;
+        var day = button.dataset.day;
+        var period = Number(button.dataset.period);
+        if (button.dataset.kind === 'empty') {
+          openManualChoice({
+            empty: true,
+            teacher: selectedSlots.length ? '' : ownerCode,
+            day: day,
+            period: period,
+            subject: '',
+            conflicts: []
+          });
+          return;
+        }
+        var teacherCode = button.dataset.teacher;
+        var subject = button.dataset.subject || '';
+        var slot = { teacher: teacherCode, day: day, period: period, subject: subject, date: '', manualDate: false, manualDayConfirmed: false, manualOverride: false };
+        if (!selectedSlots.length && teacherCode === ownerCode) {
+          commitSlot(slot);
+          return;
+        }
+        var status = assessCycle(selectedSlots.concat([slot]), selectedSlots.length + 1 === peopleCount);
+        if (status.available) {
+          commitSlot(slot);
+        } else {
+          openManualChoice({
+            empty: false,
+            teacher: teacherCode,
+            day: day,
+            period: period,
+            subject: subject,
+            conflicts: status.conflicts
+          });
+        }
+      }
+      function handleManualPanelClick(event) {
+        var action = event.target.closest('[data-action]');
+        if (!action) return;
+        if (action.dataset.action === 'confirm-manual') finishManualChoice();
+        if (action.dataset.action === 'cancel-manual') {
+          pendingChoice = null;
+          renderAll();
+        }
+      }
+      function handleManualTeacherChange(event) {
+        if (!event.target.matches('#manual-teacher') || !pendingChoice) return;
+        var preview = document.getElementById('manual-conflict-preview');
+        if (!preview) return;
+        if (!event.target.value) {
+          preview.textContent = '選擇老師後，系統會顯示可檢查到的其他課節。';
+          return;
+        }
+        var status = manualChoiceStatus(pendingChoice, event.target.value);
+        preview.innerHTML = status.conflicts.length
+          ? '課表找到以下衝突：<ul>' + status.conflicts.map(function (conflict) { return '<li>' + escapeHtml(conflictText(conflict)) + '</li>'; }).join('') + '</ul>你仍可手動確認。'
+          : '沒有偵測到固定課表衝突；此空堂仍需按手動安排確認。';
+      }
+      function handleDateChange(event) {
+        var target = event.target;
+        if (target.matches('[data-date-index]')) {
+          var index = Number(target.dataset.dateIndex);
+          var slot = selectedSlots[index];
+          if (!slot) return;
+          if (target.value === '__manual') {
+            slot.manualDate = true;
+            slot.date = '';
+            slot.manualDayConfirmed = false;
+          } else {
+            slot.manualDate = false;
+            slot.date = target.value;
+            slot.manualDayConfirmed = false;
+          }
+          renderDateChoices();
+          updateFormStatus();
+          previewSection.hidden = true;
+          return;
+        }
+        if (target.matches('[data-manual-date]')) {
+          var manualIndex = Number(target.dataset.manualDate);
+          if (!selectedSlots[manualIndex]) return;
+          selectedSlots[manualIndex].date = target.value;
+          selectedSlots[manualIndex].manualDate = true;
+          selectedSlots[manualIndex].manualDayConfirmed = false;
+          renderDateChoices();
+          updateFormStatus();
+          previewSection.hidden = true;
+          return;
+        }
+        if (target.matches('[data-day-override]')) {
+          var overrideIndex = Number(target.dataset.dayOverride);
+          if (!selectedSlots[overrideIndex]) return;
+          selectedSlots[overrideIndex].manualDayConfirmed = target.checked;
+          updateFormStatus();
+          previewSection.hidden = true;
+        }
       }
       function loadTimetable() {
         var timetableRequest = fetch('./data/timetable.json', { cache: 'no-cache' }).then(function (response) {
@@ -614,42 +1126,80 @@
           return response.json();
         }).catch(function () { return { days: {}, calendarName: 'QMSS Calendar' }; });
         Promise.all([timetableRequest, calendarRequest]).then(function (loaded) {
-          var timetable = loaded[0];
-          var calendar = loaded[1];
-          data = timetable;
-          calendarDays = calendar.days || {};
-          calendarMeta = calendar;
-          slots = [{ teacher: '', date: '', day: '', period: '' }, { teacher: '', date: '', day: '', period: '' }];
+          data = loaded[0];
+          calendarMeta = loaded[1];
+          calendarDays = calendarMeta.days || {};
+          buildScheduleIndex();
+          teacherSelect.innerHTML = '<option value="">選擇老師</option>' + data.teachers.slice().sort(function (a, b) {
+            return (a.displayName || a.code).localeCompare(b.displayName || b.code, 'zh-Hant');
+          }).map(function (teacher) {
+            return '<option value="' + escapeHtml(teacher.code) + '">' + escapeHtml(teacher.displayName || teacher.code) + '</option>';
+          }).join('');
+          teacherSelect.disabled = false;
+          classSelect.innerHTML = '<option value="">選擇班別</option>';
+          classSelect.disabled = true;
           document.getElementById('year-pill').textContent = '課表版本 · ' + data.academicYear;
-          var calendarDateCount = Object.keys(calendarDays).length;
-          var calendarUpdate = calendarMeta.lastSynced ? '（更新至 ' + calendarMeta.lastSynced + '）' : '';
-          document.getElementById('calendar-note-title').textContent = calendarDateCount ? 'QMSS Calendar 日期對照已載入。' : 'QMSS Calendar 日期對照尚未載入。';
-          document.getElementById('calendar-note-copy').textContent = calendarDateCount ? '選日期後自動帶入 Day A–F；若校曆沒有該日，才手動補選。' : '完成日別同步後會按日期自動帶入；目前可手動補選 A–F。';
-          document.getElementById('data-foot').textContent = data.academicYear + ' 課表已預載；QMSS Calendar 日別資料 ' + (calendarDateCount ? '已載入 ' + calendarDateCount + ' 日' + calendarUpdate : '尚未載入，日期可手動補選') + '。使用者毋須登入或上載。';
-          classSelect.innerHTML = '<option value="">選擇班別</option>' + data.classes.map(function (classCode) { return '<option value="' + escapeHtml(classCode) + '">' + escapeHtml(classCode) + '</option>'; }).join('');
-          classSelect.disabled = false;
-          classSelect.addEventListener('change', function () {
-            slots = slots.map(function (slot) { return { teacher: '', date: slot.date, day: calendarDayFor(slot.date) || '', period: '' }; });
-            renderTeacherCards();
-            updateFormStatus();
-            previewSection.hidden = true;
-          });
-          teacherCards.addEventListener('change', onFormChange);
+          var dateCount = Object.keys(calendarDays).length;
+          var updateLabel = calendarMeta.lastSynced ? '（更新至 ' + calendarMeta.lastSynced + '）' : '';
+          document.getElementById('calendar-note-title').textContent = dateCount
+            ? 'QMSS Calendar 日期對照已載入。'
+            : 'QMSS Calendar 日期對照尚未載入。';
+          document.getElementById('calendar-note-copy').textContent = dateCount
+            ? '選課後只會列出所選 Day 的校曆日期；有特殊安排時仍可手動輸入。'
+            : '校曆日期未載入；選課後可手動輸入日期並確認 Day。';
+          document.getElementById('data-foot').textContent = data.academicYear + ' 課表已預載；QMSS Calendar 日別資料 ' +
+            (dateCount ? '已載入 ' + dateCount + ' 日' + updateLabel : '尚未載入，日期可手動補選') + '。使用者毋須登入或上載。';
           document.getElementById('data-error').classList.remove('is-visible');
-          renderTeacherCards();
           updateFormStatus();
         }).catch(function () {
           var error = document.getElementById('data-error');
           error.textContent = '未能載入預載課表，請重新整理頁面；如問題持續，請聯絡工具維護者。';
           error.classList.add('is-visible');
-          teacherCards.innerHTML = '<p class="loading">課表暫時未能載入。</p>';
-          classSelect.disabled = true;
+          teacherSelect.disabled = true;
+          formStatus.textContent = '課表暫時未能載入。';
         });
       }
-
-      modeButtons.forEach(function (button) {
-        button.addEventListener('click', function () { setPeopleCount(Number(button.dataset.count)); });
+      teacherSelect.addEventListener('change', function () {
+        ownerCode = teacherSelect.value;
+        selectedSlots = [];
+        pendingChoice = null;
+        classSelect.innerHTML = '<option value="">選擇班別</option>';
+        if (!ownerCode) {
+          classSelect.disabled = true;
+          afterIdentity.hidden = true;
+          timetableWorkflow.hidden = true;
+          renderAll();
+          return;
+        }
+        var owner = teacherByCode(ownerCode);
+        var classes = classesFor(owner);
+        classSelect.innerHTML = '<option value="">選擇班別</option>' + classes.map(function (classCode) {
+          return '<option value="' + escapeHtml(classCode) + '">' + escapeHtml(classCode) + '</option>';
+        }).join('');
+        classSelect.disabled = false;
+        afterIdentity.hidden = false;
+        timetableWorkflow.hidden = true;
+        renderAll();
+        previewSection.hidden = true;
       });
+      classSelect.addEventListener('change', function () {
+        selectedSlots = [];
+        pendingChoice = null;
+        timetableWorkflow.hidden = !classSelect.value;
+        renderAll();
+        previewSection.hidden = true;
+      });
+      modeButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var nextCount = Number(button.dataset.count);
+          if (nextCount !== peopleCount) setPeopleCount(nextCount);
+        });
+      });
+      classTimetable.addEventListener('click', handleScheduleClick);
+      selectedLessons.addEventListener('click', handleScheduleClick);
+      manualPanel.addEventListener('click', handleManualPanelClick);
+      manualPanel.addEventListener('change', handleManualTeacherChange);
+      dateChoices.addEventListener('change', handleDateChange);
       previewButton.addEventListener('click', buildCopies);
       document.getElementById('edit-button').addEventListener('click', function () {
         previewSection.hidden = true;
