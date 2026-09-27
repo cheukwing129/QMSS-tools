@@ -286,7 +286,7 @@
       }
       function stripClasses(raw) {
         return raw.replace(new RegExp(CLASS_PATTERN.source, 'g'), ' ')
-          .replace(/\s+/g, ' ').trim().replace(/^[,;/]+|[,;/]+$/g, '') || '（科目／地點未列明）';
+          .replace(/\s+/g, ' ').trim().replace(/^[\s,;/]+|[\s,;/]+$/g, '') || '（科目／地點未列明）';
       }
       function displayName(fullName, code) {
         var chineseName = fullName;
