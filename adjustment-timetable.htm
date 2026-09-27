@@ -619,7 +619,7 @@
         var candidate = { teacher: teacherCode, day: choice.day, period: Number(choice.period), subject: choice.subject || '' };
         var status = assessCycle(selectedSlots.concat([candidate]), selectedSlots.length + 1 === peopleCount);
         var conflicts = status.conflicts.slice();
-        if (choice.empty && teacherCode) {
+        if (choice.manual && teacherCode) {
           var hasClassLesson = entriesFor(classSelect.value, choice.day, choice.period).some(function (entry) {
             return entry.teacher === teacherCode;
           });
@@ -700,10 +700,12 @@
         }
         var choosingTeacher = !pendingChoice.teacher;
         var course = pendingChoice.subject || '';
-        var title = pendingChoice.empty ? '此格沒有預載課堂資料' : '此課節未高亮：請確認是否仍要調換';
+        var title = pendingChoice.empty ? '此格沒有預載課堂資料' : (pendingChoice.manual ? '手動指定此時段' : '此課節未高亮：請確認是否仍要調換');
         var note = pendingChoice.empty
           ? '這個時段在預載課表中沒有課堂。若課節已調走或屬中六安排，請選擇實際調堂老師並確認。'
-          : '系統偵測到以下課表衝突。若該課已調走或課表有特殊安排，請核實後再手動確認。';
+          : (pendingChoice.manual
+            ? '此格已有預載課堂。若課節已調走或想手動指定老師／課堂，請核實後再確認。'
+            : '系統偵測到以下課表衝突。若該課已調走或課表有特殊安排，請核實後再手動確認。');
         var teacherField = choosingTeacher
           ? '<div class="field"><label class="field-label" for="manual-teacher">該時段的老師</label><select id="manual-teacher" class="control"><option value="">選擇老師</option>' + teacherOptions('') + '</select></div>'
           : '<div class="field"><span class="field-label">該時段的老師</span><p>' + escapeHtml((teacherByCode(pendingChoice.teacher) || {}).displayName || pendingChoice.teacher) + '</p></div>';
@@ -1024,8 +1026,10 @@
         var day = button.dataset.day;
         var period = Number(button.dataset.period);
         if (button.dataset.kind === 'empty') {
+          var cellHasLessons = entriesFor(classSelect.value, day, period).length > 0;
           openManualChoice({
-            empty: true,
+            empty: !cellHasLessons,
+            manual: true,
             teacher: selectedSlots.length ? '' : ownerCode,
             day: day,
             period: period,
@@ -1047,6 +1051,7 @@
         } else {
           openManualChoice({
             empty: false,
+            manual: false,
             teacher: teacherCode,
             day: day,
             period: period,
