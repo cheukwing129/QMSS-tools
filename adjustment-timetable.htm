@@ -527,9 +527,9 @@
             period: incoming.slot.period
           };
         });
-        var centerIndex = Math.floor((peopleCount - 1) / 2);
+        var centerIndex = Math.floor(peopleCount / 2);
         var copies = participants.map(function (participant, index) {
-          return { label: '老師 ' + participant.teacher.code + ' 保存', position: index, recipient: participant.teacher.displayName };
+          return { label: '老師 ' + participant.teacher.code + ' 保存', position: centerIndex, recipient: participant.teacher.displayName };
         });
         copies.push({ label: '貼於 ' + classSelect.value + ' 班房', position: centerIndex, recipient: classSelect.value + ' 班房' });
         copies.push({ label: '交由 Florence 保存', position: centerIndex, recipient: '行政主任 Florence' });
