@@ -113,6 +113,11 @@
     .result-tile { min-width: 0; padding: 14px; border: 1px solid #dbe4dc; border-radius: 13px; background: #f7faf6; }
     .result-tile strong { display: block; margin-bottom: 4px; font-size: 14px; }
     .result-tile p { margin: 0; color: #526a64; font-size: 14px; }
+    .data-checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+    .data-check { min-width: 0; padding: 10px; border: 1px solid #e1e8e2; border-radius: 10px; background: white; }
+    .data-check strong { display: block; margin: 0 0 2px; color: var(--green-dark); font-size: 19px; line-height: 1.2; }
+    .data-check span { display: block; color: var(--ink); font-size: 12px; font-weight: 800; line-height: 1.4; }
+    .data-check small { display: block; margin-top: 2px; color: var(--muted); font-size: 11px; line-height: 1.4; }
     .day-counts { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 9px; }
     .day-counts span { padding: 3px 8px; border-radius: 999px; background: #e8f1ec; color: #315d54; font-size: 13px; font-weight: 700; }
     .download-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
@@ -181,10 +186,13 @@
           <input id="calendar-file" type="file" accept=".ics,text/calendar">
         </label>
       </div>
+      <p class="hint">Excel 和校曆檔只在此瀏覽器內整理，毋須登入。</p>
       <div class="format-note">
         <p><strong>課表格式：</strong>每張工作表一位老師，Day A–F 分列，沿用目前課表版式。</p>
-        <p><strong>九節制對應：</strong>全日編號為第 1–9 節。Day F 課表第 6 列為第 1 節；其後 8 個固定課節列依序為第 2–9 節。Day A–E 的正式課堂也由第 2 節開始。</p>
-        <p><strong>特殊課節：</strong>課表中標示 CLP 的備課／會議，以及 Day F 第 7／9 節的 Assembly Hall，會一併寫入資料，供調堂頁選擇是否視為空堂。</p>
+        <p><strong>九節制對應：</strong>全日編號為第 1–9 節。Day F 課表第 6 列為第 1 節；Day A–E 正式課堂由第 2 節開始，第 1 節作早會／閱讀時段。</p>
+        <p><strong>休息時段：</strong>小息固定在第 3 節後，午息固定在第 6 節後；兩者由調堂頁呈現，不會當作課表課節匯出。</p>
+        <p><strong>保留課節資料：</strong>中六班別 6K、6P、6T、6W 及拆班課節均會完整保留。調堂頁預設隱藏拆班；「視中六堂節為空堂」及「視備課節／會議／周會為空堂」兩項預設不勾選，屆時可按需要選擇。</p>
+        <p><strong>特殊時段：</strong>課表中標示 CLP 的備課／會議，以及 Day F 第 7／9 節的 Assembly Hall 會一併匯出並分類，供調堂頁檢查是否視為空堂。</p>
         <p><strong>校曆檔：</strong>Google Calendar 匯出如為 ZIP，先解壓縮，再選取 QMSS Calendar.ics。若 Day 活動設定為重複事件，請先提供已展開成實際日期的 .ics。</p>
         <p><strong>匯出權限：</strong>Google Calendar 匯出需要「Make changes and manage sharing」權限；若你只有訂閱／查看權限，請日曆擁有人或管理員匯出 QMSS Calendar.ics 給你。</p>
       </div>
@@ -199,6 +207,7 @@
           <div class="result-tile">
             <strong>教師課表</strong>
             <p id="timetable-result"></p>
+            <div class="data-checks" id="timetable-checks" role="list" aria-label="課節資料分類檢查"></div>
           </div>
           <div class="result-tile">
             <strong>QMSS Calendar</strong>
@@ -301,6 +310,46 @@
         var address = String.fromCharCode(64 + column) + String(row);
         return sheet[address] ? sheet[address].v : null;
       }
+      function summarizeTimetable(teachers) {
+        var classTeachers = new Map();
+        var sixthFormSlotCount = 0;
+        var clpSlotCount = 0;
+        var assemblyHallSlotCount = 0;
+        teachers.forEach(function (teacher) {
+          (teacher.lessons || []).forEach(function (lesson) {
+            var classes = lesson.classes || [];
+            var specials = lesson.specials || [];
+            if (classes.some(function (classCode) { return /^6[KPTW]$/.test(classCode); })) sixthFormSlotCount += 1;
+            if (specials.indexOf('clp') !== -1) clpSlotCount += 1;
+            if (specials.indexOf('assemblyHall') !== -1) assemblyHallSlotCount += 1;
+            classes.forEach(function (classCode) {
+              var key = classCode + '|' + lesson.day + '|' + lesson.period;
+              var teachersAtSlot = classTeachers.get(key);
+              if (!teachersAtSlot) {
+                teachersAtSlot = new Set();
+                classTeachers.set(key, teachersAtSlot);
+              }
+              teachersAtSlot.add(teacher.code);
+            });
+          });
+        });
+        var splitClassSlotCount = Array.from(classTeachers.values()).filter(function (teacherSet) {
+          return teacherSet.size > 1;
+        }).length;
+        var warnings = [];
+        if (!sixthFormSlotCount) warnings.push('未找到 6K、6P、6T、6W 的中六課節；如本學年有中六班別，請核對課表內容。');
+        if (!splitClassSlotCount) warnings.push('未檢測到拆班班節；如本學年有拆班，請核對同一班別、Day 和節數的老師資料。');
+        if (!clpSlotCount) warnings.push('未找到 CLP 備課／會議記錄；如本學年有相關時段，請核對課表標示。');
+        if (!assemblyHallSlotCount) warnings.push('未找到 Day F 第 7／9 節 Assembly Hall；如本學年有周會安排，請核對課表標示。');
+        return {
+          sixthFormSlotCount: sixthFormSlotCount,
+          splitClassSlotCount: splitClassSlotCount,
+          clpSlotCount: clpSlotCount,
+          assemblyHallSlotCount: assemblyHallSlotCount,
+          warnings: warnings
+        };
+      }
+
       async function parseTimetable(file, academicYear) {
         if (!window.XLSX) throw new Error('Excel 解析元件未能載入。請確認網絡連線後重新整理頁面。');
         var workbook = XLSX.read(await file.arrayBuffer(), { cellDates: false });
@@ -363,6 +412,7 @@
           throw new Error('提取出的課表資料量異常（' + teachers.length + ' 位老師、' + classes.length + ' 個班別、' + lessonCount + ' 節），請確認上載的是完整年度課表。');
         }
         teachers.sort(function (a, b) { return compareText(a.displayName, b.displayName) || compareText(a.code, b.code); });
+        var stats = summarizeTimetable(teachers);
         return {
           data: {
             academicYear: academicYear,
@@ -375,7 +425,12 @@
           teacherCount: teachers.length,
           classCount: classes.length,
           lessonCount: lessonCount,
-          specialSlotCount: specialSlotCount
+          specialSlotCount: specialSlotCount,
+          sixthFormSlotCount: stats.sixthFormSlotCount,
+          splitClassSlotCount: stats.splitClassSlotCount,
+          clpSlotCount: stats.clpSlotCount,
+          assemblyHallSlotCount: stats.assemblyHallSlotCount,
+          warnings: stats.warnings
         };
       }
 
@@ -468,8 +523,28 @@
       }
       function showResults(timetable, calendar) {
         document.getElementById('timetable-result').textContent =
-          timetable.teacherCount + ' 位老師 · ' + timetable.classCount + ' 個班別 · ' + timetable.lessonCount +
-          ' 個課節／活動時段' + (timetable.specialSlotCount ? '（包括 ' + timetable.specialSlotCount + ' 個 CLP／Assembly Hall 時段）' : '');
+          timetable.teacherCount + ' 位老師 · ' + timetable.classCount + ' 個班別 · ' + timetable.lessonCount + ' 個課節／活動時段';
+        var timetableChecks = document.getElementById('timetable-checks');
+        var checks = [
+          { value: timetable.sixthFormSlotCount, label: '中六課節記錄', note: '6K／6P／6T／6W' },
+          { value: timetable.splitClassSlotCount, label: '拆班班節', note: '同班同時段由多位老師任教' },
+          { value: timetable.clpSlotCount, label: '備課／會議記錄', note: '課表標示 CLP' },
+          { value: timetable.assemblyHallSlotCount, label: '周會記錄', note: 'Day F 第 7／9 節 Assembly Hall' }
+        ];
+        timetableChecks.replaceChildren();
+        checks.forEach(function (item) {
+          var card = document.createElement('div');
+          card.className = 'data-check';
+          card.setAttribute('role', 'listitem');
+          var value = document.createElement('strong');
+          value.textContent = item.value;
+          var label = document.createElement('span');
+          label.textContent = item.label;
+          var note = document.createElement('small');
+          note.textContent = item.note;
+          card.append(value, label, note);
+          timetableChecks.appendChild(card);
+        });
         document.getElementById('calendar-result').textContent =
           calendar.count + ' 個日期 · ' + calendar.firstDate + ' 至 ' + calendar.lastDate;
         var chips = document.getElementById('day-counts');
@@ -482,7 +557,7 @@
         results.hidden = false;
         document.getElementById('download-timetable').disabled = false;
         document.getElementById('download-calendar').disabled = false;
-        var messages = calendar.warnings.slice();
+        var messages = timetable.warnings.concat(calendar.warnings);
         warningsList.replaceChildren();
         messages.forEach(function (message) {
           var li = document.createElement('li');
