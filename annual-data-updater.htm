@@ -165,7 +165,7 @@
       <div class="year-grid">
         <div>
           <label class="field-label" for="academic-year">學年名稱</label>
-          <input class="control" id="academic-year" type="text" value="" placeholder="例如 2026–2027" autocomplete="off">
+          <input class="control" id="academic-year" type="text" value="" placeholder="自動帶入當前學年" autocomplete="off">
         </div>
         <div>
           <label class="field-label" for="date-start">校曆開始日期</label>
@@ -178,8 +178,8 @@
       </div>
       <div class="settings-row">
         <label class="field-label" for="admin-recipient">列印收件人（行政主任）</label>
-        <input class="control" id="admin-recipient" type="text" value="Florence" maxlength="60" autocomplete="off" required aria-describedby="admin-recipient-note">
-        <small id="admin-recipient-note" class="field-hint">名稱會寫入 timetable.json，調堂列印版會從資料檔讀取。</small>
+        <input class="control" id="admin-recipient" type="text" value="" placeholder="從現有設定載入" maxlength="60" autocomplete="off" required aria-describedby="admin-recipient-note">
+        <small id="admin-recipient-note" class="field-hint">名稱會從目前 timetable.json 預填；如有改動可在此修改，並寫入新資料檔。</small>
       </div>
       <div class="upload-grid" style="margin-top:18px">
         <label class="upload-box" for="timetable-file">
@@ -274,6 +274,18 @@
         if (!dateEnd.value) dateEnd.value = (startYear + 1) + '-07-31';
       }
       setDefaultSchoolYear();
+
+      function loadPrintRecipient() {
+        fetch('./data/timetable.json', { cache: 'no-cache' }).then(function (response) {
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          return response.json();
+        }).then(function (currentData) {
+          var currentRecipient = currentData.printSettings && currentData.printSettings.adminRecipient;
+          var field = document.getElementById('admin-recipient');
+          if (!field.value && currentRecipient) field.value = String(currentRecipient);
+        }).catch(function () {});
+      }
+      loadPrintRecipient();
 
       function setStatus(message, state) {
         statusText.textContent = message;
