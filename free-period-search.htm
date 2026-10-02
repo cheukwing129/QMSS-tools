@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="選取一位或多位老師，合併查看 Day A–F 課表並搜尋共同空堂。">
+  <title>空堂搜尋｜QMSS Tools</title>
+  <link rel="stylesheet" href="./assets/free-period-search.css">
+  <script type="module" src="./assets/free-period-search.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+  <header class="wrap topbar">
+    <a class="brand" href="./index.html" aria-label="QMSS Tools 首頁">
+      <span class="brand-mark" aria-hidden="true">Q</span>
+      <span>
+        <span class="brand-name">QMSS Tools</span>
+        <span class="brand-caption">TEACHER TOOLKIT</span>
+      </span>
+    </a>
+    <nav class="top-links" aria-label="工具導覽">
+      <a href="./adjustment-timetable.htm">調堂小幫手 <span aria-hidden="true">↗</span></a>
+      <a href="./index.html">返回首頁</a>
+    </nav>
+  </header>
+
+  <main class="wrap" id="main">
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">教務安排 · DAY A–F</p>
+        <h1 id="page-title">空堂搜尋</h1>
+        <p class="intro-copy">選取老師，比較每人的課節，找出大家都有空的時間。</p>
+      </div>
+      <span class="year-pill" id="year-pill">課表載入中</span>
+    </section>
+
+    <div class="workspace">
+      <aside class="panel teacher-panel" aria-labelledby="teacher-title">
+        <div class="panel-heading">
+          <h2 id="teacher-title">選擇老師</h2>
+          <span class="number-badge"><span id="selected-count">0</span> 位</span>
+        </div>
+        <p class="panel-copy">可選一位或多位，名單按老師代號排序。</p>
+        <label class="search-field" for="teacher-search">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <input id="teacher-search" type="search" placeholder="搜尋姓名或代號" aria-label="搜尋老師姓名或代號" autocomplete="off" disabled>
+        </label>
+        <div class="selected-section" id="selected-section" hidden>
+          <div class="selection-heading">
+            <span>已選老師</span>
+            <button class="text-button" type="button" id="clear-selection" disabled>清除全部</button>
+          </div>
+          <div class="selected-teachers" id="selected-teachers" aria-label="已選老師"></div>
+        </div>
+        <p class="list-status" id="list-status" role="status">正在載入老師名單……</p>
+        <div class="teacher-list" id="teacher-list" role="group" aria-label="老師名單" aria-busy="true"></div>
+        <p class="no-results" id="no-results" hidden>找不到相符的老師，試試姓名或代號。</p>
+      </aside>
+
+      <section class="panel schedule-panel" aria-labelledby="schedule-title">
+        <div class="schedule-heading">
+          <div>
+            <h2 id="schedule-title">合併時間表</h2>
+            <p class="panel-copy" id="selection-summary">選取老師後，課表會自動顯示。</p>
+          </div>
+          <button class="primary-button" id="highlight-free" type="button" aria-pressed="false" disabled>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <span id="highlight-label">高亮共同空堂</span>
+          </button>
+        </div>
+
+        <fieldset class="exclusion-options" id="exclusion-options" disabled>
+          <legend>空堂判斷</legend>
+          <label class="toggle-option"><input id="ignore-sixth" type="checkbox">視中六課節為空堂</label>
+          <label class="toggle-option"><input id="ignore-assembly" type="checkbox">視周會為空堂</label>
+          <label class="toggle-option"><input id="ignore-clp" type="checkbox">視 CLP 為空堂</label>
+        </fieldset>
+        <p class="filter-note">中六：6K／6P／6T／6W；周會：Day F 第 7／9 節 Assembly Hall；CLP：備課／會議。排除的課節仍會顯示並標示「已排除」。</p>
+
+        <div class="schedule-meta" id="schedule-meta" hidden>
+          <span class="free-total"><strong id="common-count">0</strong> 節共同空堂</span>
+          <span class="legend"><i class="legend-swatch" aria-hidden="true"></i>高亮時表示全部所選老師空堂</span>
+        </div>
+        <div class="empty-state" id="empty-state">
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="8" y="12" width="32" height="29" rx="4" stroke="currentColor" stroke-width="1.7"/><path d="M16 8v8m16-8v8M8 22h32m-25 8h5m8 0h5m-18 6h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <h3>先選取要比較的老師</h3>
+          <p>每人的課節會列在同一格，<br>再按「高亮共同空堂」查看共同時間。</p>
+        </div>
+        <div class="error-state" id="load-error" role="alert" hidden>
+          <h3>課表暫時未能載入</h3>
+          <p id="error-message">請確認網絡連線後重試。</p>
+          <button class="secondary-button" id="retry-load" type="button">重新載入課表</button>
+        </div>
+        <p class="scroll-hint" id="scroll-hint" hidden>可左右滑動時間表；早會／閱讀時段不列作共同空堂。</p>
+        <div class="timetable-scroll" id="timetable-scroll" tabindex="0" aria-labelledby="schedule-title" aria-describedby="scroll-hint" hidden>
+          <table class="timetable" id="timetable">
+            <caption class="sr-only">所選老師的 Day A–F 九節制合併課表</caption>
+            <thead id="timetable-head"></thead>
+            <tbody id="timetable-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <p>依年度常規課表比較；臨時調堂及已取消的課節需另行核對。</p>
+      <a href="./annual-data-updater.htm">維護者：更新年度資料 <span aria-hidden="true">↗</span></a>
+    </footer>
+    <p class="sr-only" id="result-status" role="status" aria-live="polite" aria-atomic="true"></p>
+  </main>
+</body>
+</html>

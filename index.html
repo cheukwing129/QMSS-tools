@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f4ee">
-  <meta name="description" content="QMSS 校務工具入口：頒獎禮控場、交流團點名及調堂列印工具。">
+  <meta name="description" content="QMSS 校務工具入口：頒獎禮控場、交流團點名、調堂列印及多人空堂搜尋工具。">
   <title>QMSS Tools｜校務工具入口</title>
   <style>
     :root {
@@ -421,7 +421,7 @@
       <a href="#tools">工具清單</a>
       <a href="#footer">關於工具站</a>
     </nav>
-    <span class="live-count"><span class="live-dot" aria-hidden="true"></span><span id="header-live-count">4 款工具可用</span></span>
+    <span class="live-count"><span class="live-dot" aria-hidden="true"></span><span id="header-live-count">5 款工具可用</span></span>
   </header>
 
   <main class="wrap">
@@ -429,7 +429,7 @@
       <div>
         <p class="eyebrow">QMSS · 教師工具站</p>
         <h1 id="hero-title">校務日常，<br>一頁找到順手工具。</h1>
-        <p class="hero-copy">把活動控場、學生點名和調堂安排等工作小工具集中在這裡。選擇工具即可開啟，之後新增的工具也會在此整理。</p>
+        <p class="hero-copy">把活動控場、學生點名、調堂安排和空堂搜尋等工作小工具集中在這裡。選擇工具即可開啟，之後新增的工具也會在此整理。</p>
         <a class="primary-link" href="#tools">
           查看所有工具
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -439,7 +439,7 @@
         <div class="overview-kicker">TOOLKIT SNAPSHOT</div>
         <div class="overview-title">小工具，讓現場流程更順。</div>
         <div class="overview-stats">
-          <div><span class="stat-number" id="available-count">04</span><span class="stat-label">可直接使用</span></div>
+          <div><span class="stat-number" id="available-count">05</span><span class="stat-label">可直接使用</span></div>
           <div><span class="stat-number" id="planned-count">00</span><span class="stat-label">規劃中</span></div>
         </div>
         <div class="overview-foot"><span class="live-dot" aria-hidden="true"></span>工具清單會隨新功能更新</div>
@@ -452,7 +452,7 @@
           <h2 id="tools-title">工具清單</h2>
           <p>目前已整理好的工作小幫手，直接開啟即可使用。</p>
         </div>
-        <span class="tool-count" id="result-count" aria-live="polite">共 4 款工具</span>
+        <span class="tool-count" id="result-count" aria-live="polite">共 5 款工具</span>
       </div>
 
       <div class="toolbar">
@@ -536,6 +536,23 @@
           <div class="card-bottom">
             <span class="feature-tag">課表預載 · 二人／三人互調</span>
             <a class="card-link" href="./adjustment-timetable.htm?v=adjustment-ui-20260927-r2">開啟工具
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="tool-card adjustment free-period" data-category="academic" data-status="available" data-search="空堂 空節 共同時間 課表 時間表 老師 多人 中六 周會 CLP 會議 教務">
+          <div class="card-top">
+            <span class="tool-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M13 20H5.5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2H18a2 2 0 0 1 2 2v5M8 3v4m8-4v4M3.5 10H20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="16.5" cy="16.5" r="3.5" stroke="currentColor" stroke-width="1.7"/><path d="m19 19 3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <span class="status-badge"><span class="status-dot" aria-hidden="true"></span>已上線</span>
+          </div>
+          <div class="category">教務安排</div>
+          <h3>空堂搜尋</h3>
+          <p>選取多位老師合併查看課表，一鍵高亮共同空堂；可排除中六、周會及 CLP。</p>
+          <div class="card-bottom">
+            <span class="feature-tag">多人課表 · 共同空堂</span>
+            <a class="card-link" href="./free-period-search.htm">開啟工具
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
