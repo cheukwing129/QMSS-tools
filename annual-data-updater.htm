@@ -76,6 +76,8 @@
     .step { flex: 0 0 auto; color: #73827e; font-size: 13px; font-weight: 750; letter-spacing: .08em; }
     .year-grid, .upload-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     .field-label { display: block; margin: 0 0 7px; color: #405b59; font-size: 14px; font-weight: 750; }
+    .settings-row { max-width: 420px; margin: 0 0 18px; }
+    .settings-row .field-hint { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
     .control {
       width: 100%; min-height: 47px; padding: 10px 12px;
       border: 1px solid #cbd5d0; border-radius: 11px; background: white; color: var(--ink);
@@ -163,16 +165,21 @@
       <div class="year-grid">
         <div>
           <label class="field-label" for="academic-year">學年名稱</label>
-          <input class="control" id="academic-year" type="text" value="2026–2027" autocomplete="off">
+          <input class="control" id="academic-year" type="text" value="" placeholder="例如 2026–2027" autocomplete="off">
         </div>
         <div>
           <label class="field-label" for="date-start">校曆開始日期</label>
-          <input class="control" id="date-start" type="date" value="2026-08-01">
+          <input class="control" id="date-start" type="date" value="">
         </div>
         <div>
           <label class="field-label" for="date-end">校曆結束日期</label>
-          <input class="control" id="date-end" type="date" value="2027-07-31">
+          <input class="control" id="date-end" type="date" value="">
         </div>
+      </div>
+      <div class="settings-row">
+        <label class="field-label" for="admin-recipient">列印收件人（行政主任）</label>
+        <input class="control" id="admin-recipient" type="text" value="Florence" maxlength="60" autocomplete="off" required aria-describedby="admin-recipient-note">
+        <small id="admin-recipient-note" class="field-hint">名稱會寫入 timetable.json，調堂列印版會從資料檔讀取。</small>
       </div>
       <div class="upload-grid" style="margin-top:18px">
         <label class="upload-box" for="timetable-file">
@@ -220,8 +227,9 @@
         </div>
         <ol class="publish-steps">
           <li>下載以上兩個資料檔。</li>
-          <li>到 <a href="https://github.com/cheukwing129/QMSS-tools/tree/main/data" target="_blank" rel="noreferrer">QMSS-tools 的 data 資料夾</a>，以這兩個檔案覆蓋同名 JSON。</li>
-          <li>提交更新後，網站沿用既有部署流程更新。其他使用者毋須上載資料。</li>
+          <li>開啟 <a href="https://github.com/cheukwing129/QMSS-tools/tree/main/data" target="_blank" rel="noreferrer">QMSS-tools 的 data 資料夾</a>，登入有寫入權限的 GitHub 帳戶後，選 <strong>Add file → Upload files</strong>，一次選取兩個同名 JSON 覆蓋。</li>
+          <li>在頁底按 <strong>Commit changes</strong> 提交。毋須安裝 Git 或輸入指令；其他使用者毋須上載資料。網站會沿用既有部署流程更新。</li>
+          <li>沒有資料夾寫入權限時，將兩個 JSON 交給 QMSS-tools 維護者代為上載。</li>
         </ol>
       </div>
     </section>
@@ -253,6 +261,20 @@
         parts.forEach(function (part) { values[part.type] = part.value; });
         return values.year + '-' + values.month + '-' + values.day;
       }
+      function setDefaultSchoolYear() {
+        var parts = hkToday().split('-');
+        var currentYear = Number(parts[0]);
+        var month = Number(parts[1]);
+        var startYear = month >= 8 ? currentYear : currentYear - 1;
+        var academicYear = document.getElementById('academic-year');
+        var dateStart = document.getElementById('date-start');
+        var dateEnd = document.getElementById('date-end');
+        if (!academicYear.value) academicYear.value = startYear + '–' + (startYear + 1);
+        if (!dateStart.value) dateStart.value = startYear + '-08-01';
+        if (!dateEnd.value) dateEnd.value = (startYear + 1) + '-07-31';
+      }
+      setDefaultSchoolYear();
+
       function setStatus(message, state) {
         statusText.textContent = message;
         statusText.dataset.state = state || 'idle';
@@ -349,7 +371,7 @@
         };
       }
 
-      async function parseTimetable(file, academicYear) {
+      async function parseTimetable(file, academicYear, adminRecipient) {
         if (!window.XLSX) throw new Error('Excel 解析元件未能載入。請確認網絡連線後重新整理頁面。');
         var workbook = XLSX.read(await file.arrayBuffer(), { cellDates: false });
         if (!workbook.SheetNames || workbook.SheetNames.length < 2) throw new Error('這個 Excel 看起來不是完整的年度教師課表。');
@@ -415,6 +437,7 @@
         return {
           data: {
             academicYear: academicYear,
+            printSettings: { adminRecipient: adminRecipient },
             sourceFile: file.name,
             days: DAY_NAMES,
             periods: [1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -572,14 +595,15 @@
         var academicYear = document.getElementById('academic-year').value.trim();
         var startDate = document.getElementById('date-start').value;
         var endDate = document.getElementById('date-end').value;
-        if (!academicYear || !startDate || !endDate || startDate > endDate) {
-          setStatus('請填寫學年名稱，並確認校曆開始日期早於結束日期。', 'error');
+        var adminRecipient = document.getElementById('admin-recipient').value.trim();
+        if (!academicYear || !startDate || !endDate || !adminRecipient || startDate > endDate) {
+          setStatus('請填寫學年名稱和行政主任收件姓名，並確認校曆開始日期早於結束日期。', 'error');
           return;
         }
         processButton.disabled = true;
         setStatus('正在讀取課表和校曆……', 'idle');
         try {
-          var timetable = await parseTimetable(fileTimetable.files[0], academicYear);
+          var timetable = await parseTimetable(fileTimetable.files[0], academicYear, adminRecipient);
           var calendarText = await fileCalendar.files[0].text();
           var calendar = parseCalendarText(calendarText, startDate, endDate, academicYear);
           prepared = { timetable: timetable.data, calendar: calendar.data };
