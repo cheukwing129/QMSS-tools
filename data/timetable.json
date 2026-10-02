@@ -15424,5 +15424,8 @@
         }
       ]
     }
-  ]
+  ],
+  "printSettings": {
+    "adminRecipient": "Florence"
+  }
 }
