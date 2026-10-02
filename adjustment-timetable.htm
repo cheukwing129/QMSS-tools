@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f4ee">
-  <meta name="description" content="預載 2026–2027 課表，安排二人或三人調堂並列印各份通知。">
+  <meta name="description" content="按年度課表安排二人或三人調堂並列印各份通知。">
   <title>調堂小幫手｜QMSS Tools</title>
   <style>
     :root {
@@ -496,6 +496,7 @@
       var data;
       var calendarDays = {};
       var calendarMeta = {};
+      var printRecipient = '行政主任';
       var peopleCount = 2;
       var ownerCode = '';
       var selectedSlots = [];
@@ -997,7 +998,7 @@
           return { label: '老師 ' + participant.teacher.code + ' 保存', position: centerIndex, recipient: participant.teacher.displayName };
         });
         copies.push({ label: '貼於 ' + classSelect.value + ' 班房', position: centerIndex, recipient: classSelect.value + ' 班房' });
-        copies.push({ label: '交由 Florence 保存', position: centerIndex, recipient: '行政主任 Florence' });
+        copies.push({ label: '交由 ' + printRecipient + ' 保存', position: centerIndex, recipient: '行政主任 ' + printRecipient });
         printSheet.style.setProperty('--copy-count', String(copies.length));
         printSheet.style.setProperty('--participant-count', String(peopleCount));
         printSheet.dataset.mode = String(peopleCount);
@@ -1043,7 +1044,7 @@
           printSheet.appendChild(section);
         });
         document.getElementById('preview-count').textContent = 'A4 直向一頁，共 ' + copies.length +
-          ' 個可裁切區：' + peopleCount + ' 位老師各一份、班房張貼一份、Florence 一份。';
+          ' 個可裁切區：' + peopleCount + ' 位老師各一份、班房張貼一份、' + printRecipient + ' 一份。';
         previewSection.hidden = false;
         previewSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -1248,6 +1249,10 @@
         }).catch(function () { return { days: {}, calendarName: 'QMSS Calendar' }; });
         Promise.all([timetableRequest, calendarRequest]).then(function (loaded) {
           data = loaded[0];
+          var printSettings = data.printSettings || {};
+          printRecipient = String(printSettings.adminRecipient || '行政主任').trim() || '行政主任';
+          var description = document.querySelector('meta[name="description"]');
+          if (description) description.content = (data.academicYear ? data.academicYear + ' ' : '') + '課表調堂安排與列印通知。';
           calendarMeta = loaded[1];
           calendarDays = calendarMeta.days || {};
           buildScheduleIndex();
