@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f4ee">
-  <meta name="description" content="選取一位或多位老師，合併查看 Day A–F 課表並搜尋共同空堂。">
+  <meta name="description" content="選取一位或多位老師，比較 Day A–F 課表、搜尋共同空堂，並按 QMSS Calendar 查詢所選課節的未來日期。">
   <title>空堂搜尋｜QMSS Tools</title>
-  <link rel="stylesheet" href="./assets/free-period-search.css">
-  <script type="module" src="./assets/free-period-search.js"></script>
+  <link rel="stylesheet" href="./assets/free-period-search.css?v=calendar-20261003">
+  <script type="module" src="./assets/free-period-search.js?v=calendar-20261003"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳至主要內容</a>
@@ -92,7 +92,7 @@
           <p id="error-message">請確認網絡連線後重試。</p>
           <button class="secondary-button" id="retry-load" type="button">重新載入課表</button>
         </div>
-        <p class="scroll-hint" id="scroll-hint" hidden>可左右滑動時間表；早會／閱讀時段不列作共同空堂。</p>
+        <p class="scroll-hint" id="scroll-hint" hidden>點選任何課節，下方會列出相同 Day 的日期。窄螢幕可左右滑動；早會／閱讀時段不列作共同空堂。</p>
         <div class="timetable-scroll" id="timetable-scroll" tabindex="0" aria-labelledby="schedule-title" aria-describedby="scroll-hint" hidden>
           <table class="timetable" id="timetable">
             <caption class="sr-only">所選老師的 Day A–F 九節制合併課表</caption>
@@ -100,6 +100,26 @@
             <tbody id="timetable-body"></tbody>
           </table>
         </div>
+        <section class="slot-dates" id="slot-dates" aria-labelledby="slot-dates-title" hidden>
+          <div class="dates-heading">
+            <div>
+              <h3 id="slot-dates-title">相同 Day 的日期</h3>
+              <p class="panel-copy" id="selected-slot-label">先點選上方任何課節，不限共同空堂。</p>
+            </div>
+            <label class="date-range-label" for="date-weeks">查詢範圍
+              <select id="date-weeks">
+                <option value="2">未來 2 週</option>
+                <option value="4" selected>未來 4 週</option>
+                <option value="6">未來 6 週</option>
+                <option value="8">未來 8 週</option>
+              </select>
+            </label>
+          </div>
+          <p class="date-window" id="date-window" hidden></p>
+          <p class="calendar-status" id="calendar-status" role="status">校曆載入中……</p>
+          <ul class="date-list" id="date-list" aria-label="所選 Day 的未來日期"></ul>
+          <button class="secondary-button" type="button" id="retry-calendar" hidden>重新載入校曆</button>
+        </section>
       </section>
     </div>
     <footer class="footer">

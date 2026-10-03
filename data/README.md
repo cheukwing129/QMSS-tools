@@ -1,6 +1,6 @@
 # 年度課表更新
 
-`adjustment-timetable.htm` 直接讀取 `data/timetable.json` 和 `data/school-days.json`。網站訪客不用登入或上載檔案。QMSS Calendar 的日期和 Day A–F 對照以年度 JSON 提供給網頁，因此前端不保存 Google API key，也不要求每位訪客連接 Google。
+`adjustment-timetable.htm` 和 `free-period-search.htm` 共用並直接讀取 `data/timetable.json` 和 `data/school-days.json`。網站訪客不用登入或上載檔案。QMSS Calendar 的日期和 Day A–F 對照以年度 JSON 提供給網頁，因此前端不保存 Google API key，也不要求每位訪客連接 Google。
 
 ## 新學年更新
 
